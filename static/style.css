@@ -29,8 +29,8 @@ h1 {
     position: relative;
 
     background: rgba(0, 0, 0, 0.5);
-    margin: 36px 36px 36px 0;
-    padding: 16px;
+    margin: 32px 32px 32px 0;
+    padding: 16px 16px 16px 48px;
 }
 
 #bg {
