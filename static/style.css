@@ -14,9 +14,29 @@ body {
 a {
     border-bottom: 1px dotted #F2F2F2;
     text-decoration: none;
+
+    transition: color 0.25s;
+}
+a:hover {
+    color: #A99;
 }
 
-h1 {
+body > header {
+    z-index: 1;
+    box-sizing: border-box;
+    position: relative;
+
+    margin: auto;
+    margin-top: 36px;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
+    padding: 36px;
+}
+
+body > header h1 {
     font-size: 56px;
     font-weight: normal;
     text-shadow: 1px 1px 0px #000000, 1px 2px 0px #FFF;
@@ -24,18 +44,20 @@ h1 {
     margin: 20px 0 30px 0;
 }
 
-.content {
+section {
+    background: #FFF;
     z-index: 1;
-    position: relative;
+}
 
-    background: rgba(0, 0, 0, 0.5);
-    margin: 32px 32px 32px 0;
-    padding: 16px 16px 16px 48px;
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #bg {
     z-index: 0;
-    position: fixed;
+    position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: url(wall.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
