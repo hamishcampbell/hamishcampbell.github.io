@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hamish Campbell | Polemic</title>
+    <title>Maps | Hamish Campbell | Polemic</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/static/style.css">
@@ -44,33 +44,50 @@
 
         <div class="crumbs">
             <ul>
-                <li><a><span>Home</span></a></li>
+                <li><a href="/"><span>Home</span></a></li>
+                <li><a><span>Maps</span></a></li>
             </ul>
         </div>
 
-        <section>
+        <article>
             <header>
-                <h1>Welcome</h1>
+                <h1>New Zealand Roads</h1>
+                <p class="meta">16th October 2014 ~ QGIS</p>
             </header>
 
             <div>
-                <p>This is a work in progress...</p>
+                <div class="imageFeature">
+                    <a href="/maps/2014-10-16-nz-roads/">
+                        <img src="/assets/maps/20141016_NZ_Roads_Thumb.png" />
+                    </a>
+                </div>
+                <p>This is a quick map showing only New Zealand roads from the Land Information
+                    <a href="https://data.linz.govt.nz/layer/184-nz-mainland-road-centrelines-topo-1250k/" target="_linz">New Zealand Mainland Roads Centrelines (1:250k)</a> dataset. Roads are symbolized from lighter to darker shades of blue
+                    based on the 'lanes' attribute.</p>
             </div>
-        </section>
+            <div class="clear"></div>
+        </article>
 
-        <section>
+        <article>
             <header>
-                <h1><a href='/maps/'>Maps</a></h1>
+                <h1>New Zealand Mean Annual Temperature</h1>
+                <p class="meta">10th October 2014 ~ QGIS</p>
             </header>
 
             <div>
-                <p>A collection of maps created from open data sources, new every Friday!</p>
-                <p><a href='/maps/'>See the maps →</a></p>
+                <div class="imageFeature">
+                    <a href="/maps/2014-10-10-nz-mean-temp/">
+                        <img src="/assets/maps/20141010_NZ_Mean_Temp_Thumb.png" />
+                    </a>
+                </div>
+                <p>Landcare Research is a New Zealand CRI (Crown Research Institute) that studies the natural
+                    environment of New Zealand. They pubish a wealth of scientific data - here is a visualisation
+                    of New Zealand's mean annual temperature, from historic records. Background hillshades were
+                    privided by LINZ and the offshore bathymetry pattern from NIWA.</p>
             </div>
-        </section>
-
+            <div class="clear"></div>
+        </article>
     </div>
-
     <footer>
         <span><a href="http://creativecommons.org/licenses/by/4.0/" target="_self">CC-BY-NC</a> &copy; Hamish Campbell</span>
     </footer>
