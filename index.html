@@ -42,19 +42,19 @@
 
     <div class="content">
 
-        <div class="crumbs">
+        <div id="crumbs">
             <ul>
                 <li><a><span>Home</span></a></li>
             </ul>
         </div>
 
         <section>
-            <header>
-                <h1>Welcome</h1>
-            </header>
-
-            <div>
-                <p>This is a work in progress...</p>
+            <div class="splash">
+                <div class="profile"></div>
+                <p>Hello, my name is Hamish. I'm a web applications developer with an
+                    interest in geographic information systems, open data and end user 
+                    interfaces.</p>
+                <div class="clear"></div>
             </div>
         </section>
 
@@ -64,7 +64,8 @@
             </header>
 
             <div>
-                <p>A collection of maps created from open data sources, new every Friday!</p>
+                <p>A collection of maps created from open data sources. Updated every
+                    Friday (time permitting).</p>
                 <p><a href='/maps/'>See the maps →</a></p>
             </div>
         </section>
@@ -74,4 +75,7 @@
     <footer>
         <span><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-NC</a> &copy; Hamish Campbell</span>
     </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+    <script src="/static/site.js"></script>
 </body>

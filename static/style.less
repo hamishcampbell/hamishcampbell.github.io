@@ -1,3 +1,5 @@
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -56,15 +58,55 @@ body > header > h1 {
     margin: 20px 0 30px 0;
 }
 
-.content {
-    margin-top: 205px;
+.splash {
+
+    max-width: 680px;
+    margin: auto;
+    padding-top: 38px;
+
+    .profile {
+        background-image: url(me.jpg);
+        background-size: 100%;
+        border-radius: 50%;
+        float: left;
+        margin: 0 24px 16px 0;
+        width: 120px;
+        height: 120px;
+    }
+
+    p {
+        font-size: 1.2em;
+        color: #666;
+        line-height: 2.3em;
+        margin-top: 4px;
+    }
 }
 
-.crumbs {
+.content {
+    margin-top: 205px;
+    background: #F2F2F2;
+    padding-bottom: 24px;
+    position: relative;
+    z-index: 1;
+
+    .affixTop & {
+        margin-top: 205px + 48px;
+    }
+}
+
+#crumbs {
     background: #E6E6E6;
     position: relative;
+    box-sizing: border-box;
+    height: 48px;
     padding: 12px 0;
     z-index: 1;
+
+    .affixTop & {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 
     ul {
         line-height: 24px;
@@ -103,9 +145,6 @@ body > header > h1 {
 }
 
 article, section {
-    position: relative;
-    background: #F2F2F2;
-    z-index: 1;
     color: #333;
 }
 
@@ -131,7 +170,7 @@ section > header,
 article > header {
     max-width: 800px;
     margin: auto;
-    padding: 24px 24px 8px;
+    padding: 16px 16px 8px;
 }
 section > header h1,
 article > header h1 {
@@ -162,7 +201,7 @@ article > div p {
 }
 
 footer {
-    background: #F2F2F2;
+    background: #E6E6E6;
     color: #999;
     text-align: center;
 
