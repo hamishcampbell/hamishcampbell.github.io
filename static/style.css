@@ -131,6 +131,10 @@ body > header > h1 {
 #crumbs li:last-child:after {
   content: none;
 }
+#disqus_thread {
+  max-width: 800px;
+  margin: auto;
+}
 article,
 section {
   color: #333;
