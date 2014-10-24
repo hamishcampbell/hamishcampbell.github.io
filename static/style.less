@@ -1,4 +1,4 @@
-
+@max-content-width: 800px;
 
 html, body {
     margin: 0;
@@ -94,6 +94,22 @@ body > header > h1 {
     }
 }
 
+.summary {
+    margin-bottom: 16px;
+
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+    .meta {
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+        line-height: 1em;
+        color: #666;
+    }
+}
+
 #crumbs {
     background: #E6E6E6;
     position: relative;
@@ -111,7 +127,7 @@ body > header > h1 {
     ul {
         line-height: 24px;
         height: 24px;
-        max-width: 800px;
+        max-width: @max-content-width;
         padding: 0 24px;
         margin: 0 auto;
         list-style: none;
@@ -144,11 +160,6 @@ body > header > h1 {
     }
 }
 
-#disqus_thread {
-    max-width: 800px;
-    margin: auto;
-}
-
 article, section {
     color: #333;
 }
@@ -157,7 +168,7 @@ article:after {
     display: block;
     content: "⊙";
     text-align: center;
-    max-width: 800px;
+    max-width: @max-content-width;
     padding: 0 24px;
     margin: auto;
     font-size: 22px;
@@ -173,32 +184,35 @@ article:last-of-type:after {
 
 section > header,
 article > header {
-    max-width: 800px;
+    max-width: @max-content-width;
     margin: auto;
     padding: 16px 16px 8px;
 }
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.2em; }
+
 section > header h1,
 article > header h1 {
     padding: 0;
     margin: 8px 0 4px 0;
 }
+section > header p.meta,
 article > header p.meta {
     font-size: 0.9em;
     color: #666;
+    margin-top: 0;
 }
 section > article,
 section > div,
 article > div {
     padding: 0 24px 8px 24px;
     margin: auto;
-    max-width: 800px;
+    max-width: @max-content-width;
     text-align: justify;
 }
 section > article:first-of-type {
     padding-top: 0;
-}
-article h2 {
-    font-size: 1.2em;
 }
 
 article > div p {
@@ -261,3 +275,5 @@ body {
     margin: 0;
     clear: both;
 }
+
+@import "syntax.css";

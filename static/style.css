@@ -1,3 +1,4 @@
+@import "syntax.css";
 html,
 body {
   margin: 0;
@@ -84,6 +85,20 @@ body > header > h1 {
 .affixTop .content {
   margin-top: 253px;
 }
+.summary {
+  margin-bottom: 16px;
+}
+.summary h3 {
+  margin: 0;
+  padding: 0;
+}
+.summary .meta {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  color: #666;
+}
 #crumbs {
   background: #E6E6E6;
   position: relative;
@@ -131,10 +146,6 @@ body > header > h1 {
 #crumbs li:last-child:after {
   content: none;
 }
-#disqus_thread {
-  max-width: 800px;
-  margin: auto;
-}
 article,
 section {
   color: #333;
@@ -161,14 +172,22 @@ article > header {
   margin: auto;
   padding: 16px 16px 8px;
 }
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.2em;
+}
 section > header h1,
 article > header h1 {
   padding: 0;
   margin: 8px 0 4px 0;
 }
+section > header p.meta,
 article > header p.meta {
   font-size: 0.9em;
   color: #666;
+  margin-top: 0;
 }
 section > article,
 section > div,
@@ -180,9 +199,6 @@ article > div {
 }
 section > article:first-of-type {
   padding-top: 0;
-}
-article h2 {
-  font-size: 1.2em;
 }
 article > div p {
   margin: 0 0 12px 0;
