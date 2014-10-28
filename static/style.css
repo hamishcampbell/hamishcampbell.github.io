@@ -59,6 +59,7 @@ body > header > h1 {
   max-width: 680px;
   margin: auto;
   padding-top: 38px;
+  padding-bottom: 24px;
 }
 .splash .profile {
   background-image: url(me.jpg);
@@ -166,7 +167,6 @@ article:first-of-type {
 article:last-of-type:after {
   display: none;
 }
-section > header,
 article > header {
   max-width: 800px;
   margin: auto;
@@ -189,8 +189,8 @@ article > header p.meta {
   color: #666;
   margin-top: 0;
 }
+div.home,
 section > article,
-section > div,
 article > div {
   padding: 0 24px 8px 24px;
   margin: auto;
@@ -202,6 +202,18 @@ section > article:first-of-type {
 }
 article > div p {
   margin: 0 0 12px 0;
+}
+.home > .left {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding-right: 16px;
+}
+.home > .right {
+  box-sizing: border-box;
+  float: right;
+  width: 50%;
+  padding-left: 16px;
 }
 footer {
   background: #E6E6E6;
@@ -225,9 +237,29 @@ article .imagePreview img {
   border: 1px solid #CCC;
   width: 100%;
 }
+article p img {
+  border: 1px solid #CCC;
+  max-width: 800px;
+}
 article code {
   background: #DDD;
   padding: 2px;
+}
+hr {
+  margin: 12px 0 36px 0;
+  padding: 0;
+  height: 1px;
+  border: none;
+}
+hr:after {
+  display: block;
+  content: "⊙";
+  text-align: center;
+  max-width: 800px;
+  padding: 0 24px;
+  margin: auto;
+  font-size: 22px;
+  color: #999;
 }
 body {
   background: url(wall.jpg) no-repeat center center fixed;
@@ -237,6 +269,14 @@ body {
   background-size: cover;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.wall.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='wall.jpg', sizingMethod='scale')";
+}
+blockquote {
+  margin: 12px 0;
+  padding: 0 12px;
+  border-left: 12px solid #DDD;
+  font-size: 0.95em;
+  text-align: left;
+  font-style: italic;
 }
 /** UTIL **/
 .clear {
