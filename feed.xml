@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Polemic</title>
+        <description></description>      
+        <link>http://polemic.nz</link>
+        <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Random Maps, October 2014</title>
+                <description>&lt;p&gt;This graphic of Queenstown (New Zealand) uses a nice technique to show the incline of town streets. This is a great
+way to make a pedestrian-friendly transport map.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot; data-conversation=&quot;none&quot; align=&quot;center&quot;&gt;&lt;p&gt;Great graphic concept! Show the incline of streets in a town, help pedestrians. &lt;a href=&quot;http://t.co/TSzw6tAAgt&quot;&gt;pic.twitter.com/TSzw6tAAgt&lt;/a&gt; View on Twitter&lt;/p&gt;&amp;mdash; Bob Lehman (@fellowplanner) &lt;a href=&quot;https://twitter.com/fellowplanner/status/523308413779214336&quot;&gt;October 18, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;hr /&gt;&lt;/p&gt;
+
+&lt;p&gt;This map of the relationship between where people live and work in Engliand shows the magnetic pull that the city
+of London has on English commuters. The same representation should be relatively easy to create using New Zealand data from the 2013
+census.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot; data-conversation=&quot;none&quot; align=&quot;center&quot;&gt;
+    &lt;p&gt;Local version of map comparing geo-centroid of each MSOA to the workplace population weighted centroid (arrow point) &lt;a href=&quot;http://t.co/KwS7NQCeoK&quot;&gt;pic.twitter.com/KwS7NQCeoK&lt;/a&gt;&lt;/p&gt;
+    &amp;mdash; Neal Hudson (@resi_analyst) &lt;a href=&quot;https://twitter.com/resi_analyst/status/526791876377321472&quot;&gt;October 27, 2014&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;hr /&gt;&lt;/p&gt;
+
+&lt;p&gt;A few people think that there might be &lt;a href=&quot;http://www.nzherald.co.nz/nz/news/article.cfm?c_id=1&amp;amp;objectid=10865715&quot;&gt;moose&lt;/a&gt; in Fiordland&amp;#39;s remote and hilly back country. Auckland GIS student &lt;a href=&quot;http://www.4lex.nz/&quot;&gt;Alex Corkin&lt;/a&gt; goes &lt;a href=&quot;http://4lex.nz/mooseHunt.html&quot;&gt;hunting for for the elusive creatures&lt;/a&gt; using various data sources to determine the best location for CCTV cameras.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/4lexMooseHunt_800.jpg&quot; alt=&quot;Moose Hunt&quot;&gt;&lt;/p&gt;
+</description>
+                <pubDate>Tue, 28 Oct 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/10/28/random-maps-october-2014/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/10/28/random-maps-october-2014/</guid>
+            </item>
+        
+            <item>
+                <title>Auckland Circuit Board</title>
+                <description>&lt;p&gt;I was lacking for time this week, so this is the result of an earlier experiment with
+QGIS symbolizers. It&amp;#39;s an attempt to produce a circuit board type diagram of an Auckland
+central suburb. Getting the track detail around the pin holes is especially fiddly.
+Some post-processing in GIMP to give the base board a bit of extra texture too.&lt;/p&gt;
+</description>
+                <pubDate>Fri, 24 Oct 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/10/24/auckland-circuit-board/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/10/24/auckland-circuit-board/</guid>
+            </item>
+        
+            <item>
+                <title>New Zealand Roads</title>
+                <description>&lt;p&gt;This is a quick map showing New Zealand roads from the Land Information New Zealand
+&lt;a href=&quot;https://data.linz.govt.nz/layer/184-nz-mainland-road-centrelines-topo-1250k/&quot; target=&quot;_linz&quot;&gt;Mainland 
+Roads Centrelines (1:250k)&lt;/a&gt; dataset (and nothing else), inspired by 
+&lt;a href=&quot;http://io9.com/a-map-of-u-s-roads-and-nothing-else-483183413&quot; target=&quot;_blank&quot;&gt;this&lt;/a&gt; map of U.S. Roads.
+Road centrelines are symbolized with lighter to darker shades of blue based on the data &lt;code&gt;lanes&lt;/code&gt; attribute.&lt;/p&gt;
+</description>
+                <pubDate>Thu, 16 Oct 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/10/16/nz-roads/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/10/16/nz-roads/</guid>
+            </item>
+        
+            <item>
+                <title>New Zealand Mean Annual Temperature</title>
+                <description>&lt;p&gt;Landcare Research is a New Zealand CRI (Crown Research Institute) that studies the natural
+environment of New Zealand. They pubish a wealth of scientific data - here is a visualisation
+of New Zealand&amp;#39;s mean annual temperature, from historic records. Background hillshades were
+privided by LINZ and the offshore bathymetry pattern from NIWA.&lt;/p&gt;
+</description>
+                <pubDate>Fri, 10 Oct 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/10/10/nz-mean-temp/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/10/10/nz-mean-temp/</guid>
+            </item>
+        
+            <item>
+                <title>Waiheke and Ponui Islands</title>
+                <description>&lt;p&gt;A neon map of the islands of Waiheke and Ponui in Auckland&amp;#39;s Hauraki Gulf. The effect is
+created by generated a roughness map from an elevation model of the islands.&lt;/p&gt;
+</description>
+                <pubDate>Thu, 09 Oct 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/10/09/waiheke-ponui/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/10/09/waiheke-ponui/</guid>
+            </item>
+        
+    </channel>
+</rss>
