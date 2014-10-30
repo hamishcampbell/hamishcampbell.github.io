@@ -7,6 +7,31 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>New Zealand Extruded</title>
+                <description>&lt;p&gt;Adding depth to a map can make it stand out (pun unintended), but it can be difficult to generate 3d
+perspective from a flat plane within QGIS. In this example, depth outlines are created with
+marker symbolizers of vertical lines, offset vertically and overlaied with another
+copy of the layer. The urban areas layer is additionally offset to create the
+built-up effect. Labels are created with white text, a black buffer and drop shadow.&lt;/p&gt;
+
+&lt;p&gt;The print renderer introduces some unwanted artifacts in the border, but this is probably fixable
+with a bit of tweaking.&lt;/p&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/208-nz-geographic-names-topo-1500k/&quot;&gt;NZ Geographic Names (Topo, 1:500k)&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/4246-nz-urban-areas-2012-yearly-pattern/&quot;&gt;NZ Urban Areas (2012 Yearly Pattern)&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/184-nz-mainland-road-centrelines-topo-1250k/&quot;&gt;NZ Mainland Road Centrelines (Topo, 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/1559-nz-coastlines-and-islands-polygons-topo-1250k/&quot;&gt;NZ Coastlines and Islands Polygons (Topo 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Fri, 31 Oct 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/10/31/new-zealand-extruded/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/10/31/new-zealand-extruded/</guid>
+            </item>
+        
+            <item>
                 <title>Random Maps, October 2014</title>
                 <description>&lt;p&gt;This graphic of Queenstown (New Zealand) uses a nice technique to show the incline of town streets. This is a great
 way to make a pedestrian-friendly transport map.&lt;/p&gt;
