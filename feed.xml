@@ -18,6 +18,21 @@ direct paths to town, the darkest are the 10% least direct.&lt;/p&gt;
 that ignores speed limits, turn and one-way restrictions and assumes that
 any road that crosses another will intersect. Nevertheless, it was a lot
 of fun to make, and I&amp;#39;ll post a detailed account of how it was made later. It would be easy to improve and apply to other areas. Leave a comment if you have suggestions!&lt;/p&gt;
+
+&lt;h3&gt;Downloads&lt;/h3&gt;
+
+&lt;p&gt;Explore and download the final data set here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/7325-auckland-downtown-proximity-map/&quot;&gt;Auckland Downtown Proximity Map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/183-improved-nz-road-centrelines-august-2011/&quot;&gt;Improved NZ Road Centrelines (August 2011)&lt;/a&gt; (NZ Open GPS Maps)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/1559-nz-coastlines-and-islands-polygons-topo-1250k/&quot;&gt;NZ Coastlines and Islands Polygons (Topo 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <pubDate>Fri, 07 Nov 2014 00:00:00 +1300</pubDate>
                 <link>http://polemic.nz/2014/11/07/auckland-downtown-proximity/</link>
