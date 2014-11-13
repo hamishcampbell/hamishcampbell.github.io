@@ -7,6 +7,37 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>New Zealand Historic Earthquakes</title>
+                <description>&lt;p&gt;New Zealand is sometimes called the Shakey Isles and it&amp;#39;s not hard to see why.
+This map shows all earthquakes in New Zealand
+from &lt;a href=&quot;http://www.geonet.org.nz/&quot;&gt;GeoNet&lt;/a&gt;, the earthquake monitoring service provided by GNS Science. This
+data has been extracted from the GeoNet &lt;a href=&quot;http://info.geonet.org.nz/display/appdata/Advanced+Queries&quot;&gt;WFS servce&lt;/a&gt;
+and filtered for earthquakes local to New Zealand.&lt;/p&gt;
+
+&lt;p&gt;The map is produced by overlaying point markers that are (very roughly and definitely &lt;b&gt;not&lt;/b&gt; scientifically)
+weighted for the strength (magnitude) and depth of the measured quake.&lt;/p&gt;
+
+&lt;h3&gt;Downloads&lt;/h3&gt;
+
+&lt;p&gt;Explore and download an extract of the data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://labs.koordinates.com/layer/7328-new-zealand-earthquakes/&quot;&gt;New Zealand Earthquakes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://info.geonet.org.nz/display/appdata/Earthquake+Catalogue&quot;&gt;GeoNet Earthquake Catalogue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/1559-nz-coastlines-and-islands-polygons-topo-1250k/&quot;&gt;NZ Coastlines and Islands Polygons (Topo 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Fri, 14 Nov 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/11/14/nz-earthquakes/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/11/14/nz-earthquakes/</guid>
+            </item>
+        
+            <item>
                 <title>Auckland Downtown Proximity</title>
                 <description>&lt;p&gt;This map shows the relationship between the &amp;quot;direct&amp;quot; (crow flies) distance
 and &amp;quot;shortest path&amp;quot; (via roads) from 1 Queen Street (downtown) and the 
