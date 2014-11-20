@@ -274,6 +274,14 @@ article code {
   background: #DDD;
   padding: 2px;
 }
+article .highlight {
+  overflow-x: auto;
+  padding: 0 12px;
+  margin-bottom: 16px;
+}
+article .highlight code {
+  background: none;
+}
 hr {
   margin: 12px 0 36px 0;
   padding: 0;
