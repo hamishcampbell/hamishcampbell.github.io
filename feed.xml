@@ -7,6 +7,35 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>New Zealand Deprivation Index (2013)</title>
+                <description>&lt;p&gt;The New Zealand Deprivation Index is a key socioeconomic indicator produced by the
+University of Otago Department of Public Health.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NZDep2013 is an updated version of the NZDep91, NZDep96, NZDep2001 and
+NZDep2006 indexes of socioeconomic deprivation. NZDep2013 combines nine
+variables from the 2013 census which reflect eight dimensions of deprivation.
+NZDep2013 provides a deprivation score for each meshblock in New Zealand.
+Meshblocks are geographical units defined by Statistics New Zealand, containing
+a median of approximately 81 people in 2013.
+&amp;mdash; &lt;a href=&quot;http://www.otago.ac.nz/wellington/departments/publichealth/research/hirp/otago020194.html&quot;&gt;Socioeconomic Deprivation Indexes: NZDep and NZiDep, Department of Public Health&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The index is a key of relative &amp;#39;deprivation&amp;#39;, where a high index indicates a high level of deprivation.&lt;/p&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx&quot;&gt;New Zealand 2013 Clipped Meshblock Boundaries&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.otago.ac.nz/wellington/departments/publichealth/research/hirp/otago020194.html&quot;&gt;NZDep2013 Meshblock Data&lt;/a&gt; (University of Otago)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Fri, 28 Nov 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/11/28/nz-deprivation-index/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/11/28/nz-deprivation-index/</guid>
+            </item>
+        
+            <item>
                 <title>Azimuth Orthographic Projections with QGIS</title>
                 <description>&lt;p&gt;This is an example of an azimuthal orthographic projection of the earth centered on 
 New Zealand. Creating maps with azimuthal orthographic projections in &lt;a href=&quot;http://www.qgis.org/en/site/&quot;&gt;QGIS&lt;/a&gt; requires a few tricks to get right, so here is a short tutorial on setting up the coordinate system, making your data work in the projection, and generating
