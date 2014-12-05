@@ -7,6 +7,50 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Population Proportional Meshblocks</title>
+                <description>&lt;p&gt;My &lt;a href=&quot;/2014/11/28/nz-deprivation-index/&quot;&gt;last map&lt;/a&gt; visualised the NZ deprivation index by meshblock. It provided
+a quick regional overview of deprivation however it obscures the
+effects of population density. This week I wanted to explore different
+ways to present the NZ meshblock dataset that emphasises population
+distribution over geographic location.&lt;/p&gt;
+
+&lt;p&gt;This map is the result of using a modified meshblock dataset I created with the
+same deprivation data. The size of each block accurately reflects the
+size of the population, and the position of the block is weighted to the
+mean location of the population horizontally.&lt;/p&gt;
+
+&lt;p&gt;Each &amp;#39;row&amp;#39; above contains all meshblocks quantized in to 10km bands (north/south)
+with a width of 1 metre for each &amp;#39;population resident&amp;#39;. The grid is 50km square, so
+a band that is one square wide represents 50,000 people, and a full grid square would
+represent 250,000 people.&lt;/p&gt;
+
+&lt;p&gt;This is an interesting way to arrange the meshblock set. It works
+reasonably well for New Zealand where the country is roughly north/south
+aligned, giving an idea of how the population is distributed and retaining
+useful reference points for comparison. The blocks are a bit small, a problem
+that is difficult to fix given the uneven population distribution.&lt;/p&gt;
+
+&lt;h3&gt;Downloads&lt;/h3&gt;
+
+&lt;p&gt;You can explore and download the modified meshblock layer I created for this map here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://labs.koordinates.com/layer/7344-population-weighted-meshblocks/&quot;&gt;Population Weighted Meshblocks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx&quot;&gt;New Zealand 2013 Clipped Meshblock Boundaries&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.otago.ac.nz/wellington/departments/publichealth/research/hirp/otago020194.html&quot;&gt;NZDep2013 Meshblock Data&lt;/a&gt; (University of Otago)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Fri, 05 Dec 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/12/05/population-proportional-meshblocks/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/12/05/population-proportional-meshblocks/</guid>
+            </item>
+        
+            <item>
                 <title>New Zealand Deprivation Index (2013)</title>
                 <description>&lt;p&gt;The New Zealand Deprivation Index is a key socioeconomic indicator produced by the
 University of Otago Department of Public Health.&lt;/p&gt;
@@ -356,16 +400,6 @@ privided by LINZ and the offshore bathymetry pattern from NIWA.&lt;/p&gt;
                 <pubDate>Fri, 10 Oct 2014 00:00:00 +1300</pubDate>
                 <link>http://polemic.nz/2014/10/10/nz-mean-temp/</link>
                 <guid isPermaLink="true">http://polemic.nz/2014/10/10/nz-mean-temp/</guid>
-            </item>
-        
-            <item>
-                <title>Waiheke and Ponui Islands</title>
-                <description>&lt;p&gt;A neon map of the islands of Waiheke and Ponui in Auckland&amp;#39;s Hauraki Gulf. The effect is
-created by generated a roughness map from an elevation model of the islands.&lt;/p&gt;
-</description>
-                <pubDate>Thu, 09 Oct 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/10/09/waiheke-ponui/</link>
-                <guid isPermaLink="true">http://polemic.nz/2014/10/09/waiheke-ponui/</guid>
             </item>
         
     </channel>
