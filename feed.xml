@@ -7,6 +7,31 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Kiwicon 8</title>
+                <description>&lt;p&gt;Today&amp;#39;s map is a small tribute to Kiwicon 8 - New Zealand&amp;#39;s hacker conference
+that I&amp;#39;m currently attending. The theme this year is &amp;quot;It&amp;#39;s always 1989 in computer
+security&amp;quot;. It&amp;#39;s been an excellent conference so far and the crüe have put on an amazing
+show (a real life Delorean, for one!).&lt;/p&gt;
+
+&lt;p&gt;Aside from the usual hacks and cracks, it&amp;#39;s been interesting to see some themes
+emerge - for example - a shift from the &amp;#39;apparatus of security&amp;#39; to
+the security of people and their (non-technological) networks.&lt;/p&gt;
+
+&lt;p&gt;On to the map!&lt;/p&gt;
+
+&lt;p&gt;To create the New Zealand outline I first generated a regular 50 km point grid as a snapping guide.
+Then, with a new shapefile layer, I set the snapping options to 50,000 metres and started drawing. Creating
+the features is just a matter of getting a rough outline and tweaking until it looks visually appealing. The
+neon outline is a series of outline line symbolizers. The map is then exported to GIMP to add the text effects.
+The latest version of QGIS has some great improvements, but the print composer is still very limited when
+it comes to adding other elements.&lt;/p&gt;
+</description>
+                <pubDate>Fri, 12 Dec 2014 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2014/12/12/kiwicon-8/</link>
+                <guid isPermaLink="true">http://polemic.nz/2014/12/12/kiwicon-8/</guid>
+            </item>
+        
+            <item>
                 <title>Population Proportional Meshblocks</title>
                 <description>&lt;p&gt;My &lt;a href=&quot;/2014/11/28/nz-deprivation-index/&quot;&gt;last map&lt;/a&gt; visualised the NZ deprivation index by meshblock. It provided
 a quick regional overview of deprivation however it obscures the
@@ -388,18 +413,6 @@ Road centrelines are symbolized with lighter to darker shades of blue based on t
                 <pubDate>Thu, 16 Oct 2014 00:00:00 +1300</pubDate>
                 <link>http://polemic.nz/2014/10/16/nz-roads/</link>
                 <guid isPermaLink="true">http://polemic.nz/2014/10/16/nz-roads/</guid>
-            </item>
-        
-            <item>
-                <title>New Zealand Mean Annual Temperature</title>
-                <description>&lt;p&gt;Landcare Research is a New Zealand CRI (Crown Research Institute) that studies the natural
-environment of New Zealand. They pubish a wealth of scientific data - here is a visualisation
-of New Zealand&amp;#39;s mean annual temperature, from historic records. Background hillshades were
-privided by LINZ and the offshore bathymetry pattern from NIWA.&lt;/p&gt;
-</description>
-                <pubDate>Fri, 10 Oct 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/10/10/nz-mean-temp/</link>
-                <guid isPermaLink="true">http://polemic.nz/2014/10/10/nz-mean-temp/</guid>
             </item>
         
     </channel>
