@@ -6,16 +6,16 @@ I hereby claim:
 
   * I am an admin of http://polemic.nz
   * I am polemic (https://keybase.io/polemic) on keybase.
-  * I have a public key with fingerprint BAD4 9EBC D443 5443 C80A  E782 6EA7 CFF7 7561 9F45
+  * I have a public key with fingerprint DAD5 7EEC 292E 8C9E B5DA  3CF8 63D3 ADE1 5625 3865
 
 To claim this, I am signing this object:
 
 {
     "body": {
         "key": {
-            "fingerprint": "bad49ebcd4435443c80ae7826ea7cff775619f45",
+            "fingerprint": "dad57eec292e8c9eb5da3cf863d3ade156253865",
             "host": "keybase.io",
-            "key_id": "6ea7cff775619f45",
+            "key_id": "63d3ade156253865",
             "uid": "d2e0ef9eee38c8ba12d80d2bd6070000",
             "username": "polemic"
         },
@@ -26,35 +26,34 @@ To claim this, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1414444972,
+    "ctime": 1418683338,
     "expire_in": 157680000,
-    "prev": "0bf19bb6ecb8510be1adbf15c5b713c1e223e2a58aff0084967484c2766dbb71",
-    "seqno": 4,
+    "prev": "60ce3e23038cc1dcb75bb0e5de4ecd86f2343bf2dfbf38d21b9c8216b5e8b8f2",
+    "seqno": 13,
     "tag": "signature"
 }
 
 with the aforementioned key, yielding the PGP signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v1.1.3
+Version: Keybase OpenPGP v1.1.6
 Comment: https://keybase.io/crypto
 
-yMHgAnicO8LLzMDFaLdwId/aMOcJjKcPvCtlCPHbvqZaKSk/pVLJqlopOxVMpWXm
-pacWFRRl5pUoWSklJaaYWKYmJaeYmBibAnGyhUFiqrmFkVlqonlyWpq5uamZoWWa
-iamSjlJGfjFIB9CYpMTiVL3MfKAYkBOfmQIUxaK+FCyRYpRqkJpmmZqaamyRbJGU
-aGiUYmGQYpSUYmZgbgAEIIXFqUV5ibmpQNUF+TmpuZnJSrU6SkDBsszkVJCTQTaj
-KtDLqwJqLCjKL8lPzs8BimeUlBRYgbSVVBaA1JWnJsVDTYhPysxLAXoaqKEstag4
-Mz9PycoQqDK5JBNkpKGJoQkQWJob6SilVhRkFqXGZ4JUmJqbWYAcCLImtQxopEFS
-mqFlUpJZanKShamhQVKqYWIKUMg02TTJ3NA42TDVyMg41SjR1CIxLc3AwMLE0szc
-xMIk2cjczCwlCahECeSnwrx8JSsToDMT04FGFmem5yWWlBalKtUeOhDDwsDIxcDG
-ygSKNgYuTgFYZD56zMHQOr9issZVllvMBY9+HtkSJ696+7zcn90bLx4VMZz2b9Pc
-7In8CvuFQrc4+D7zvJhxpG3xnInTfz7ZueV0xM2zi1/a5qat/9XOxSjzap2nZ134
-98k/AgKX3tzM4BPlWb3roN3F+l0VJ72sniZkvZK3dbrKJrFvc4nBrVtOzU5HVNqC
-jMuyTF9PL/yzYNWNM88nOCZ7WCptFTCaLeh99rBHYLHELylhNtOFYXeaJvQ9vBws
-G3berEb64ddfO13t7HQ6Z79pXrfiu/UOtsJ8nabHLo+nX5+rNmnXBcbvmz79eWnr
-1Z/8Qk9v25/LkUe/SxVtZDlg/rzKt/dU8f1PMm1hfWVT/0dvmcDUsHvJtobL5gA3
-Ehsv
-=SjB+
+yMHdAnicbVFtSFNRGN7MtGaSVkQFpVwrLIfcj927szWMIIW2yIKyD611z8edN/Xe
+uU1r2kApjEEmQpoUfVFmUQSFFBXJHGKyUdlPwSgy+5HUUpB+hNW5Uj+Czp/Dec7z
+PO/z8A5lLzBZzMHu9tF0Vss1J2OpBtPeDpRoZqCOw4yzmakh85eiaj4S8AdULcQ4
+GSxj0U4I4h08AchBoIhlASlAErAgY8KJEi8KQBIZK1OtBw0FtYFykBSrOsXow6ti
+iv6H3zD/gXnCEsVBCBEAAlDmeAxYzEMssXaWHoMYJAFNriOU7ddrSZ2KmIiVoWCj
+iogR2Zj8L6FYa6JCf0AP6UivpXh1KOR3GrJQ2G/wjhPo/ePghaqGaWkqaCSBoKpr
+jJOjTBRSDUvOxgEJCIIArAw54VcDxKsaDNEuASOgMYY0GhVZRATCCywtgjiMoF2E
+kCUiJjaCMJAUXrAJUOGxAhUBYJ6DDgR4ToIiARAoPGN0qtd06i3QnLKPegZVnyaH
+GgKEicRjVekms8WUsTDN2JvJsjjn7zbdKxaZ2j5nltXn9da0jpiPje2SioYeFL07
+7Krfbo/cvZwfjve4akaSTRmJzKm17yuiD4u7DnIX12clXhxYvmbzaFn8QuGN1NyH
+fO/9I86uTlfb06xTcDKjPUa69jx/9WSHJ5U1QO709XtaI6XtiiV79+oWZ+fKk44K
+95Zmy3fbvQzTy7LCZZtuTkd7r3VPDF/asG7b48GJEuApP7Rv3HnVPdDyKdr/c7A0
+LaenLzz9C1/aOHl+pNxTHo1NIreUW/LlWWVH7tKq28mP2S23mIKzS+bGpk4Pzypo
+bLjayvvflr6unHlzLpk3E7i+M6hu/VYw/siVeSWVcAirfLPxtKNf9/848xsA1Q7l
+=FzVd
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
