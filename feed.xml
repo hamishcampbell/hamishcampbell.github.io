@@ -7,6 +7,59 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Auckland Employment Centres</title>
+                <description>&lt;p&gt;A recent &lt;a href=&quot;http://transportblog.co.nz&quot;&gt;Auckland Transport Blog&lt;/a&gt; &lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot;&gt;post&lt;/a&gt; highlighted one of my
+biggest bugbears about misleading cartography - using fill
+symbology from absolute values that are dependant on the area
+of the underlying polygons. It seemed like a good excuse as any to try out
+hexbinning as an alternative method of looking at the data.&lt;/p&gt;
+
+&lt;p&gt;The analysis in the post looked at the &amp;quot;&lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot;&gt;Geometry of Urban Labour Markets&lt;/a&gt;&amp;quot; and is seeks to find patterns of employment
+as it relates to transport in the city. Here is the original map:&lt;/p&gt;
+
+&lt;div style='text-align: center'&gt;
+    &lt;img src='http://transportblog.co.nz/wp-content/uploads/2014/11/Auckland_employment_by_AU_2014-1024x724.jpg' style=&quot;min-width: 300px; border: 1px solid #DDD; width: 80%&quot; /&gt;
+    &lt;p&gt;&lt;small&gt;Employee count by Auckland area unit, 2014 - &lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot; target=&quot;_blank&quot;&gt;Auckland Transport Blog&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The data is based on Statistics New Zealand employee count estimates for census area unit (AU).
+The problem is that the size of an area unit is roughly proportional to normally &lt;em&gt;resident&lt;/em&gt; 
+population. So what happens if we provide the light to dark symbology in this map? Well it looks
+like Mangere South (the dark blue block to the south) is the biggest employment centre in the city, with other the other most significant areas outside of the CBD in industrial areas like Otahuhu and East Tamaki.&lt;/p&gt;
+
+&lt;p&gt;Is that true? It&amp;#39;s not surprising that a lot of people work in those areas - they&amp;#39;re large areas of industrial land. Mangere South includes the Airport and it&amp;#39;s environs. The problem is the data is skewed: few people actually live there, so the AU is particularly large. Practically speaking it means that industrial areas will appear more significant (a square-ish relation) than other areas of high employment with larger resident populations (e.g. the CBD and regional centres, commercial and mixed areas). &lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re talking about transport and planning, this is a pretty important distinction.&lt;/p&gt;
+
+&lt;p&gt;If you want to compare absolute values between variable geographic sizes, you need to look
+at density. Fortunately this is easy in most GIS packages - just add a new field and fill
+it with the absolute value divided by the calculated area of the block.&lt;/p&gt;
+
+&lt;p&gt;In QGIS you can go the the attribute table, enable layer editing, hit the field calculater and add
+a new calculated field with the formula &lt;code&gt;&amp;quot;value_field&amp;quot; / $area&lt;/code&gt;. Symbolize with gradients based on
+the density value and you have an easy way to compare the areas of different sizes.&lt;/p&gt;
+
+&lt;p&gt;But density might not be the easiest way to visualise the data or to start clustering areas to
+find patterns. This is where hexbinning - aggregated values over a regular grid of hexagons - comes in.&lt;/p&gt;
+
+&lt;p&gt;In this map, I&amp;#39;ve created a hexbin layer using the handy &lt;a href=&quot;http://plugins.qgis.org/plugins/mmqgis/&quot;&gt;MMQGIS plugin&lt;/a&gt;. After calculating the employee density for the AUs, I&amp;#39;ve mapped the mean
+values to the hexes, and highlighted the hexes to show where the most dense employment areas
+in Auckand exist. The top 20% by density are highlighted, with a roughly logarythmic scale for the top 20% from light to dark. &lt;/p&gt;
+
+&lt;p&gt;Now you can start to see where the centres of employment exist, and what those centres look like. The CBD is - by far - the biggest centre of employment in the region, but an awful lot of people work close to the CBD. The surrounding suburbs are not-insigificant employment regions in their own right. Rosebank, New Lynn, Henderson, Takapuna and Albany show charateristics of a composite model of development, and to the industry south-east we see a far more dispersed pattern.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately there is one significant issue with my approach: the resolution of the hexes is significantly higher that of the original AUs in some areas. This is highlighted by the missing expected zone of employment around the Airport. While the map reveals the Mangere South AU
+is actually (in aggregate) a region of low employment density, we also know that employment
+there is actually considerably more concentrated &lt;em&gt;within&lt;/em&gt; the AU than the map implies.&lt;/p&gt;
+
+&lt;p&gt;It means the Statistics NZ data is, in my opinion, innappropriately aggregated. We simply can&amp;#39;t pull fine-grained information about employment patterns in places where very few people live (but many people work). If you have suggestions on how that situation could be improved, leave a comment below!&lt;/p&gt;
+</description>
+                <pubDate>Fri, 16 Jan 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/01/16/auckland-employment-centres/</link>
+                <guid isPermaLink="true">http://polemic.nz/2015/01/16/auckland-employment-centres/</guid>
+            </item>
+        
+            <item>
                 <title>Kiwicon 8</title>
                 <description>&lt;p&gt;Today&amp;#39;s map is a small tribute to Kiwicon 8 - New Zealand&amp;#39;s hacker conference
 that I&amp;#39;m currently attending. The theme this year is &amp;quot;It&amp;#39;s always 1989 in computer
@@ -400,19 +453,6 @@ Some post-processing in GIMP to give the base board a bit of extra texture too.&
                 <pubDate>Fri, 24 Oct 2014 00:00:00 +1300</pubDate>
                 <link>http://polemic.nz/2014/10/24/auckland-circuit-board/</link>
                 <guid isPermaLink="true">http://polemic.nz/2014/10/24/auckland-circuit-board/</guid>
-            </item>
-        
-            <item>
-                <title>New Zealand Roads</title>
-                <description>&lt;p&gt;This is a quick map showing New Zealand roads from the Land Information New Zealand
-&lt;a href=&quot;https://data.linz.govt.nz/layer/184-nz-mainland-road-centrelines-topo-1250k/&quot; target=&quot;_linz&quot;&gt;Mainland 
-Roads Centrelines (1:250k)&lt;/a&gt; dataset (and nothing else), inspired by 
-&lt;a href=&quot;http://io9.com/a-map-of-u-s-roads-and-nothing-else-483183413&quot; target=&quot;_blank&quot;&gt;this&lt;/a&gt; map of U.S. Roads.
-Road centrelines are symbolized with lighter to darker shades of blue based on the data &lt;code&gt;lanes&lt;/code&gt; attribute.&lt;/p&gt;
-</description>
-                <pubDate>Thu, 16 Oct 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/10/16/nz-roads/</link>
-                <guid isPermaLink="true">http://polemic.nz/2014/10/16/nz-roads/</guid>
             </item>
         
     </channel>
