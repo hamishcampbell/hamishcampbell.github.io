@@ -317,6 +317,28 @@ blockquote {
   text-align: left;
   font-style: italic;
 }
+article q {
+  font-style: italic;
+}
+article table {
+  border-spacing: 0;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #999;
+}
+article table th,
+article table td {
+  margin: 0;
+  padding: 4px;
+}
+article table thead th {
+  border-bottom: 2px solid #999;
+}
+article table tbody th {
+  border-right: 2px solid #999999;
+}
+article table tbody tr:nth-child(odd) {
+  background-color: #FFF;
+}
 /** UTIL **/
 .clear {
   padding: 0;

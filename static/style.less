@@ -371,6 +371,33 @@ blockquote {
     font-style: italic;
 }
 
+article {
+    q {
+        font-style: italic;
+    }
+    table {
+        border-spacing: 0;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #999;
+
+        th, td {
+            margin: 0;
+            padding: 4px;
+        }
+
+        thead th {
+            border-bottom: 2px solid #999;
+        }
+        tbody th {
+            border-right: 2px solid #999
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #FFF;
+        }
+    }
+}
+
 
 /** UTIL **/
 .clear { 

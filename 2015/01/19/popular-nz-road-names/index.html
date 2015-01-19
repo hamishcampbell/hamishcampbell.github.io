@@ -76,8 +76,11 @@ to have quick look at name statistics. To analyse the data, import it to Postgre
 <p><code>shp2pgsql nz-road-centre-line-electoral.shp | psql [database_name]</code></p></li>
 </ol>
 
-<p>Now you can run queries against the data. To get the 50 most popular road names:</p>
-<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="ss">&quot;name&quot;</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">total_count</span> 
+<p>Now you can run queries against the data. To get the 50 most popular road names with their total length:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
+    <span class="ss">&quot;name&quot;</span><span class="p">,</span>
+    <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">total_count</span><span class="p">,</span>
+    <span class="n">ROUND</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">ST_LENGTH</span><span class="p">(</span><span class="n">geom</span><span class="p">)))</span> <span class="k">as</span> <span class="n">total_length</span>
 <span class="k">FROM</span> <span class="ss">&quot;nz-road-centre-line-electoral&quot;</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="ss">&quot;name&quot;</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">total_count</span> <span class="k">DESC</span>
 <span class="k">LIMIT</span> <span class="mi">50</span>
@@ -88,63 +91,76 @@ to have quick look at name statistics. To analyse the data, import it to Postgre
 <thead>
     <tr>
         <th>Rank</th>
-        <th width="400px">Name</th>
-        <th>Frequency</th>
+        <th style="min-width:260px">Name</th>
+        <th style="min-width:90px">Frequency</th>
+        <th>Length (m)</th>
     </tr>
 </thead>
 <tbody>
-<tr><td>1</td><td>Accessway</td><td>2414</td></tr>
-<tr><td>2</td><td>Service Lane</td><td>492</td></tr>
-<tr><td>3</td><td>Roadway</td><td>452</td></tr>
-<tr><td>4</td><td>State Highway  1</td><td>125</td></tr>
-<tr><td>5</td><td>George Street</td><td>74</td></tr>
-<tr><td>6</td><td>Queen Street</td><td>69</td></tr>
-<tr><td>7</td><td>Beach Road</td><td>69</td></tr>
-<tr><td>8</td><td>High Street</td><td>68</td></tr>
-<tr><td>9</td><td>King Street</td><td>66</td></tr>
-<tr><td>10</td><td>Station Road</td><td>66</td></tr>
-<tr><td>11</td><td>Rata Street</td><td>57</td></tr>
-<tr><td>12</td><td>School Road</td><td>55</td></tr>
-<tr><td>13</td><td>Grey Street</td><td>54</td></tr>
-<tr><td>14</td><td>State Highway  2</td><td>52</td></tr>
-<tr><td>15</td><td>Church Street</td><td>52</td></tr>
-<tr><td>16</td><td>Elizabeth Street</td><td>52</td></tr>
-<tr><td>17</td><td>Victoria Street</td><td>50</td></tr>
-<tr><td>18</td><td>Rimu Street</td><td>48</td></tr>
-<tr><td>19</td><td>River Road</td><td>48</td></tr>
-<tr><td>20</td><td>Bridge Street</td><td>46</td></tr>
-<tr><td>21</td><td>State Highway  6</td><td>46</td></tr>
-<tr><td>22</td><td>Cemetery Road</td><td>46</td></tr>
-<tr><td>23</td><td>Main Road</td><td>45</td></tr>
-<tr><td>24</td><td>Albert Street</td><td>44</td></tr>
-<tr><td>25</td><td>Domain Road</td><td>44</td></tr>
-<tr><td>26</td><td>Mill Road</td><td>43</td></tr>
-<tr><td>27</td><td>Short Street</td><td>43</td></tr>
-<tr><td>28</td><td>Boundary Road</td><td>42</td></tr>
-<tr><td>29</td><td>Miro Street</td><td>42</td></tr>
-<tr><td>30</td><td>William Street</td><td>41</td></tr>
-<tr><td>31</td><td>Matai Street</td><td>40</td></tr>
-<tr><td>32</td><td>Totara Street</td><td>40</td></tr>
-<tr><td>33</td><td>Wilson Road</td><td>39</td></tr>
-<tr><td>34</td><td>Seddon Street</td><td>38</td></tr>
-<tr><td>35</td><td>John Street</td><td>37</td></tr>
-<tr><td>36</td><td>Princes Street</td><td>36</td></tr>
-<tr><td>37</td><td>Charles Street</td><td>35</td></tr>
-<tr><td>38</td><td>Oxford Street</td><td>35</td></tr>
-<tr><td>39</td><td>Nelson Street</td><td>35</td></tr>
-<tr><td>40</td><td>James Street</td><td>35</td></tr>
-<tr><td>41</td><td>Valley Road</td><td>34</td></tr>
-<tr><td>42</td><td>York Street</td><td>34</td></tr>
-<tr><td>43</td><td>Tui Street</td><td>34</td></tr>
-<tr><td>44</td><td>Kowhai Street</td><td>34</td></tr>
-<tr><td>45</td><td>Campbell Street</td><td>32</td></tr>
-<tr><td>46</td><td>Kent Street</td><td>32</td></tr>
-<tr><td>47</td><td>Ward Street</td><td>32</td></tr>
-<tr><td>48</td><td>Russell Street</td><td>32</td></tr>
-<tr><td>49</td><td>Duke Street</td><td>32</td></tr>
-<tr><td>50</td><td>Main Street</td><td>32</td></tr>
-
+<tr><td>1</td><td>Accessway</td><td>2414</td><td>220,876</td></tr>
+<tr><td>2</td><td>Service Lane</td><td>492</td><td>54,500</td></tr>
+<tr><td>3</td><td>Roadway</td><td>452</td><td>335,172</td></tr>
+<tr><td>4</td><td>State Highway  1</td><td>125</td><td>2,168,214</td></tr>
+<tr><td>5</td><td>George Street</td><td>74</td><td>38,105</td></tr>
+<tr><td>6</td><td>Queen Street</td><td>69</td><td>50,181</td></tr>
+<tr><td>7</td><td>Beach Road</td><td>69</td><td>103,280</td></tr>
+<tr><td>8</td><td>High Street</td><td>68</td><td>68,671</td></tr>
+<tr><td>9</td><td>King Street</td><td>66</td><td>42,302</td></tr>
+<tr><td>10</td><td>Station Road</td><td>66</td><td>80,138</td></tr>
+<tr><td>11</td><td>Rata Street</td><td>57</td><td>25,589</td></tr>
+<tr><td>12</td><td>School Road</td><td>55</td><td>75,847</td></tr>
+<tr><td>13</td><td>Grey Street</td><td>54</td><td>36,090</td></tr>
+<tr><td>14</td><td>State Highway  2</td><td>52</td><td>991,692</td></tr>
+<tr><td>15</td><td>Church Street</td><td>52</td><td>40,540</td></tr>
+<tr><td>16</td><td>Elizabeth Street</td><td>52</td><td>21,323</td></tr>
+<tr><td>17</td><td>Victoria Street</td><td>50</td><td>45,263</td></tr>
+<tr><td>18</td><td>Rimu Street</td><td>48</td><td>17,075</td></tr>
+<tr><td>19</td><td>River Road</td><td>48</td><td>273,968</td></tr>
+<tr><td>20</td><td>Bridge Street</td><td>46</td><td>30,604</td></tr>
+<tr><td>21</td><td>State Highway  6</td><td>46</td><td>1,183,521</td></tr>
+<tr><td>22</td><td>Cemetery Road</td><td>46</td><td>56,800</td></tr>
+<tr><td>23</td><td>Main Road</td><td>45</td><td>85,202</td></tr>
+<tr><td>24</td><td>Albert Street</td><td>44</td><td>25,832</td></tr>
+<tr><td>25</td><td>Domain Road</td><td>44</td><td>47,879</td></tr>
+<tr><td>26</td><td>Mill Road</td><td>43</td><td>111,434</td></tr>
+<tr><td>27</td><td>Short Street</td><td>43</td><td>6,575</td></tr>
+<tr><td>28</td><td>Boundary Road</td><td>42</td><td>152,026</td></tr>
+<tr><td>29</td><td>Miro Street</td><td>42</td><td>17,852</td></tr>
+<tr><td>30</td><td>William Street</td><td>41</td><td>17,808</td></tr>
+<tr><td>31</td><td>Matai Street</td><td>40</td><td>15,183</td></tr>
+<tr><td>32</td><td>Totara Street</td><td>40</td><td>18,546</td></tr>
+<tr><td>33</td><td>Wilson Road</td><td>39</td><td>104,471</td></tr>
+<tr><td>34</td><td>Seddon Street</td><td>38</td><td>25,237</td></tr>
+<tr><td>35</td><td>John Street</td><td>37</td><td>14,036</td></tr>
+<tr><td>36</td><td>Princes Street</td><td>36</td><td>26,509</td></tr>
+<tr><td>37</td><td>Charles Street</td><td>35</td><td>16,041</td></tr>
+<tr><td>38</td><td>Oxford Street</td><td>35</td><td>23,789</td></tr>
+<tr><td>39</td><td>Nelson Street</td><td>35</td><td>17,365</td></tr>
+<tr><td>40</td><td>James Street</td><td>35</td><td>15,162</td></tr>
+<tr><td>41</td><td>Valley Road</td><td>34</td><td>92,760</td></tr>
+<tr><td>42</td><td>York Street</td><td>34</td><td>12,786</td></tr>
+<tr><td>43</td><td>Tui Street</td><td>34</td><td>12,064</td></tr>
+<tr><td>44</td><td>Kowhai Street</td><td>34</td><td>12,220</td></tr>
+<tr><td>45</td><td>Campbell Street</td><td>32</td><td>17,273</td></tr>
+<tr><td>46</td><td>Kent Street</td><td>32</td><td>18,598</td></tr>
+<tr><td>47</td><td>Ward Street</td><td>32</td><td>17,431</td></tr>
+<tr><td>48</td><td>Russell Street</td><td>32</td><td>14,733</td></tr>
+<tr><td>49</td><td>Duke Street</td><td>32</td><td>17,436</td></tr>
+<tr><td>50</td><td>Main Street</td><td>32</td><td>33,201</td></tr>
 </tbody></table>
+
+<p>Short Street - clearly well named at an average length of 153m.</p>
+
+<p>And of course we can get the total length of all road centrelines in the dataset with:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
+    <span class="k">SUM</span><span class="p">(</span><span class="n">ST_LENGTH</span><span class="p">(</span><span class="n">geom</span><span class="p">))</span> <span class="k">as</span> <span class="n">total_length</span>
+<span class="k">FROM</span> <span class="ss">&quot;nz-road-centre-line-electoral&quot;</span>
+</code></pre></div>
+<p>Which gives 123,086,930 metres of road.*</p>
+
+<p>*<small>Note that the dataset exists for electoral addressing purposes, so this comment on the layer
+information is important: <q>Because some roads have multiple names for part of their lengths, some road centreline geometries will duplicate parts of other roads even though there is in reality only one road formation.</q> In other words, we&#39;ve got some duplication above.
+</small></p>
 
     </div>
 
