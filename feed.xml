@@ -7,6 +7,94 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Popular New Zealand Road Names</title>
+                <description>&lt;p&gt;I pulled down Land Information New Zealand&amp;#39;s &lt;a href=&quot;https://data.linz.govt.nz/layer/818-nz-road-centre-line-electoral/&quot;&gt;Road Centre Line dataset&lt;/a&gt;
+to have quick look at name statistics. To analyse the data, import it to Postgres with &lt;a href=&quot;http://postgis.net/docs/manual-2.0/using_postgis_dbmanagement.html#shp2pgsql_usage&quot;&gt;&lt;code&gt;shp2pgsql&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download the data in the Shapefile format&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Extract and load into an existing Postgresql/PostGIS database:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;shp2pgsql nz-road-centre-line-electoral.shp | psql [database_name]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now you can run queries against the data. To get the 50 most popular road names:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_count&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;nz-road-centre-line-electoral&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_count&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the results:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Rank&lt;/th&gt;
+        &lt;th width=&quot;400px&quot;&gt;Name&lt;/th&gt;
+        &lt;th&gt;Frequency&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Accessway&lt;/td&gt;&lt;td&gt;2414&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Service Lane&lt;/td&gt;&lt;td&gt;492&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Roadway&lt;/td&gt;&lt;td&gt;452&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;State Highway  1&lt;/td&gt;&lt;td&gt;125&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;George Street&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Queen Street&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Beach Road&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;High Street&lt;/td&gt;&lt;td&gt;68&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;King Street&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;Station Road&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;Rata Street&lt;/td&gt;&lt;td&gt;57&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;School Road&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;Grey Street&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;State Highway  2&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;15&lt;/td&gt;&lt;td&gt;Church Street&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;Elizabeth Street&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;Victoria Street&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;Rimu Street&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;19&lt;/td&gt;&lt;td&gt;River Road&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;Bridge Street&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;21&lt;/td&gt;&lt;td&gt;State Highway  6&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;Cemetery Road&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;Main Road&lt;/td&gt;&lt;td&gt;45&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;Albert Street&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;Domain Road&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;26&lt;/td&gt;&lt;td&gt;Mill Road&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;Short Street&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;28&lt;/td&gt;&lt;td&gt;Boundary Road&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;29&lt;/td&gt;&lt;td&gt;Miro Street&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;William Street&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;31&lt;/td&gt;&lt;td&gt;Matai Street&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;Totara Street&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;33&lt;/td&gt;&lt;td&gt;Wilson Road&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;34&lt;/td&gt;&lt;td&gt;Seddon Street&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;John Street&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;Princes Street&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;Charles Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;Oxford Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;Nelson Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;James Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;Valley Road&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;York Street&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;Tui Street&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;Kowhai Street&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;Campbell Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;Kent Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;Ward Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;Russell Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;49&lt;/td&gt;&lt;td&gt;Duke Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;Main Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;/tr&gt;
+
+&lt;/tbody&gt;&lt;/table&gt;
+</description>
+                <pubDate>Mon, 19 Jan 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/01/19/popular-nz-road-names/</link>
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/01/19/popular-nz-road-names/</guid>
+            </item>
+        
+            <item>
                 <title>Auckland Employment Centres</title>
                 <description>&lt;p&gt;A recent &lt;a href=&quot;http://transportblog.co.nz&quot;&gt;Auckland Transport Blog&lt;/a&gt; &lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot;&gt;post&lt;/a&gt; highlighted one of my
 biggest bugbears about misleading cartography - using fill
@@ -466,21 +554,6 @@ census.&lt;/p&gt;
                 <link>http://polemic.nz/2014/10/28/random-maps-october-2014/</link>
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/10/28/random-maps-october-2014/</guid>
-            </item>
-        
-            <item>
-                <title>Auckland Circuit Board</title>
-                <description>&lt;p&gt;I was lacking for time this week, so this is the result of an earlier experiment with
-QGIS symbolizers. It&amp;#39;s an attempt to produce a circuit board type diagram of an Auckland
-central suburb. Getting the track detail around the pin holes is especially fiddly.
-Some post-processing in GIMP to give the base board a bit of extra texture too.&lt;/p&gt;
-</description>
-                <pubDate>Fri, 24 Oct 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/10/24/auckland-circuit-board/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20141024_Circuit_Thumb.png" type="image/png" />
-                
-                <guid isPermaLink="true">http://polemic.nz/2014/10/24/auckland-circuit-board/</guid>
             </item>
         
     </channel>
