@@ -20,7 +20,7 @@ oddly enough - by the New Zealand Fire Service Commission. And if so, you probab
 
 &lt;p&gt;I&amp;#39;ll write a bit more about the Commission at a later date (the Commission is not be confused with the New Zealand Fire Service, mind. The Commission is the board that oversees the actual Fire Service, it pays to be pedantic when dealing with agencies and the OIA). It&amp;#39;s a cautionary tale for all open data advocates.&lt;/p&gt;
 
-&lt;p&gt;So here we are: we want to know about suburbs, but we can&amp;#39;t use the official data. We&amp;#39;ll need to get it elsewhere. Fortunately there is another CC-BY dataset that &lt;em&gt;does&lt;/em&gt; have a &lt;code&gt;locality&lt;/code&gt; field that looks a lot like a suburb. This is the &lt;a href=&quot;https://data.linz.govt.nz/layer/779-nz-street-address-electoral/&quot;&gt;New Zealand Electoral Address&lt;/a&gt; dataset from LINZ:&lt;/p&gt;
+&lt;p&gt;So here we are: we want to know about suburbs, but we can&amp;#39;t use the official data. We&amp;#39;ll need to get it elsewhere. Fortunately there is another CC-BY dataset that &lt;em&gt;does&lt;/em&gt; have a &lt;code&gt;locality&lt;/code&gt; field that looks a lot like a suburb&lt;sup&gt;1&lt;/sup&gt;. This is the &lt;a href=&quot;https://data.linz.govt.nz/layer/779-nz-street-address-electoral/&quot;&gt;New Zealand Electoral Address&lt;/a&gt; dataset from LINZ:&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;This layer provides all allocated addresses as advised to LINZ by Territorial Authorities (TAs). Under the Local Government Act 1974 (section 319) it is the responsibility of the TAs to advise LINZ (the Surveyor General) of all allocated addresses in their district.&lt;/p&gt;
@@ -73,6 +73,10 @@ suburb dataset, from CC-BY licensed data sources.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/779-nz-street-address-electoral/&quot;&gt;New Zealand Electoral Address&lt;/a&gt; (Land Information New Zealand)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx&quot;&gt;New Zealand 2014 Clipped Meshblock Boundaries&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3&gt;Footnotes&lt;/h3&gt;
+
+&lt;p&gt;&lt;sup&gt;1.&lt;/sup&gt; It turns out that the &lt;code&gt;locality&lt;/code&gt; field is indeed, slightly indirectly, from the NZFS locality boundaries. More on that in Part 2.&lt;/p&gt;
 </description>
                 <pubDate>Fri, 23 Jan 2015 00:00:00 +1300</pubDate>
                 <link>http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</link>
