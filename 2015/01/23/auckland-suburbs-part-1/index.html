@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+ ____   __   __    ____  _  _  __  ___ 
+(  _ \ /  \ (  )  (  __)( \/ )(  )/ __)
+ ) __/(  O )/ (_/\ ) _) / \/ \ )(( (__ 
+(__)   \__/ \____/(____)\_)(_/(__)\___)
+
+  by Hamish Campbell | Auckland | Aotearoa New Zealand
+
+  hn.campbell@gmail.com
+-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Auckland Suburbs - Part 1 | Hamish Campbell | Polemic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@polemic">
+    <meta name="twitter:creator" content="@polemic">
+    <meta name="twitter:title" content="Auckland Suburbs - Part 1">
+    <meta name="twitter:description" content="So, suburbs. You&amp;#39;re probably looking at this map and
+wondering &amp;quot;what&amp;#39;s the big deal?&amp;quot;. It&amp;#39;s a terrible
+map of the suburbs of Auckland. There are lots of holes. Some
+bits are downright inaccurate. And you&amp;#39;d be right to wonder. Then again, you might be someone who has once tried to acquire an authoritative, free and open dataset of suburbs
+for Auckland (or, better yet, the whole of New Zealand).
+">
+    <meta name="twitter:image:src" content="http://polemic.nz/assets/maps/20150123-Auckland-Suburbs_Thumb.png">
+    
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/font-awesome.css">
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Montserrat+Alternates'>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://polemic.nz/feed.xml">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35371727-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Polemic</h1>
+        <p>Hamish Campbell &ndash; Aotearoa New Zealand</p>
+        <p class="ident">
+            <a href="http://github.com/hamishcampbell" target="_blank"><i class="icon-github"></i> GitHub</a> &ndash; 
+            <a href="http://twitter.com/polemic" target="_blank"><i class="icon-twitter"></i> Twitter</a> &ndash; 
+            <a href="http://linkedin.com/profile/view?id=55658318&amp;locale=en_US" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a> &ndash; 
+            <a href="https://keybase.io/polemic" target="_blank"><i class="icon-key"></i> Keybase</a>
+        </p>
+    </header>
+
+    <div class="content">
+
+        <div id="crumbs">
+            <ul>
+                <li><a href="/"><span>Home</span></a></li>
+                
+                <li><a href="/maps/"><span>Maps</span></a></li>
+                
+                
+                <li><a><span>Auckland Suburbs - Part 1</span></a></li>
+                
+                </ul>
+        </div>
+
+        <article>
+    <header>
+        <h1>Auckland Suburbs - Part 1</h1>
+        <p class="meta">23 Jan 2015</p>
+    </header>
+
+    <div>
+        <div class="imagePreview">
+    <img src="/assets/maps/20150123-Auckland-Suburbs.png" />
+</div>
+<p>So, suburbs. You&#39;re probably looking at this map and
+wondering &quot;what&#39;s the big deal?&quot;. It&#39;s a terrible
+map of the suburbs of Auckland. There are lots of holes. Some
+bits are downright inaccurate. And you&#39;d be right to wonder. Then again, you might be someone who has once tried to acquire an authoritative, free and open dataset of suburbs
+for Auckland (or, better yet, the whole of New Zealand).</p>
+
+<p>If you&#39;re in the latter group, then you&#39;re lucky enough to have experienced the strange
+black hole of rationality that surrounds the <a href="https://data.govt.nz/datasetrequest/show/4">NZ Localities</a> dataset held -
+oddly enough - by the New Zealand Fire Service Commission. And if so, you probably have an idea of why the map above is significant.</p>
+
+<p>I&#39;ll write a bit more about the Commission at a later date (the Commission is not be confused with the New Zealand Fire Service, mind. The Commission is the board that oversees the actual Fire Service, it pays to be pedantic when dealing with agencies and the OIA). It&#39;s a cautionary tale for all open data advocates.</p>
+
+<p>So here we are: we want to know about suburbs, but we can&#39;t use the official data. We&#39;ll need to get it elsewhere. Fortunately there is another CC-BY dataset that <em>does</em> have a <code>locality</code> field that looks a lot like a suburb. This is the <a href="https://data.linz.govt.nz/layer/779-nz-street-address-electoral/">New Zealand Electoral Address</a> dataset from LINZ:</p>
+
+<blockquote>
+<p>This layer provides all allocated addresses as advised to LINZ by Territorial Authorities (TAs). Under the Local Government Act 1974 (section 319) it is the responsibility of the TAs to advise LINZ (the Surveyor General) of all allocated addresses in their district.</p>
+</blockquote>
+
+<p>How do we go from the point layer to suburb polygons? I first tried calculating Concave Hulls over the locality but the results were.. not great. However the priority for LINZ is to correctly locate addresses within Stats NZ Meshblocks. So we can assign the address locality to the containing meshblock in Postgres, including a count of the times that locality name appears, like so (where I&#39;ve already imported the Statistics Meshblocks as <code>meshblocks</code> and address points as <code>electoral-addresses</code>:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span>
+    <span class="n">mb</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">mb</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span>
+    <span class="n">ad</span><span class="p">.</span><span class="n">locality</span><span class="p">,</span>
+    <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">locality_count</span>
+<span class="k">INTO</span> <span class="ss">&quot;meshblock-localities&quot;</span> 
+<span class="k">FROM</span> <span class="ss">&quot;meshblocks&quot;</span> <span class="k">as</span> <span class="n">mb</span>
+<span class="k">INNER</span> <span class="k">JOIN</span> <span class="ss">&quot;electoral-addresses&quot;</span> <span class="k">as</span> <span class="n">ad</span> 
+<span class="k">ON</span> <span class="n">ST_Intersects</span><span class="p">(</span><span class="n">mb</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">ST_SetSRID</span><span class="p">(</span><span class="n">ad</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span> <span class="mi">2193</span><span class="p">))</span>
+<span class="k">WHERE</span> <span class="n">mb</span><span class="p">.</span><span class="n">ta2014_nam</span> <span class="o">=</span> <span class="s1">&#39;Auckland&#39;</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">mb</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ad</span><span class="p">.</span><span class="n">locality</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">ad</span><span class="p">.</span><span class="n">locality</span><span class="p">,</span> <span class="n">locality_count</span> <span class="k">DESC</span>
+</code></pre></div>
+<p>This new table <code>meshblock-localities</code> now has duplicate meshblocks for each locality found, so we select distinct meshblocks by picking the most common locality found:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="k">ON</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="n">locality</span><span class="p">,</span> <span class="n">locality_count</span><span class="p">,</span> <span class="n">geom</span>
+<span class="k">INTO</span> <span class="ss">&quot;meshblock-localities-distinct&quot;</span>
+<span class="k">FROM</span> <span class="ss">&quot;meshblock-localities&quot;</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">id</span><span class="p">,</span> <span class="n">locality_count</span> <span class="k">DESC</span><span class="p">;</span><span class="o">*/</span>
+</code></pre></div>
+<p>Finally, we still have individual meshblocks, but we really want to join localities together to form single polygons:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
+    <span class="n">locality</span><span class="p">,</span>
+    <span class="n">ST_UNION</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span> <span class="k">as</span> <span class="n">geom</span>
+<span class="k">INTO</span> <span class="ss">&quot;meshblock-localities-union&quot;</span>
+<span class="k">FROM</span> <span class="ss">&quot;meshblock-localities-distinct&quot;</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">locality</span><span class="p">;</span>
+</code></pre></div>
+<p>Now our table <code>meshblock-localities-union</code> has just the
+locality name and it&#39;s geometry. I&#39;ve then imported it into
+QGIS and performed some additional cleanup:</p>
+
+<ul>
+<li>Split multi-part geometries. There are a lot of small
+blocks that are geographically distinct with odd (sometimes hyphenated) names.</li>
+<li>Remove some spurious records, e.g. localities like &quot;Auckland&quot; - probably assigned to addresses that are not obviously in a well known suburb.</li>
+</ul>
+
+<p>The result: a rough starting point to build a proper 
+suburb dataset, from CC-BY licensed data sources.</p>
+
+<h3>Datasources</h3>
+
+<ul>
+<li><a href="https://data.linz.govt.nz/layer/779-nz-street-address-electoral/">New Zealand Electoral Address</a> (Land Information New Zealand)</li>
+<li><a href="http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx">New Zealand 2014 Clipped Meshblock Boundaries</a> (Statistics NZ)</li>
+</ul>
+
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polemic'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>
+
+
+    </div>
+
+    <footer>
+        <span><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-NC</a> &copy; Hamish Campbell</span>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+    <script src="/static/site.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
