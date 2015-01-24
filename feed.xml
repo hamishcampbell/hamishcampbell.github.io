@@ -7,6 +7,19 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Electro-Punk</title>
+                <description>&lt;p&gt;An ice-cream machine at The Tannery in New Lynn. A curious mix of modern and old.&lt;/p&gt;
+</description>
+                <pubDate>Sat, 24 Jan 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/01/24/electro-punk/</link>
+                
+                
+                <enclosure url="http://polemic.nz/assets/photos/20150124-ElectroPunk_Thumb.jpg" type="image/jpg" />
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/01/24/electro-punk/</guid>
+            </item>
+        
+            <item>
                 <title>Auckland Suburbs - Part 1</title>
                 <description>&lt;p&gt;So, suburbs. You&amp;#39;re probably looking at this map and
 wondering &amp;quot;what&amp;#39;s the big deal?&amp;quot;. It&amp;#39;s a terrible
@@ -82,6 +95,7 @@ suburb dataset, from CC-BY licensed data sources.&lt;/p&gt;
                 <link>http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20150123-Auckland-Suburbs_Thumb.png" type="image/png" />
+                
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</guid>
             </item>
@@ -187,6 +201,7 @@ information is important: &lt;q&gt;Because some roads have multiple names for pa
                 <pubDate>Mon, 19 Jan 2015 00:00:00 +1300</pubDate>
                 <link>http://polemic.nz/2015/01/19/popular-nz-road-names/</link>
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2015/01/19/popular-nz-road-names/</guid>
             </item>
         
@@ -243,6 +258,7 @@ there is actually considerably more concentrated &lt;em&gt;within&lt;/em&gt; the
                 
                 <enclosure url="http://polemic.nz/assets/maps/20150116-Auckland_Employment_Centres2014_Thumb.png" type="image/png" />
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2015/01/16/auckland-employment-centres/</guid>
             </item>
         
@@ -270,6 +286,7 @@ it comes to adding other elements.&lt;/p&gt;
                 <link>http://polemic.nz/2014/12/12/kiwicon-8/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141212_Kiwicon_Thumb.png" type="image/png" />
+                
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/12/12/kiwicon-8/</guid>
             </item>
@@ -318,6 +335,7 @@ that is difficult to fix given the uneven population distribution.&lt;/p&gt;
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141205-Deprivation-Revisited_Thumb.png" type="image/png" />
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2014/12/05/population-proportional-meshblocks/</guid>
             </item>
         
@@ -349,6 +367,7 @@ a median of approximately 81 people in 2013.
                 <link>http://polemic.nz/2014/11/28/nz-deprivation-index/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141128-NZ-Deprivation-Index_Thumb.png" type="image/png" />
+                
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/11/28/nz-deprivation-index/</guid>
             </item>
@@ -519,6 +538,7 @@ of the unclipped version, your map should render correctly.&lt;/p&gt;
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141121-NZ-AzimuthalOrtho_Thumb.png" type="image/png" />
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2014/11/21/nz-azimuth-orthographic/</guid>
             </item>
         
@@ -552,6 +572,7 @@ weighted for the strength (magnitude) and depth of the measured quake.&lt;/p&gt;
                 <link>http://polemic.nz/2014/11/14/nz-earthquakes/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141114-Earthquakes-Thumb.png" type="image/png" />
+                
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/11/14/nz-earthquakes/</guid>
             </item>
@@ -589,35 +610,8 @@ of fun to make, and I&amp;#39;ll post a detailed account of how it was made late
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141107-AucklandDistanceRatio_Thumb.png" type="image/png" />
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2014/11/07/auckland-downtown-proximity/</guid>
-            </item>
-        
-            <item>
-                <title>New Zealand Extruded</title>
-                <description>&lt;p&gt;Adding depth to a map can make it stand out (pun unintended), but it can be difficult to generate 3d
-perspective from a flat plane within QGIS. In this example, depth outlines are created with
-marker symbolizers of vertical lines, offset vertically and overlaied with another
-copy of the layer. The urban areas layer is additionally offset to create the
-built-up effect. Labels are created with white text, a black buffer and drop shadow.&lt;/p&gt;
-
-&lt;p&gt;The print renderer introduces some unwanted artifacts in the border, but this is probably fixable
-with a bit of tweaking.&lt;/p&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/208-nz-geographic-names-topo-1500k/&quot;&gt;NZ Geographic Names (Topo, 1:500k)&lt;/a&gt; (LINZ)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/4246-nz-urban-areas-2012-yearly-pattern/&quot;&gt;NZ Urban Areas (2012 Yearly Pattern)&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/184-nz-mainland-road-centrelines-topo-1250k/&quot;&gt;NZ Mainland Road Centrelines (Topo, 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/1559-nz-coastlines-and-islands-polygons-topo-1250k/&quot;&gt;NZ Coastlines and Islands Polygons (Topo 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <pubDate>Fri, 31 Oct 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/10/31/new-zealand-extruded/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20141031_NZ_Extruded_Thumb.png" type="image/png" />
-                
-                <guid isPermaLink="true">http://polemic.nz/2014/10/31/new-zealand-extruded/</guid>
             </item>
         
     </channel>
