@@ -7,6 +7,19 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Warbirds over Auckland</title>
+                <description>&lt;p&gt;Warbirds over Auckland for the 175th anniversary celebrations. Happy Birthday, Auckland City!&lt;/p&gt;
+</description>
+                <pubDate>Tue, 27 Jan 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/01/27/warbirds/</link>
+                
+                
+                <enclosure url="http://polemic.nz/assets/photos/20150125-Warbirds_Thumb.jpg" type="image/jpg" />
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/01/27/warbirds/</guid>
+            </item>
+        
+            <item>
                 <title>Electro-Punk</title>
                 <description>&lt;p&gt;An ice-cream machine at The Tannery in New Lynn. A curious mix of modern and old.&lt;/p&gt;
 </description>
@@ -123,12 +136,12 @@ to have quick look at name statistics. To analyse the data, import it to Postgre
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And the results:&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table style=&quot;width: 100%;&quot;&gt;
 &lt;thead&gt;
     &lt;tr&gt;
         &lt;th&gt;Rank&lt;/th&gt;
-        &lt;th style=&quot;min-width:260px&quot;&gt;Name&lt;/th&gt;
-        &lt;th style=&quot;min-width:90px&quot;&gt;Frequency&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Frequency&lt;/th&gt;
         &lt;th&gt;Length (m)&lt;/th&gt;
     &lt;/tr&gt;
 &lt;/thead&gt;
@@ -575,43 +588,6 @@ weighted for the strength (magnitude) and depth of the measured quake.&lt;/p&gt;
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/11/14/nz-earthquakes/</guid>
-            </item>
-        
-            <item>
-                <title>Auckland Downtown Proximity</title>
-                <description>&lt;p&gt;This map shows the relationship between the &amp;quot;direct&amp;quot; (crow flies) distance
-and &amp;quot;shortest path&amp;quot; (via roads) from 1 Queen Street (downtown) and the 
-rest of Auckland, via the road network. Percentiles describe the relative 
-&amp;#39;directness&amp;#39; of the path - the lightest shade polygons are in the 10% most 
-direct paths to town, the darkest are the 10% least direct.&lt;/p&gt;
-
-&lt;p&gt;This is a very simplistic analysis. I had to create my own edge network
-that ignores speed limits, turn and one-way restrictions and assumes that
-any road that crosses another will intersect. Nevertheless, it was a lot
-of fun to make, and I&amp;#39;ll post a detailed account of how it was made later. It would be easy to improve and apply to other areas. Leave a comment if you have suggestions!&lt;/p&gt;
-
-&lt;h3&gt;Downloads&lt;/h3&gt;
-
-&lt;p&gt;Explore and download the final data set here:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/7325-auckland-downtown-proximity-map/&quot;&gt;Auckland Downtown Proximity Map&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/183-improved-nz-road-centrelines-august-2011/&quot;&gt;Improved NZ Road Centrelines (August 2011)&lt;/a&gt; (NZ Open GPS Maps)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/1559-nz-coastlines-and-islands-polygons-topo-1250k/&quot;&gt;NZ Coastlines and Islands Polygons (Topo 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <pubDate>Fri, 07 Nov 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/11/07/auckland-downtown-proximity/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20141107-AucklandDistanceRatio_Thumb.png" type="image/png" />
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2014/11/07/auckland-downtown-proximity/</guid>
             </item>
         
     </channel>

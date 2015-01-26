@@ -329,6 +329,7 @@ article table th,
 article table td {
   margin: 0;
   padding: 4px;
+  font-size: 0.95em;
 }
 article table thead th {
   border-bottom: 2px solid #999;
@@ -338,6 +339,12 @@ article table tbody th {
 }
 article table tbody tr:nth-child(odd) {
   background-color: #FFF;
+}
+article table tbody tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+article table tbody tr:hover {
+  background-color: #DDD;
 }
 /** UTIL **/
 .clear {
