@@ -7,6 +7,45 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Auckland Crash Animation</title>
+                <description>&lt;p&gt;&lt;iframe src=&quot;//player.vimeo.com/video/118107645&quot; width=&quot;800&quot; height=&quot;400&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;http://vimeo.com/118107645&quot;&gt;Auckland Central Crashes 2010-2014&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/user36859677&quot;&gt;Hamish Campbell&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;The NZTA collects detailed crash data from the NZ Police. This data,
+held in the NZ Crash Analysis System (CAS) is published regularly (&lt;a href=&quot;http://www.nzta.govt.nz/resources/crash-analysis-system-data/index.html&quot;&gt;here&lt;/a&gt; ) and
+provides detailed data on the location, causes and consequences
+of crashes on New Zealand roads.&lt;/p&gt;
+
+&lt;p&gt;The above animation shows all central Auckland crashes over the period Jan 2010 to June 2014 (the latest available data). Fatalities are coded in dark red, severe injury crashes in orange, minor injury crashes in yellow and no-injury crashes in blue. The map is made with QGIS and the frames generated with the &lt;a href=&quot;https://plugins.qgis.org/plugins/timemanager/&quot;&gt;TimeManager&lt;/a&gt; plugin.&lt;/p&gt;
+
+&lt;p&gt;This is a very simple view of the data. The tables contain lots of useful information, like:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The types of vehicles involved (as well as cyclists and pedestrians)&lt;/li&gt;
+&lt;li&gt;Weather and lighting conditions&lt;/li&gt;
+&lt;li&gt;Vehicle movement&lt;/li&gt;
+&lt;li&gt;Characteristics of the road&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What sorts of questions would you ask, given the above information?&lt;/p&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.nzta.govt.nz/resources/crash-analysis-system-data/index.html&quot;&gt;CAS Crash Data 2000-2014&lt;/a&gt; (NZTA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz&quot;&gt;Base data layers&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Fri, 30 Jan 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/01/30/auckland-crashes-animation/</link>
+                
+                
+                
+                <enclosure url="http://polemic.nz/assets/thumbs/20150130-Auckland-Crashes_Thumb.png" type="image/jpg" />
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/01/30/auckland-crashes-animation/</guid>
+            </item>
+        
+            <item>
                 <title>Warbirds over Auckland</title>
                 <description>&lt;p&gt;Warbirds over Auckland for the 175th anniversary celebrations. Happy Birthday, Auckland City!&lt;/p&gt;
 </description>
@@ -15,6 +54,7 @@
                 
                 
                 <enclosure url="http://polemic.nz/assets/photos/20150125-Warbirds_Thumb.jpg" type="image/jpg" />
+                
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/27/warbirds/</guid>
             </item>
@@ -28,6 +68,7 @@
                 
                 
                 <enclosure url="http://polemic.nz/assets/photos/20150124-ElectroPunk_Thumb.jpg" type="image/jpg" />
+                
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/24/electro-punk/</guid>
             </item>
@@ -108,6 +149,7 @@ suburb dataset, from CC-BY licensed data sources.&lt;/p&gt;
                 <link>http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20150123-Auckland-Suburbs_Thumb.png" type="image/png" />
+                
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</guid>
@@ -215,6 +257,7 @@ information is important: &lt;q&gt;Because some roads have multiple names for pa
                 <link>http://polemic.nz/2015/01/19/popular-nz-road-names/</link>
                 
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2015/01/19/popular-nz-road-names/</guid>
             </item>
         
@@ -272,6 +315,7 @@ there is actually considerably more concentrated &lt;em&gt;within&lt;/em&gt; the
                 <enclosure url="http://polemic.nz/assets/maps/20150116-Auckland_Employment_Centres2014_Thumb.png" type="image/png" />
                 
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2015/01/16/auckland-employment-centres/</guid>
             </item>
         
@@ -299,6 +343,7 @@ it comes to adding other elements.&lt;/p&gt;
                 <link>http://polemic.nz/2014/12/12/kiwicon-8/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141212_Kiwicon_Thumb.png" type="image/png" />
+                
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/12/12/kiwicon-8/</guid>
@@ -349,6 +394,7 @@ that is difficult to fix given the uneven population distribution.&lt;/p&gt;
                 <enclosure url="http://polemic.nz/assets/maps/20141205-Deprivation-Revisited_Thumb.png" type="image/png" />
                 
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2014/12/05/population-proportional-meshblocks/</guid>
             </item>
         
@@ -380,6 +426,7 @@ a median of approximately 81 people in 2013.
                 <link>http://polemic.nz/2014/11/28/nz-deprivation-index/</link>
                 
                 <enclosure url="http://polemic.nz/assets/maps/20141128-NZ-Deprivation-Index_Thumb.png" type="image/png" />
+                
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/11/28/nz-deprivation-index/</guid>
@@ -552,42 +599,8 @@ of the unclipped version, your map should render correctly.&lt;/p&gt;
                 <enclosure url="http://polemic.nz/assets/maps/20141121-NZ-AzimuthalOrtho_Thumb.png" type="image/png" />
                 
                 
+                
                 <guid isPermaLink="true">http://polemic.nz/2014/11/21/nz-azimuth-orthographic/</guid>
-            </item>
-        
-            <item>
-                <title>New Zealand Historic Earthquakes</title>
-                <description>&lt;p&gt;New Zealand is sometimes called the Shakey Isles and it&amp;#39;s not hard to see why.
-This map shows all earthquakes in New Zealand
-from &lt;a href=&quot;http://www.geonet.org.nz/&quot;&gt;GeoNet&lt;/a&gt;, the earthquake monitoring service provided by GNS Science. This
-data has been extracted from the GeoNet &lt;a href=&quot;http://info.geonet.org.nz/display/appdata/Advanced+Queries&quot;&gt;WFS servce&lt;/a&gt;
-and filtered for earthquakes local to New Zealand.&lt;/p&gt;
-
-&lt;p&gt;The map is produced by overlaying point markers that are (very roughly and definitely &lt;b&gt;not&lt;/b&gt; scientifically)
-weighted for the strength (magnitude) and depth of the measured quake.&lt;/p&gt;
-
-&lt;h3&gt;Downloads&lt;/h3&gt;
-
-&lt;p&gt;Explore and download an extract of the data:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://labs.koordinates.com/layer/7328-new-zealand-earthquakes/&quot;&gt;New Zealand Earthquakes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://info.geonet.org.nz/display/appdata/Earthquake+Catalogue&quot;&gt;GeoNet Earthquake Catalogue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/1559-nz-coastlines-and-islands-polygons-topo-1250k/&quot;&gt;NZ Coastlines and Islands Polygons (Topo 1:250k)&lt;/a&gt; (LINZ)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <pubDate>Fri, 14 Nov 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/11/14/nz-earthquakes/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20141114-Earthquakes-Thumb.png" type="image/png" />
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2014/11/14/nz-earthquakes/</guid>
             </item>
         
     </channel>
