@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+ ____   __   __    ____  _  _  __  ___ 
+(  _ \ /  \ (  )  (  __)( \/ )(  )/ __)
+ ) __/(  O )/ (_/\ ) _) / \/ \ )(( (__ 
+(__)   \__/ \____/(____)\_)(_/(__)\___)
+
+  by Hamish Campbell | Auckland | Aotearoa New Zealand
+
+  hn.campbell@gmail.com
+-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>NZ Population Hexbins | Hamish Campbell | Polemic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@polemic">
+    <meta name="twitter:creator" content="@polemic">
+    <meta name="twitter:title" content="NZ Population Hexbins">
+    <meta name="twitter:description" content="I&amp;#39;ve been thinking a lot about hexbin maps lately, after an earlier
+exploration of employment centers.
+In the previous map, I generated the hexbin with a QGIS plug-in and manually
+fixed up coastal hexes in a very non-reproducible way.
+">
+    <meta name="twitter:image:src" content="http://polemic.nz/assets/maps/20150220-NZHexBinPop_Thumb.png">
+    
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/font-awesome.css">
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Montserrat+Alternates'>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://polemic.nz/feed.xml">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35371727-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Polemic</h1>
+        <p>Hamish Campbell &ndash; Aotearoa New Zealand</p>
+        <p class="ident">
+            <a href="http://github.com/hamishcampbell" target="_blank"><i class="icon-github"></i> GitHub</a> &ndash; 
+            <a href="http://twitter.com/polemic" target="_blank"><i class="icon-twitter"></i> Twitter</a> &ndash; 
+            <a href="http://linkedin.com/profile/view?id=55658318&amp;locale=en_US" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a> &ndash; 
+            <a href="https://keybase.io/polemic" target="_blank"><i class="icon-key"></i> Keybase</a>
+        </p>
+    </header>
+
+    <div class="content">
+
+        <div id="crumbs">
+            <ul class="left">
+                <li><a href="/"><span>Home</span></a></li>
+                
+                <li><a href="/maps/"><span>Maps</span></a></li>
+                
+                
+                <li><a><span>NZ Population Hexbins</span></a></li>
+                
+            </ul>
+        </div>
+
+        <article>
+    <header>
+        <h1>NZ Population Hexbins</h1>
+        <p class="meta">20 Feb 2015</p>
+    </header>
+
+    <div>
+        <div class="imagePreview">
+    <img src="/assets/maps/20150220-NZHexBinPop.png" />
+</div>
+<p>I&#39;ve been thinking a lot about hexbin maps lately, after an earlier
+exploration of <a href="/2015/01/16/auckland-employment-centres/">employment centers</a>.
+In the previous map, I generated the hexbin with a QGIS plug-in and manually
+fixed up coastal hexes in a very non-reproducible way.</p>
+
+<p>I since discovered that the <a href="http://cartodb.com/">CartoDB</a> project have an open
+repository of <a href="https://github.com/CartoDB/cartodb-postgresql">postgresql functions</a>
+which include functions for <a href="https://github.com/CartoDB/cartodb-postgresql/blob/master/scripts-available/CDB_Hexagon.sql#L31">generating hexagonal grids</a>.</p>
+
+<p>This makes it easy to create hexagonal grids in postgresql/postgis and automate the
+process of creating land overlays for specific areas.</p>
+
+<p>First of all I grabbed the LINZ coastlines and islands polygon layer, simplified it considerably, removed some
+of the smaller off-shore islands and loaded this into postgres as the table <code>land_cover</code>.</p>
+
+<p>I then created a hexagonal grid with a side length of 10km that covers the entire extent of the coastline layer:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span>
+    <span class="n">ST_SetSRID</span><span class="p">(</span>
+        <span class="n">CDB_HexagonGrid</span><span class="p">(</span>
+            <span class="p">(</span><span class="k">SELECT</span> <span class="n">ST_Extent</span><span class="p">(</span><span class="ss">&quot;geom&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">extent</span> <span class="k">from</span> <span class="ss">&quot;land_cover&quot;</span><span class="p">),</span> <span class="mi">10000</span><span class="p">),</span>
+            <span class="mi">2193</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">geom</span>
+<span class="k">INTO</span> <span class="ss">&quot;hexgrid&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>The next step is to remove the hexagons that don&#39;t cover land. The follow query finds hexagons that
+intersect with the land cover layer and contain at least 30% land. This factor is a somewhat arbitrary - 
+I wanted it to be slightly optimistic about coverage:</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
+<span class="k">INTO</span> <span class="n">hexgrid_cover</span>
+<span class="k">FROM</span> <span class="n">hexgrid</span> <span class="n">a</span><span class="p">,</span> <span class="n">land_cover</span> <span class="n">b</span>
+<span class="k">WHERE</span>
+    <span class="n">ST_INTERSECTS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">geom</span><span class="p">)</span> <span class="k">AND</span>
+    <span class="n">ST_AREA</span><span class="p">(</span><span class="n">ST_INTERSECTION</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">geom</span><span class="p">))</span> <span class="o">/</span> <span class="n">ST_AREA</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">geom</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">;</span>
+</code></pre></div>
+<p>(Note that since the area of each hexagon is constant, the <code>ST_AREA(a.geom)</code> can be optimized out, but it&#39;s
+provided here for simplicity)</p>
+
+<p>The result is a hexagonal grid coverage for the country. I&#39;ve uploaded a few nationwide hexbin sets I&#39;ve generated
+for the whole country as <a href="https://github.com/hamishcampbell/nz-data/tree/master/hexbin">geojson on GitHub</a>.</p>
+
+<p>For this particular map, I&#39;ve taken the NZ meshblock data with &#39;usually resident population&#39; counts summed the totals
+for the hexagonal intersections weighted by area. I won&#39;t provide the detail here but:</p>
+
+<ol>
+<li>Pre-calculate the area for each meshblock as a new column in the meshblock table.</li>
+<li>Create a new layer of <a href="http://postgis.net/docs/ST_Intersection.html">intersections</a> between the meshblock layer and hexagons, including the hexagon ID, original meshblock area and population count.</li>
+<li>Calculate the new (sliced) meshblock area, and divide this by the original area to get the proportion.</li>
+<li>Multiply the proportional area by the original resident population count to get the weighted population.</li>
+<li>Sum the weighted population over each hexagon id and assign that to the relevant hexagon.</li>
+</ol>
+
+<h3>Datasources</h3>
+
+<ul>
+<li><a href="https://data.linz.govt.nz/layer/1153-nz-coastlines-and-islands-polygons-topo-150k/">NZ Coastlines and Islands Polygons</a> (LINZ)</li>
+<li><a href="http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx">Statistics NZ Pattern Files</a> (Statistics NZ)</li>
+<li><a href="http://nzdotstat.stats.govt.nz/wbos/Index.aspx">Statistics NZ Tables</a> (Statistics NZ)</li>
+</ul>
+
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polemic'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>
+
+
+    </div>
+
+    <footer>
+        <span><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-NC</a> &copy; Hamish Campbell</span>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+    <script src="/static/site.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
