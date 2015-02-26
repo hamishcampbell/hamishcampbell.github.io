@@ -7,6 +7,42 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>World Hexes</title>
+                <description>&lt;p&gt;Last hex map for a while, I promise! Strapped for time this week so I was lazy and
+used the same method as the &lt;a href=&quot;/2015/02/20/nz-population-hexbin/&quot;&gt;previous map&lt;/a&gt;. This map uses a world country boundaries in a
+decimal degrees projection (WSG84) with 2.5 degree edge (5 degree span) hexes.&lt;/p&gt;
+
+&lt;p&gt;Creating the border effect in QGIS is straight-forward once you understand
+how &amp;quot;symbol levels&amp;quot; work. The symbology for the layer is quite simple - a polygon fill
+with a series of border outlines like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20150227-symbology.png&quot; alt=&quot;World Hex Symbology in QGIS&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;By default, the full symbology for each feature will be drawn one by one, including
+any overlaps. The end result looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20150227-bad-map.png&quot; alt=&quot;World Hex Symbology without Symbol Levels&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;You can change how QGIS draws feature symbology to instead draw each symbol
+&amp;#39;level&amp;#39; for all features in sequence. From the &amp;quot;Advanced&amp;quot; menu in the symbology dialog,
+click &amp;quot;Symbol Levels&amp;quot; and tick the check-box &amp;quot;Enable symbol levels&amp;quot;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20150227-symbol-levels.png&quot; alt=&quot;Enabling Symbol Levels in QGIS&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;This is great for outlining related features, especially when you also stack categorised
+symbolizers based on feature attributes, like in my previous &lt;a href=&quot;/2015/01/16/auckland-employment-centres/&quot;&gt;employment centers&lt;/a&gt; map.&lt;/p&gt;
+</description>
+                <pubDate>Fri, 27 Feb 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/02/27/world-hexes/</link>
+                
+                <enclosure url="http://polemic.nz/assets/maps/20150227-HexWorld_Thumb.png" type="image/png" />
+                
+                
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/02/27/world-hexes/</guid>
+            </item>
+        
+            <item>
                 <title>NZ Population Hexbins</title>
                 <description>&lt;p&gt;I&amp;#39;ve been thinking a lot about hexbin maps lately, after an earlier
 exploration of &lt;a href=&quot;/2015/01/16/auckland-employment-centres/&quot;&gt;employment centers&lt;/a&gt;.
@@ -465,40 +501,6 @@ that is difficult to fix given the uneven population distribution.&lt;/p&gt;
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/12/05/population-proportional-meshblocks/</guid>
-            </item>
-        
-            <item>
-                <title>New Zealand Deprivation Index (2013)</title>
-                <description>&lt;p&gt;The New Zealand Deprivation Index is a key socioeconomic indicator produced by the
-University of Otago Department of Public Health.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;NZDep2013 is an updated version of the NZDep91, NZDep96, NZDep2001 and
-NZDep2006 indexes of socioeconomic deprivation. NZDep2013 combines nine
-variables from the 2013 census which reflect eight dimensions of deprivation.
-NZDep2013 provides a deprivation score for each meshblock in New Zealand.
-Meshblocks are geographical units defined by Statistics New Zealand, containing
-a median of approximately 81 people in 2013.
-&amp;mdash; &lt;a href=&quot;http://www.otago.ac.nz/wellington/departments/publichealth/research/hirp/otago020194.html&quot;&gt;Socioeconomic Deprivation Indexes: NZDep and NZiDep, Department of Public Health&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The index is a key of relative &amp;#39;deprivation&amp;#39;, where a high index indicates a high level of deprivation.&lt;/p&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx&quot;&gt;New Zealand 2013 Clipped Meshblock Boundaries&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.otago.ac.nz/wellington/departments/publichealth/research/hirp/otago020194.html&quot;&gt;NZDep2013 Meshblock Data&lt;/a&gt; (University of Otago)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <pubDate>Fri, 28 Nov 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/11/28/nz-deprivation-index/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20141128-NZ-Deprivation-Index_Thumb.png" type="image/png" />
-                
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2014/11/28/nz-deprivation-index/</guid>
             </item>
         
     </channel>
