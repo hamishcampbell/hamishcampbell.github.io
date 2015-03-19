@@ -7,6 +7,53 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Rivers of New Zealand</title>
+                <description>&lt;p&gt;New Zealand&amp;#39;s &lt;a href=&quot;http://www.mfe.govt.nz/&quot;&gt;Ministry for the Environment&lt;/a&gt; recently launched their 
+new &lt;a href=&quot;https://data.mfe.govt.nz/&quot;&gt;Data Service&lt;/a&gt;. It&amp;#39;s another excellent
+source of open data and a sign that the &amp;#39;open data dam&amp;#39; has truly burst.&lt;/p&gt;
+
+&lt;p&gt;One of the most interesting datasets in the service is the New Zealand &amp;quot;River
+Environment Classification&amp;quot; set.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The New Zealand River Environment Classification (REC) organizes information about the physical characteristics of New Zealand&amp;#39;s rivers. Individual river sections are mapped according to physical factors such as climate, source of flow for the river water, topography, and geology, and catchment land cover eg, forest, pasture or urban. Sections of river that have similar ecological characteristics can then be grouped together, no matter where they are.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I highly recommend you go read &lt;a href=&quot;http://fogonwater.com/blog/2015/03/inverse-topography-mapping-stream-order/&quot;&gt;Chris McDowall&amp;#39;s blog post&lt;/a&gt;
+where he maps the data and provides some insight into its structure. Chris uses the stream &lt;em&gt;order&lt;/em&gt; (an indication of how
+many upstream tributaries feed into a particular segment) which gives a fascinating insight into the structure of rivers. &lt;/p&gt;
+
+&lt;p&gt;Incidentally, as a software developer, this dataset is also interesting in that it represents a directed tree graph, and there are lots
+of graphing options we could use to explore the data in a &lt;em&gt;logical&lt;/em&gt; rather than &lt;em&gt;physical&lt;/em&gt; sense.&lt;/p&gt;
+
+&lt;p&gt;The data also includes catchment information, and for each segment it provides the total cumulative catchment are for the segments 
+tributaries. This is the field used for the river widths in the map above, weighted non-linearly so we can still see the smaller river segments (at least, in the larger download below). Labels are somewhat arbitrarily applied, to highly some of the large outlets.&lt;/p&gt;
+
+&lt;h3&gt;Downloads&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/assets/maps/20150320-Rivers-Of-New-Zealand_Large.png&quot;&gt;2048x2897px Version of the map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Data Sources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.mfe.govt.nz/search/?q=REC&quot;&gt;River Environment Classification&lt;/a&gt; (MfE)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz&quot;&gt;Coastlines and Lake Polygons&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://koordinates.com/layer/1720-new-zealand-250m-bathymetry-rainbow-2008/&quot;&gt;NZ 250m Bathymetry Rainbow&lt;/a&gt; (NIWA)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Fri, 20 Mar 2015 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2015/03/20/Rivers-Of-New-Zealand/</link>
+                
+                <enclosure url="http://polemic.nz/assets/maps/20150320-Rivers-Of-New-Zealand_Thumb.png" type="image/png" />
+                
+                
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/03/20/Rivers-Of-New-Zealand/</guid>
+            </item>
+        
+            <item>
                 <title>World Hexes</title>
                 <description>&lt;p&gt;Last hex map for a while, I promise! Strapped for time this week so I was lazy and
 used the same method as the &lt;a href=&quot;/2015/02/20/nz-population-hexbin/&quot;&gt;previous map&lt;/a&gt;. This map uses a world country boundaries in a
@@ -452,55 +499,6 @@ it comes to adding other elements.&lt;/p&gt;
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2014/12/12/kiwicon-8/</guid>
-            </item>
-        
-            <item>
-                <title>Population Proportional Meshblocks</title>
-                <description>&lt;p&gt;My &lt;a href=&quot;/2014/11/28/nz-deprivation-index/&quot;&gt;last map&lt;/a&gt; visualised the NZ deprivation index by meshblock. It provided
-a quick regional overview of deprivation however it obscures the
-effects of population density. This week I wanted to explore different
-ways to present the NZ meshblock dataset that emphasises population
-distribution over geographic location.&lt;/p&gt;
-
-&lt;p&gt;This map is the result of using a modified meshblock dataset I created with the
-same deprivation data. The size of each block accurately reflects the
-size of the population, and the position of the block is weighted to the
-mean location of the population horizontally.&lt;/p&gt;
-
-&lt;p&gt;Each &amp;#39;row&amp;#39; above contains all meshblocks quantized in to 10km bands (north/south)
-with a width of 1 metre for each &amp;#39;population resident&amp;#39;. The grid is 50km square, so
-a band that is one square wide represents 50,000 people, and a full grid square would
-represent 250,000 people.&lt;/p&gt;
-
-&lt;p&gt;This is an interesting way to arrange the meshblock set. It works
-reasonably well for New Zealand where the country is roughly north/south
-aligned, giving an idea of how the population is distributed and retaining
-useful reference points for comparison. The blocks are a bit small, a problem
-that is difficult to fix given the uneven population distribution.&lt;/p&gt;
-
-&lt;h3&gt;Downloads&lt;/h3&gt;
-
-&lt;p&gt;You can explore and download the modified meshblock layer I created for this map here:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://labs.koordinates.com/layer/7344-population-weighted-meshblocks/&quot;&gt;Population Weighted Meshblocks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx&quot;&gt;New Zealand 2013 Clipped Meshblock Boundaries&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.otago.ac.nz/wellington/departments/publichealth/research/hirp/otago020194.html&quot;&gt;NZDep2013 Meshblock Data&lt;/a&gt; (University of Otago)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <pubDate>Fri, 05 Dec 2014 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2014/12/05/population-proportional-meshblocks/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20141205-Deprivation-Revisited_Thumb.png" type="image/png" />
-                
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2014/12/05/population-proportional-meshblocks/</guid>
             </item>
         
     </channel>
