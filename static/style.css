@@ -49,6 +49,9 @@ body > header > h1 {
     font-size: 44px;
     margin: 15px 0 20px 0;
   }
+  body > header > .ident {
+    display: none;
+  }
 }
 .splash {
   max-width: 680px;
@@ -88,10 +91,10 @@ body > header > h1 {
 }
 @media all and (max-width: 550px) {
   .content {
-    margin-top: 190px;
+    margin-top: 147px;
   }
   .affixTop .content {
-    margin-top: 226px;
+    margin-top: 183px;
   }
 }
 .summary {
