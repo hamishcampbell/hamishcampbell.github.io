@@ -7,6 +7,203 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Of Suburbs and Open Data Barriers</title>
+                <description>&lt;p&gt;This is a a follow-up to my first &lt;a href=&quot;/2015/01/23/auckland-suburbs-part-1/&quot;&gt;Auckland Suburbs&lt;/a&gt; map.
+As I outlined earlier, the only authoritative suburbs dataset for New Zealand is the 
+&lt;a href=&quot;https://data.govt.nz/datasetrequest/show/4&quot;&gt;NZ Localities&lt;/a&gt; dataset. 
+The data is maintained by the New Zealand Fire Service
+Commission (NZFSC) and has been the subject of one of the longest running OIA disputes in NZ. &lt;/p&gt;
+
+&lt;p&gt;In this post I expand a bit more on the background of the data and demonstrate why the NZFSC&amp;#39;s
+licensing approach has proven counter-productive to their aims.&lt;/p&gt;
+
+&lt;h3&gt;Localities and Suburbs&lt;/h3&gt;
+
+&lt;p&gt;What is the NZ localities dataset? As follows:&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The data stored in the dataset describes the boundaries between different ‘localities’, 
+or parts of the entire country. It might be understood as describing the boundaries between 
+suburbs, but this would not be accurate as many ‘localities’ are not suburbs of a town or city, 
+and public perceptions of where one suburb starts and another ends may differ from the 
+boundaries defined in the dataset.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While a locality is not &lt;em&gt;technically&lt;/em&gt; a suburb - it certinaly comprises &lt;em&gt;of&lt;/em&gt; suburbs as we would
+commonly understand them to be. And indeed, this is how the data is commonly used. &lt;/p&gt;
+
+&lt;p&gt;The NZFSC has stated&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The NZ Localities dataset is available for distribution, and NZ Fire Service promote 
+the use of this dataset as all emergency services are using the data for reference 
+and to support emergency response. The dataset is managed and maintained by a 
+consortium including NZ Fire Service, NZ Post and Quotable Value NZ.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;On the face of it, this is superb. It is a localities dataset, produced in
+partnership with our postal service and local authorities, available for &lt;em&gt;free&lt;/em&gt; and ostensibly
+promoted for further use as an authoritative reference.&lt;/p&gt;
+
+&lt;h3&gt;Putting up Barriers&lt;/h3&gt;
+
+&lt;p&gt;Unfortunately there is a big catch. While free, the data is distributed under a 
+license agreement with NZFSC as licensor. The license can not be transferred
+and can be terminated at any time.&lt;/p&gt;
+
+&lt;p&gt;It also prevents the following uses:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You may not incorporate the data into a project in such a way that
+someone can extract the data,&lt;/li&gt;
+&lt;li&gt;You may not modify the data, aside from text formatting and geographic re-projections,&lt;/li&gt;
+&lt;li&gt;You may not sell, lease or otherwise provide the data for commercial gain.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, the license requires that you update your copy of the data (and any copies you&amp;#39;ve
+supplied to others who have signed the license) within 6 months of release of an update.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, that makes the data unsuitable for a wide range of projects. Just a few reasons include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Incompatibility with licenses associated with existing projects or products,&lt;/li&gt;
+&lt;li&gt;Unclear who the license is granted to (does every contributor to an open source project have to sign it before they can see the data?),&lt;/li&gt;
+&lt;li&gt;Termination clauses that might be difficult to adhere to,&lt;/li&gt;
+&lt;li&gt;Difficulting in preventing &amp;#39;reverse engineering&amp;#39; of the data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Perhaps most significantly, it cannot be incorporated into &lt;a href=&quot;http://openstreetmap.org&quot;&gt;Open Street Map&lt;/a&gt; - the same geographic data used in Auckland Transport&amp;#39;s &lt;a href=&quot;https://at.govt.nz/bus-train-ferry/journey-planner/&quot;&gt;Journey Planner&lt;/a&gt; site (and transport apps), &lt;a href=&quot;https://www.mapbox.com/showcase/&quot;&gt;these things&lt;/a&gt;, &lt;a href=&quot;http://wiki.openstreetmap.org/wiki/List_of_OSM-based_services&quot;&gt;all of these&lt;/a&gt;, pops up in
+&lt;a href=&quot;https://en.wikipedia.org/wiki/OpenStreetMap#Commercial_services&quot;&gt;Apple maps&lt;/a&gt; and so on.&lt;/p&gt;
+
+&lt;h3&gt;Why are the license terms so restrictive?&lt;/h3&gt;
+
+&lt;p&gt;As the NZFSC puts it&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In our view there is a very clear risk to public safety where, the 
+caller provides the call taker with address information based on a 
+repackaged, on-sold dataset that contains unauthorised changes or does 
+not include authorised updates.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The argument has some merit. They&amp;#39;ve spent a lot of time creating
+an accurate locality dataset to ensure they get where they need to be; lives and
+property are at risk and it&amp;#39;s important to avoid mistakes by maintaining control. This
+logic ultimately convinced the Ombudsman that the NZFSC had a case to retain the license.&lt;/p&gt;
+
+&lt;p&gt;The Ombudsman acknowledge a key objection, that&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;..the constraints placed on the use or manipulation of the dataset by the NZFSC 
+licence has the effect of inhibiting more widespread adoption of the locality boundaries. 
+This, in turn, increases the risk that someone may give a call centre an account of their 
+location that differs from the call centre software — increasing the risk of delay in 
+despatching the correct equipment and people to the right location.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But ultimately decided that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NZFSC’s willingness to provide the NZ Localities dataset free of charge, to anyone who 
+seeks it and is willing to become a licensee, largely satisfies the public interest in 
+disclosure of this information. In light of the potential for harm arising from 
+out-of-date datasets in the public domain, I do not consider the licence requirement 
+for updating the dataset when requested, to be onerous.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The reality of the situation is that other datasets &lt;em&gt;already&lt;/em&gt; exist in the public domain.&lt;/p&gt;
+
+&lt;h3&gt;Put up a barriers and the community will route around you&lt;/h3&gt;
+
+&lt;p&gt;The argument for retaining the license is predicated on the axiom that the NZFSC &lt;em&gt;has&lt;/em&gt; control.&lt;/p&gt;
+
+&lt;p&gt;In the absense of a &lt;em&gt;facts about the world&lt;/em&gt; that can be used freely, the community can and 
+does create its own. The data they produce is a mix of community consensus, guesswork, 
+approximations and bad assumptions. The result is a lot of conflicting
+locality information. The &lt;a href=&quot;http://nominatim.openstreetmap.org/&quot;&gt;Nominatum Open Street Map address finder&lt;/a&gt; includes non-existant&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;4.&lt;/sup&gt;&lt;/a&gt; localities such as
+&lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=rosebank%2C+auckland&amp;amp;viewbox=27.99%2C-26.11%2C28.09%2C-26.17&quot;&gt;Rosebank&lt;/a&gt; and &lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=balmoral%2C+auckland&amp;amp;viewbox=174.74%2C-36.88%2C174.84%2C-36.94&quot;&gt;Balmoral&lt;/a&gt; in Auckland. &lt;a href=&quot;https://mapzen.com/blog/who-s-on-first&quot;&gt;MapZen&amp;#39;s world gazateer&lt;/a&gt; project will 
+use open sources like &lt;a href=&quot;http://www.geonames.org/&quot;&gt;Geonames&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;captioned-image&quot;&gt;
+    &lt;img src=&quot;/assets/maps/20150910-Quattroshapes.png&quot; /&gt;
+    &lt;p class=&quot;caption&quot;&gt;Quattroshapes Neighbourhoods of Auckland &amp;mdash; Data CC-BY Foursquare / LINZ, Map CC-BY Hamish Campbell&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Another example (displayed above) is the &lt;a href=&quot;http://quattroshapes.com/&quot;&gt;Quattroshapes&lt;/a&gt; gazetteer 
+dataset created by &lt;a href=&quot;https://foursquare.com/&quot;&gt;Foursquare&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;To improve recommendations, we have created an authoritative source 
+of polygons around a curated list of places. This gazetteer of 
+non-overlapping polygons provides more relevant results than simple point geometries.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A quick inspection reveals ommissions (Kelston), additions (Balmoral)
+and significant errors (no Rosebank, but the area is split between 4 incorrect locations).
+In the absence of authoritative open data, this is what is often used to create real consumer products.&lt;/p&gt;
+
+&lt;p class=&quot;pop&quot;&gt;The net result of restrictive licensing is to promote the use of inaccurate, non-authoritatve and poor quality alternatives.&lt;/p&gt;
+
+&lt;p&gt;I believe the NZFSC is genuinely concerned with ensuring that up-to-date information
+is used in critical applications. The only way to achieve that aim is to release the data
+under an open license.&lt;/p&gt;
+
+&lt;h3&gt;The Ombudsman&amp;#39;s Decision&lt;/h3&gt;
+
+&lt;p&gt;The original OIA request went all the way to the Ombudsman. Over 7 years after the original
+OIA request the Ombudsman &lt;a href=&quot;http://www.ombudsman.parliament.nz/system/paperclip/document_files/document_files/885/original/179451_-_request_for_nz_localities_dataset.pdf?1413915614&quot;&gt;ruled in favour of NZFSC&amp;#39;s opinion&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This decision is a reminder that the Official Information Act is not a replacement for Open Data
+or the &lt;a href=&quot;https://www.ict.govt.nz/guidance-and-resources/open-government/new-zealand-government-open-access-and-licensing-nzgoal-framework/&quot;&gt;NZGOAL&lt;/a&gt; framework in New Zealand.&lt;/p&gt;
+
+&lt;p&gt;There was a glimmer of hope in the decision. Part 98 states:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In 2011 the NZFSC gave a public undertaking to review the licence agreement against the
+criteria of the NZGOAL framework. NZFS has now confirmed, by letter of 24 July 2014,
+that:&lt;/p&gt;
+
+&lt;p&gt;“Since 2013, NZFS has been working with the NZ Geospatial Office (NZGO)
+and LINZ to establish and mandate the NZ Localities dataset as a fundamental
+dataset for NZ under the NZ Geospatial Strategy and NZGOAL framework.
+NZFS is also working with NZGO and LINZ to establish the NZFS Commission as
+the authoritative custodian of the NZ Localities dataset. ... Prior to the end of
+2014, and subsequent to establishing NZFS as custodian, NZFS will release the
+NZ Localities dataset under a new Creative Commons licence (CC variation yet
+to be defined).”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It&amp;#39;s disappointing that nearing the end of 2015 we still haven&amp;#39;t seen the data released.&lt;/p&gt;
+
+&lt;h3&gt;Moving forward&lt;/h3&gt;
+
+&lt;p&gt;The final part of this series will:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Provide a methodology for generating the authoritatve boundaries from open data sources, and&lt;/li&gt;
+&lt;li&gt;Outine some of things that are happening to make an official localities dataset a
+reality.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;span id=&quot;footnotes&quot;&gt;Footnotes&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;sup&gt;1.&lt;/sup&gt; &lt;a href=&quot;http://www.ombudsman.parliament.nz/system/paperclip/document_files/document_files/885/original/179451_-_request_for_nz_localities_dataset.pdf?1413915614&quot;&gt;Request for the New Zealand Localities
+dataset - Ombudsman&amp;#39;s Decision - Page 2&lt;/a&gt;&lt;br&gt;
+&lt;sup&gt;2.&lt;/sup&gt; ibid. Page 3&lt;br&gt;
+&lt;sup&gt;3.&lt;/sup&gt; ibid. Page 8&lt;br&gt;
+&lt;sup&gt;4.&lt;/sup&gt; Non-existant in that they don&amp;#39;t exist in the NZFSC data, but &lt;em&gt;are&lt;/em&gt; commonly known.&lt;/p&gt;
+</description>
+                <pubDate>Thu, 10 Sep 2015 00:00:00 +1200</pubDate>
+                <link>http://polemic.nz/2015/09/10/suburbs-and-open-data-barriers/</link>
+                
+                <enclosure url="http://polemic.nz/assets/maps/20150910-AucklandSuburbs-Part2_Thumb.png" type="image/png" />
+                
+                
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/09/10/suburbs-and-open-data-barriers/</guid>
+            </item>
+        
+            <item>
                 <title>Red Peak</title>
                 <description>&lt;p&gt;A lot has already been said about our flag selection process. I&amp;#39;m
 one of many that believe the selection panel dropped the ball at the final hurdle. Despite the 
@@ -441,64 +638,6 @@ information is important: &lt;q&gt;Because some roads have multiple names for pa
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/19/popular-nz-road-names/</guid>
-            </item>
-        
-            <item>
-                <title>Auckland Employment Centres</title>
-                <description>&lt;p&gt;A recent &lt;a href=&quot;http://transportblog.co.nz&quot;&gt;Auckland Transport Blog&lt;/a&gt; &lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot;&gt;post&lt;/a&gt; highlighted one of my
-biggest bugbears about misleading cartography - using fill
-symbology from absolute values that are dependant on the area
-of the underlying polygons. It seemed like as good excuse as any to try out
-hexbinning as an alternative method of looking at the data.&lt;/p&gt;
-
-&lt;p&gt;The analysis in the post looked at the &amp;quot;&lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot;&gt;Geometry of Urban Labour Markets&lt;/a&gt;&amp;quot; and is seeks to find patterns of employment
-as it relates to transport in the city. Here is the original map:&lt;/p&gt;
-
-&lt;div style=&#39;text-align: center&#39;&gt;
-    &lt;img src=&#39;http://transportblog.co.nz/wp-content/uploads/2014/11/Auckland_employment_by_AU_2014-1024x724.jpg&#39; style=&quot;min-width: 300px; border: 1px solid #DDD; width: 80%&quot; /&gt;
-    &lt;p&gt;&lt;small&gt;Employee count by Auckland area unit, 2014 - &lt;a href=&quot;http://transportblog.co.nz/2015/01/13/the-geometry-of-urban-labour-markets/&quot; target=&quot;_blank&quot;&gt;Auckland Transport Blog&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The data is based on Statistics New Zealand employee count estimates for census area unit (AU).
-The problem is that the size of an area unit is roughly proportional to normally &lt;em&gt;resident&lt;/em&gt; 
-population. So what happens if we provide the light to dark symbology in this map? Well it looks
-like Mangere South (the dark blue block to the south) is the biggest employment centre in the city, with other the other most significant areas outside of the CBD in industrial areas like Otahuhu and East Tamaki.&lt;/p&gt;
-
-&lt;p&gt;Is that true? It&amp;#39;s not surprising that a lot of people work in those areas - they&amp;#39;re large areas of industrial land. Mangere South includes the Airport and its environs. The problem is the data is skewed: few people actually live there, so the AU is particularly large. Practically speaking it means that industrial areas will appear more significant (a square-ish relation) than other areas of high employment with larger resident populations (e.g. the CBD and regional centres, commercial and mixed areas). &lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re talking about transport and planning, this is a pretty important distinction.&lt;/p&gt;
-
-&lt;p&gt;If you want to compare absolute values between variable geographic sizes, you need to look
-at density. Fortunately this is easy in most GIS packages - just add a new field and fill
-it with the absolute value divided by the calculated area of the block.&lt;/p&gt;
-
-&lt;p&gt;In QGIS you can go the the attribute table, enable layer editing, hit the field calculator and add
-a new calculated field with the formula &lt;code&gt;&amp;quot;value_field&amp;quot; / $area&lt;/code&gt;. Symbolize with gradients based on
-the density value and you have an easy way to compare AUs of different sizes.&lt;/p&gt;
-
-&lt;p&gt;But density might not be the easiest way to visualise the data or to start clustering areas to
-find patterns. This is where hexbinning - aggregated values over a regular grid of hexagons - comes in.&lt;/p&gt;
-
-&lt;p&gt;In this map, I&amp;#39;ve created a hexbin layer using the handy &lt;a href=&quot;http://plugins.qgis.org/plugins/mmqgis/&quot;&gt;MMQGIS plugin&lt;/a&gt;. After calculating the employee density for the AUs, I&amp;#39;ve mapped the mean
-values to the hexes, and highlighted the hexes to show where the most dense employment areas
-in Auckland exist. The top 20% by density are highlighted, with a roughly logarithmic scale for the top 20% from light to dark. &lt;/p&gt;
-
-&lt;p&gt;Now you can start to see where the centres of employment exist, and what those centres look like. The CBD is - by far - the biggest centre of employment in the region, but an awful lot of people work close to the CBD. The surrounding suburbs are not-insignificant employment regions in their own right. Rosebank, New Lynn, Henderson, Takapuna and Albany show characteristics of a composite model of development, and to the industry south-east we see a far more dispersed pattern.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately there is one significant issue with my approach: the resolution of the hexes is significantly higher that of the original AUs in some areas. This is highlighted by the missing expected zone of employment around the Airport. While the map reveals the Mangere South AU
-is actually (in aggregate) a region of low employment density, we also know that employment
-there is actually considerably more concentrated &lt;em&gt;within&lt;/em&gt; the AU than the map implies.&lt;/p&gt;
-
-&lt;p&gt;It means the Statistics NZ data is, in my opinion, inappropriately aggregated. We simply can&amp;#39;t pull fine-grained information about employment patterns in places where very few people live (but many people work). If you have suggestions on how that situation could be improved, leave a comment below!&lt;/p&gt;
-</description>
-                <pubDate>Fri, 16 Jan 2015 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2015/01/16/auckland-employment-centres/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20150116-Auckland_Employment_Centres2014_Thumb.png" type="image/png" />
-                
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2015/01/16/auckland-employment-centres/</guid>
             </item>
         
     </channel>

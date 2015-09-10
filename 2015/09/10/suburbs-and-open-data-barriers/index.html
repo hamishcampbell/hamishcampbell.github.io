@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--
+ ____   __   __    ____  _  _  __  ___ 
+(  _ \ /  \ (  )  (  __)( \/ )(  )/ __)
+ ) __/(  O )/ (_/\ ) _) / \/ \ )(( (__ 
+(__)   \__/ \____/(____)\_)(_/(__)\___)
+
+  by Hamish Campbell | Auckland | Aotearoa New Zealand
+
+  hn.campbell@gmail.com
+-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Of Suburbs and Open Data Barriers | Hamish Campbell | Polemic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@polemic">
+    <meta name="twitter:creator" content="@polemic">
+    <meta name="twitter:title" content="Of Suburbs and Open Data Barriers">
+    <meta name="twitter:description" content="This is a a follow-up to my first Auckland Suburbs map.
+As I outlined earlier, the only authoritative suburbs dataset for New Zealand is the 
+NZ Localities dataset. 
+The data is maintained by the New Zealand Fire Service
+Commission (NZFSC) and has been the subject of one of the longest running OIA disputes in NZ. 
+">
+    <meta name="twitter:image:src" content="http://polemic.nz/assets/maps/20150910-AucklandSuburbs-Part2_Thumb.png">
+    
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/font-awesome.css">
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Montserrat+Alternates'>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://polemic.nz/feed.xml">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35371727-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Polemic</h1>
+        <p>Hamish Campbell &ndash; Aotearoa New Zealand</p>
+        <p class="ident">
+            <a href="http://github.com/hamishcampbell" target="_blank"><i class="icon-github"></i> GitHub</a> &ndash; 
+            <a href="http://twitter.com/polemic" target="_blank"><i class="icon-twitter"></i> Twitter</a> &ndash; 
+            <a href="http://linkedin.com/profile/view?id=55658318&amp;locale=en_US" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a> &ndash; 
+            <a href="https://keybase.io/polemic" target="_blank"><i class="icon-key"></i> Keybase</a>
+        </p>
+    </header>
+
+    <div class="content">
+
+        <div id="crumbs">
+            <ul class="left">
+                <li><a href="/"><span>Home</span></a></li>
+                
+                <li><a href="/maps/"><span>Maps</span></a></li>
+                
+                
+                <li><a><span>Of Suburbs and Open Data Barriers</span></a></li>
+                
+            </ul>
+        </div>
+
+        <article>
+    <header>
+        <h1>Of Suburbs and Open Data Barriers</h1>
+        <p class="meta">10 Sep 2015</p>
+    </header>
+
+    <div>
+        <div class="imagePreview">
+    <img src="/assets/maps/20150910-AucklandSuburbs-Part2.png" />
+</div>
+<p>This is a a follow-up to my first <a href="/2015/01/23/auckland-suburbs-part-1/">Auckland Suburbs</a> map.
+As I outlined earlier, the only authoritative suburbs dataset for New Zealand is the 
+<a href="https://data.govt.nz/datasetrequest/show/4">NZ Localities</a> dataset. 
+The data is maintained by the New Zealand Fire Service
+Commission (NZFSC) and has been the subject of one of the longest running OIA disputes in NZ. </p>
+
+<p>In this post I expand a bit more on the background of the data and demonstrate why the NZFSC&#39;s
+licensing approach has proven counter-productive to their aims.</p>
+
+<h3>Localities and Suburbs</h3>
+
+<p>What is the NZ localities dataset? As follows:<a href="#footnotes"><sup>1</sup></a></p>
+
+<blockquote>
+<p>The data stored in the dataset describes the boundaries between different ‘localities’, 
+or parts of the entire country. It might be understood as describing the boundaries between 
+suburbs, but this would not be accurate as many ‘localities’ are not suburbs of a town or city, 
+and public perceptions of where one suburb starts and another ends may differ from the 
+boundaries defined in the dataset.</p>
+</blockquote>
+
+<p>While a locality is not <em>technically</em> a suburb - it certinaly comprises <em>of</em> suburbs as we would
+commonly understand them to be. And indeed, this is how the data is commonly used. </p>
+
+<p>The NZFSC has stated<a href="#footnotes"><sup>2</sup></a> that:</p>
+
+<blockquote>
+<p>The NZ Localities dataset is available for distribution, and NZ Fire Service promote 
+the use of this dataset as all emergency services are using the data for reference 
+and to support emergency response. The dataset is managed and maintained by a 
+consortium including NZ Fire Service, NZ Post and Quotable Value NZ.</p>
+</blockquote>
+
+<p>On the face of it, this is superb. It is a localities dataset, produced in
+partnership with our postal service and local authorities, available for <em>free</em> and ostensibly
+promoted for further use as an authoritative reference.</p>
+
+<h3>Putting up Barriers</h3>
+
+<p>Unfortunately there is a big catch. While free, the data is distributed under a 
+license agreement with NZFSC as licensor. The license can not be transferred
+and can be terminated at any time.</p>
+
+<p>It also prevents the following uses:</p>
+
+<ul>
+<li>You may not incorporate the data into a project in such a way that
+someone can extract the data,</li>
+<li>You may not modify the data, aside from text formatting and geographic re-projections,</li>
+<li>You may not sell, lease or otherwise provide the data for commercial gain.</li>
+</ul>
+
+<p>Finally, the license requires that you update your copy of the data (and any copies you&#39;ve
+supplied to others who have signed the license) within 6 months of release of an update.</p>
+
+<p>Unfortunately, that makes the data unsuitable for a wide range of projects. Just a few reasons include:</p>
+
+<ul>
+<li>Incompatibility with licenses associated with existing projects or products,</li>
+<li>Unclear who the license is granted to (does every contributor to an open source project have to sign it before they can see the data?),</li>
+<li>Termination clauses that might be difficult to adhere to,</li>
+<li>Difficulting in preventing &#39;reverse engineering&#39; of the data.</li>
+</ul>
+
+<p>Perhaps most significantly, it cannot be incorporated into <a href="http://openstreetmap.org">Open Street Map</a> - the same geographic data used in Auckland Transport&#39;s <a href="https://at.govt.nz/bus-train-ferry/journey-planner/">Journey Planner</a> site (and transport apps), <a href="https://www.mapbox.com/showcase/">these things</a>, <a href="http://wiki.openstreetmap.org/wiki/List_of_OSM-based_services">all of these</a>, pops up in
+<a href="https://en.wikipedia.org/wiki/OpenStreetMap#Commercial_services">Apple maps</a> and so on.</p>
+
+<h3>Why are the license terms so restrictive?</h3>
+
+<p>As the NZFSC puts it<a href="#footnotes"><sup>3</sup></a>:</p>
+
+<blockquote>
+<p>In our view there is a very clear risk to public safety where, the 
+caller provides the call taker with address information based on a 
+repackaged, on-sold dataset that contains unauthorised changes or does 
+not include authorised updates.</p>
+</blockquote>
+
+<p>The argument has some merit. They&#39;ve spent a lot of time creating
+an accurate locality dataset to ensure they get where they need to be; lives and
+property are at risk and it&#39;s important to avoid mistakes by maintaining control. This
+logic ultimately convinced the Ombudsman that the NZFSC had a case to retain the license.</p>
+
+<p>The Ombudsman acknowledge a key objection, that<a href="#footnotes"><sup>3</sup></a>:</p>
+
+<blockquote>
+<p>..the constraints placed on the use or manipulation of the dataset by the NZFSC 
+licence has the effect of inhibiting more widespread adoption of the locality boundaries. 
+This, in turn, increases the risk that someone may give a call centre an account of their 
+location that differs from the call centre software — increasing the risk of delay in 
+despatching the correct equipment and people to the right location.</p>
+</blockquote>
+
+<p>But ultimately decided that:</p>
+
+<blockquote>
+<p>NZFSC’s willingness to provide the NZ Localities dataset free of charge, to anyone who 
+seeks it and is willing to become a licensee, largely satisfies the public interest in 
+disclosure of this information. In light of the potential for harm arising from 
+out-of-date datasets in the public domain, I do not consider the licence requirement 
+for updating the dataset when requested, to be onerous.</p>
+</blockquote>
+
+<p>The reality of the situation is that other datasets <em>already</em> exist in the public domain.</p>
+
+<h3>Put up a barriers and the community will route around you</h3>
+
+<p>The argument for retaining the license is predicated on the axiom that the NZFSC <em>has</em> control.</p>
+
+<p>In the absense of a <em>facts about the world</em> that can be used freely, the community can and 
+does create its own. The data they produce is a mix of community consensus, guesswork, 
+approximations and bad assumptions. The result is a lot of conflicting
+locality information. The <a href="http://nominatim.openstreetmap.org/">Nominatum Open Street Map address finder</a> includes non-existant<a href="#footnotes"><sup>4.</sup></a> localities such as
+<a href="http://nominatim.openstreetmap.org/search.php?q=rosebank%2C+auckland&amp;viewbox=27.99%2C-26.11%2C28.09%2C-26.17">Rosebank</a> and <a href="http://nominatim.openstreetmap.org/search.php?q=balmoral%2C+auckland&amp;viewbox=174.74%2C-36.88%2C174.84%2C-36.94">Balmoral</a> in Auckland. <a href="https://mapzen.com/blog/who-s-on-first">MapZen&#39;s world gazateer</a> project will 
+use open sources like <a href="http://www.geonames.org/">Geonames</a>.</p>
+
+<div class="captioned-image">
+    <img src="/assets/maps/20150910-Quattroshapes.png" />
+    <p class="caption">Quattroshapes Neighbourhoods of Auckland &mdash; Data CC-BY Foursquare / LINZ, Map CC-BY Hamish Campbell</p>
+</div>
+
+<p>Another example (displayed above) is the <a href="http://quattroshapes.com/">Quattroshapes</a> gazetteer 
+dataset created by <a href="https://foursquare.com/">Foursquare</a>.</p>
+
+<blockquote>
+<p>To improve recommendations, we have created an authoritative source 
+of polygons around a curated list of places. This gazetteer of 
+non-overlapping polygons provides more relevant results than simple point geometries.</p>
+</blockquote>
+
+<p>A quick inspection reveals ommissions (Kelston), additions (Balmoral)
+and significant errors (no Rosebank, but the area is split between 4 incorrect locations).
+In the absence of authoritative open data, this is what is often used to create real consumer products.</p>
+
+<p class="pop">The net result of restrictive licensing is to promote the use of inaccurate, non-authoritatve and poor quality alternatives.</p>
+
+<p>I believe the NZFSC is genuinely concerned with ensuring that up-to-date information
+is used in critical applications. The only way to achieve that aim is to release the data
+under an open license.</p>
+
+<h3>The Ombudsman&#39;s Decision</h3>
+
+<p>The original OIA request went all the way to the Ombudsman. Over 7 years after the original
+OIA request the Ombudsman <a href="http://www.ombudsman.parliament.nz/system/paperclip/document_files/document_files/885/original/179451_-_request_for_nz_localities_dataset.pdf?1413915614">ruled in favour of NZFSC&#39;s opinion</a>.</p>
+
+<p>This decision is a reminder that the Official Information Act is not a replacement for Open Data
+or the <a href="https://www.ict.govt.nz/guidance-and-resources/open-government/new-zealand-government-open-access-and-licensing-nzgoal-framework/">NZGOAL</a> framework in New Zealand.</p>
+
+<p>There was a glimmer of hope in the decision. Part 98 states:</p>
+
+<blockquote>
+<p>In 2011 the NZFSC gave a public undertaking to review the licence agreement against the
+criteria of the NZGOAL framework. NZFS has now confirmed, by letter of 24 July 2014,
+that:</p>
+
+<p>“Since 2013, NZFS has been working with the NZ Geospatial Office (NZGO)
+and LINZ to establish and mandate the NZ Localities dataset as a fundamental
+dataset for NZ under the NZ Geospatial Strategy and NZGOAL framework.
+NZFS is also working with NZGO and LINZ to establish the NZFS Commission as
+the authoritative custodian of the NZ Localities dataset. ... Prior to the end of
+2014, and subsequent to establishing NZFS as custodian, NZFS will release the
+NZ Localities dataset under a new Creative Commons licence (CC variation yet
+to be defined).”</p>
+</blockquote>
+
+<p>It&#39;s disappointing that nearing the end of 2015 we still haven&#39;t seen the data released.</p>
+
+<h3>Moving forward</h3>
+
+<p>The final part of this series will:</p>
+
+<ul>
+<li>Provide a methodology for generating the authoritatve boundaries from open data sources, and</li>
+<li>Outine some of things that are happening to make an official localities dataset a
+reality.</li>
+</ul>
+
+<h3><span id="footnotes">Footnotes</span></h3>
+
+<p><sup>1.</sup> <a href="http://www.ombudsman.parliament.nz/system/paperclip/document_files/document_files/885/original/179451_-_request_for_nz_localities_dataset.pdf?1413915614">Request for the New Zealand Localities
+dataset - Ombudsman&#39;s Decision - Page 2</a><br>
+<sup>2.</sup> ibid. Page 3<br>
+<sup>3.</sup> ibid. Page 8<br>
+<sup>4.</sup> Non-existant in that they don&#39;t exist in the NZFSC data, but <em>are</em> commonly known.</p>
+
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polemic'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>
+
+
+    </div>
+
+    <footer>
+        <span><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-NC</a> &copy; Hamish Campbell</span>
+        <p class="ident">
+            <a href="http://github.com/hamishcampbell" target="_blank"><i class="icon-github"></i> GitHub</a> &ndash; 
+            <a href="http://twitter.com/polemic" target="_blank"><i class="icon-twitter"></i> Twitter</a> &ndash; 
+            <a href="http://linkedin.com/profile/view?id=55658318&amp;locale=en_US" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a> &ndash; 
+            <a href="https://keybase.io/polemic" target="_blank"><i class="icon-key"></i> Keybase</a>
+        </p>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+    <script src="/static/site.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
