@@ -29,7 +29,7 @@ and public perceptions of where one suburb starts and another ends may differ fr
 boundaries defined in the dataset.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;While a locality is not &lt;em&gt;technically&lt;/em&gt; a suburb - it certinaly comprises &lt;em&gt;of&lt;/em&gt; suburbs as we would
+&lt;p&gt;While a locality is not &lt;em&gt;technically&lt;/em&gt; a suburb - it certainly comprises &lt;em&gt;of&lt;/em&gt; suburbs as we would
 commonly understand them to be. And indeed, this is how the data is commonly used. &lt;/p&gt;
 
 &lt;p&gt;The NZFSC has stated&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; that:&lt;/p&gt;
@@ -69,7 +69,7 @@ supplied to others who have signed the license) within 6 months of release of an
 &lt;li&gt;Incompatibility with licenses associated with existing projects or products,&lt;/li&gt;
 &lt;li&gt;Unclear who the license is granted to (does every contributor to an open source project have to sign it before they can see the data?),&lt;/li&gt;
 &lt;li&gt;Termination clauses that might be difficult to adhere to,&lt;/li&gt;
-&lt;li&gt;Difficulting in preventing &amp;#39;reverse engineering&amp;#39; of the data.&lt;/li&gt;
+&lt;li&gt;Difficulty in preventing &amp;#39;reverse engineering&amp;#39; of the data.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Perhaps most significantly, it cannot be incorporated into &lt;a href=&quot;http://openstreetmap.org&quot;&gt;Open Street Map&lt;/a&gt; - the same geographic data used in Auckland Transport&amp;#39;s &lt;a href=&quot;https://at.govt.nz/bus-train-ferry/journey-planner/&quot;&gt;Journey Planner&lt;/a&gt; site (and transport apps), &lt;a href=&quot;https://www.mapbox.com/showcase/&quot;&gt;these things&lt;/a&gt;, &lt;a href=&quot;http://wiki.openstreetmap.org/wiki/List_of_OSM-based_services&quot;&gt;all of these&lt;/a&gt;, pops up in
@@ -98,7 +98,7 @@ logic ultimately convinced the Ombudsman that the NZFSC had a case to retain the
 licence has the effect of inhibiting more widespread adoption of the locality boundaries. 
 This, in turn, increases the risk that someone may give a call centre an account of their 
 location that differs from the call centre software — increasing the risk of delay in 
-despatching the correct equipment and people to the right location.&lt;/p&gt;
+dispatching the correct equipment and people to the right location.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;But ultimately decided that:&lt;/p&gt;
@@ -117,11 +117,11 @@ for updating the dataset when requested, to be onerous.&lt;/p&gt;
 
 &lt;p&gt;The argument for retaining the license is predicated on the axiom that the NZFSC &lt;em&gt;has&lt;/em&gt; control.&lt;/p&gt;
 
-&lt;p&gt;In the absense of a &lt;em&gt;facts about the world&lt;/em&gt; that can be used freely, the community can and 
+&lt;p&gt;In the absence of a &lt;em&gt;facts about the world&lt;/em&gt; that can be used freely, the community can and 
 does create its own. The data they produce is a mix of community consensus, guesswork, 
 approximations and bad assumptions. The result is a lot of conflicting
-locality information. The &lt;a href=&quot;http://nominatim.openstreetmap.org/&quot;&gt;Nominatum Open Street Map address finder&lt;/a&gt; includes non-existant&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;4.&lt;/sup&gt;&lt;/a&gt; localities such as
-&lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=rosebank%2C+auckland&amp;amp;viewbox=27.99%2C-26.11%2C28.09%2C-26.17&quot;&gt;Rosebank&lt;/a&gt; and &lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=balmoral%2C+auckland&amp;amp;viewbox=174.74%2C-36.88%2C174.84%2C-36.94&quot;&gt;Balmoral&lt;/a&gt; in Auckland. &lt;a href=&quot;https://mapzen.com/blog/who-s-on-first&quot;&gt;MapZen&amp;#39;s world gazateer&lt;/a&gt; project will 
+locality information. The &lt;a href=&quot;http://nominatim.openstreetmap.org/&quot;&gt;Nominatum Open Street Map address finder&lt;/a&gt; includes non-existent&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;4.&lt;/sup&gt;&lt;/a&gt; localities such as
+&lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=rosebank%2C+auckland&amp;amp;viewbox=27.99%2C-26.11%2C28.09%2C-26.17&quot;&gt;Rosebank&lt;/a&gt; and &lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=balmoral%2C+auckland&amp;amp;viewbox=174.74%2C-36.88%2C174.84%2C-36.94&quot;&gt;Balmoral&lt;/a&gt; in Auckland. &lt;a href=&quot;https://mapzen.com/blog/who-s-on-first&quot;&gt;MapZen&amp;#39;s world gazetteer&lt;/a&gt; project will 
 use open sources like &lt;a href=&quot;http://www.geonames.org/&quot;&gt;Geonames&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;captioned-image&quot;&gt;
@@ -138,11 +138,11 @@ of polygons around a curated list of places. This gazetteer of
 non-overlapping polygons provides more relevant results than simple point geometries.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;A quick inspection reveals ommissions (Kelston), additions (Balmoral)
+&lt;p&gt;A quick inspection reveals omissions (Kelston), additions (Balmoral)
 and significant errors (no Rosebank, but the area is split between 4 incorrect locations).
 In the absence of authoritative open data, this is what is often used to create real consumer products.&lt;/p&gt;
 
-&lt;p class=&quot;pop&quot;&gt;The net result of restrictive licensing is to promote the use of inaccurate, non-authoritatve and poor quality alternatives.&lt;/p&gt;
+&lt;p class=&quot;pop&quot;&gt;The net result of restrictive licensing is to promote the use of inaccurate, non-authoritative and poor quality alternatives.&lt;/p&gt;
 
 &lt;p&gt;I believe the NZFSC is genuinely concerned with ensuring that up-to-date information
 is used in critical applications. The only way to achieve that aim is to release the data
@@ -180,8 +180,8 @@ to be defined).”&lt;/p&gt;
 &lt;p&gt;The final part of this series will:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Provide a methodology for generating the authoritatve boundaries from open data sources, and&lt;/li&gt;
-&lt;li&gt;Outine some of things that are happening to make an official localities dataset a
+&lt;li&gt;Provide a methodology for generating the authoritative boundaries from open data sources, and&lt;/li&gt;
+&lt;li&gt;Outline some of things that are happening to make an official localities dataset a
 reality.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -191,7 +191,7 @@ reality.&lt;/li&gt;
 dataset - Ombudsman&amp;#39;s Decision - Page 2&lt;/a&gt;&lt;br&gt;
 &lt;sup&gt;2.&lt;/sup&gt; ibid. Page 3&lt;br&gt;
 &lt;sup&gt;3.&lt;/sup&gt; ibid. Page 8&lt;br&gt;
-&lt;sup&gt;4.&lt;/sup&gt; Non-existant in that they don&amp;#39;t exist in the NZFSC data, but &lt;em&gt;are&lt;/em&gt; commonly known.&lt;/p&gt;
+&lt;sup&gt;4.&lt;/sup&gt; Non-existent in that they don&amp;#39;t exist in the NZFSC data, but &lt;em&gt;are&lt;/em&gt; commonly known.&lt;/p&gt;
 </description>
                 <pubDate>Thu, 10 Sep 2015 00:00:00 +1200</pubDate>
                 <link>http://polemic.nz/2015/09/10/suburbs-and-open-data-barriers/</link>
