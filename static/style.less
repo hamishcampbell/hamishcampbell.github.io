@@ -2,7 +2,7 @@
 @min-content-width: 400px;
 
 @crumb-height: 48px;
-@crumb-height-small: 36px;
+@crumb-height-small: 34px;
 
 html, body {
     margin: 0;
@@ -189,18 +189,25 @@ body > header > h1 {
     li:last-child:after {
         content: none;
     }
+    li:last-child span {
+        margin-right: 0;
+    }
 }
 
 @media all and (max-width: 550px) {
     #crumbs {
         height: @crumb-height-small;
         padding: @crumb-height-small / 4 0;
+        font-size: 12px;
 
         ul {
             line-height: @crumb-height-small / 2;
             height: @crumb-height-small / 2;
             max-width: @max-content-width;
             padding: 0 @crumb-height-small / 2;
+        }
+        span {
+            margin: 0 4px;
         }
     }
 }
