@@ -7,6 +7,50 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Whau Flags</title>
+                <description>&lt;p&gt;I&amp;#39;ve been working on a side project for the &lt;a href=&quot;http://whauthepeople.com/&quot; target=&quot;_blank&quot;&gt;Whau
+Arts Festival&lt;/a&gt; happening in Avondale, Auckland from the 15&lt;sup&gt;th&lt;/sup&gt; - 18&lt;sup&gt;th&lt;/sup&gt; October.
+&amp;quot;&lt;a href=&quot;http://whauflags.nz/&quot; target=&quot;_blank&quot;&gt;Whau Flags&lt;/a&gt;&amp;quot; is an interactive installation (online
+at &lt;a href=&quot;http://whauflags.nz/&quot; target=&quot;_blank&quot;&gt;whauflags.nz&lt;/a&gt; and via screens at the festival) that
+generates flag designs. The site gives participants ways to interact with the installation by
+guiding the evolution of new designs, saving and sharing favourites and more. It&amp;#39;s still under construction but usable now.&lt;/p&gt;
+
+&lt;p&gt;Each flag is represented by a genome that defines the colour palette and constituent patterns that make
+up the design. For example, the flag &lt;code&gt;356o560oCA0-5113o3125o3446-&lt;/code&gt; looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://whauflags.nz/flag/show/356o560oCA0-5113o3125o3446-/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/images/flag-356o560oCA0-5113o3125o3446-.png&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;From a flag page in the website, you can click the &amp;#39;evolve&amp;#39; button to produce new variants. Each
+&amp;#39;allele&amp;#39; of the flag genome can mutate, migrate or disappear entirely in a generation. Some of the
+results are surprising:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://whauflags.nz/flag/show/DCAoB72-9449o9112-/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/images/flag-DCAoB72-9449o9112-.png&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m looking forward to see how people use the site, and it&amp;#39;s possible that a local sewing group
+will be &amp;quot;materializing&amp;quot; some of the designs as real life flags to fly at the event.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://whauflags.nz/flag/show/B13o5B0oCB1-1883o4551o7886-/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/images/flag-B13o5B0oCB1-1883o4551o7886-.png&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The festival itself is only in its second year, but it provides a platform for
+alternative and experimental projects. There will be live metal-working, tattoo, 
+a boy-racer chauffeur &amp;#39;experience&amp;#39; (for lack of a better description), experimental
+architecture, large scale street art and a lot more. Hope to see you there!&lt;/p&gt;
+</description>
+                <pubDate>Fri, 25 Sep 2015 00:00:00 +1200</pubDate>
+                <link>http://polemic.nz/2015/09/25/whauflag/</link>
+                
+                
+                
+                <guid isPermaLink="true">http://polemic.nz/2015/09/25/whauflag/</guid>
+            </item>
+        
+            <item>
                 <title>Of Suburbs and Open Data Barriers</title>
                 <description>&lt;p&gt;This is a a follow-up to my first &lt;a href=&quot;/2015/01/23/auckland-suburbs-part-1/&quot;&gt;Auckland Suburbs&lt;/a&gt; map.
 As I outlined earlier, the only authoritative suburbs dataset for New Zealand is the 
@@ -532,112 +576,6 @@ suburb dataset, from CC-BY licensed data sources.&lt;/p&gt;
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</guid>
-            </item>
-        
-            <item>
-                <title>Popular New Zealand Road Names</title>
-                <description>&lt;p&gt;I pulled down Land Information New Zealand&amp;#39;s &lt;a href=&quot;https://data.linz.govt.nz/layer/818-nz-road-centre-line-electoral/&quot;&gt;Road Centre Line dataset&lt;/a&gt;
-to have quick look at name statistics. To analyse the data, import it to Postgres with &lt;a href=&quot;http://postgis.net/docs/manual-2.0/using_postgis_dbmanagement.html#shp2pgsql_usage&quot;&gt;&lt;code&gt;shp2pgsql&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Download the data in the Shapefile format&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Extract and load into an existing Postgresql/PostGIS database:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;shp2pgsql nz-road-centre-line-electoral.shp | psql [database_name]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Now you can run queries against the data. To get the 50 most popular road names with their total length:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
-    &lt;span class=&quot;ss&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ROUND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ST_LENGTH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_length&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;nz-road-centre-line-electoral&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_count&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And the results:&lt;/p&gt;
-
-&lt;table style=&quot;width: 100%;&quot;&gt;
-&lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Rank&lt;/th&gt;
-        &lt;th&gt;Name&lt;/th&gt;
-        &lt;th&gt;Frequency&lt;/th&gt;
-        &lt;th&gt;Length (m)&lt;/th&gt;
-    &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Accessway&lt;/td&gt;&lt;td&gt;2414&lt;/td&gt;&lt;td&gt;220,876&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Service Lane&lt;/td&gt;&lt;td&gt;492&lt;/td&gt;&lt;td&gt;54,500&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Roadway&lt;/td&gt;&lt;td&gt;452&lt;/td&gt;&lt;td&gt;335,172&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;State Highway  1&lt;/td&gt;&lt;td&gt;125&lt;/td&gt;&lt;td&gt;2,168,214&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;George Street&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;38,105&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Queen Street&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;50,181&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Beach Road&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;103,280&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;High Street&lt;/td&gt;&lt;td&gt;68&lt;/td&gt;&lt;td&gt;68,671&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;King Street&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;td&gt;42,302&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;Station Road&lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;td&gt;80,138&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;Rata Street&lt;/td&gt;&lt;td&gt;57&lt;/td&gt;&lt;td&gt;25,589&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;School Road&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;75,847&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;Grey Street&lt;/td&gt;&lt;td&gt;54&lt;/td&gt;&lt;td&gt;36,090&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;State Highway  2&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;991,692&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;15&lt;/td&gt;&lt;td&gt;Church Street&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;40,540&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;Elizabeth Street&lt;/td&gt;&lt;td&gt;52&lt;/td&gt;&lt;td&gt;21,323&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;Victoria Street&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;45,263&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;Rimu Street&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;17,075&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;19&lt;/td&gt;&lt;td&gt;River Road&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;273,968&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;Bridge Street&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;30,604&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;21&lt;/td&gt;&lt;td&gt;State Highway  6&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;1,183,521&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;Cemetery Road&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;56,800&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;23&lt;/td&gt;&lt;td&gt;Main Road&lt;/td&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;85,202&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;24&lt;/td&gt;&lt;td&gt;Albert Street&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;25,832&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;Domain Road&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;47,879&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;26&lt;/td&gt;&lt;td&gt;Mill Road&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;111,434&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;27&lt;/td&gt;&lt;td&gt;Short Street&lt;/td&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;6,575&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;28&lt;/td&gt;&lt;td&gt;Boundary Road&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;152,026&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;29&lt;/td&gt;&lt;td&gt;Miro Street&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;17,852&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;William Street&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;17,808&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;31&lt;/td&gt;&lt;td&gt;Matai Street&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;15,183&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;Totara Street&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;18,546&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;33&lt;/td&gt;&lt;td&gt;Wilson Road&lt;/td&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;104,471&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;34&lt;/td&gt;&lt;td&gt;Seddon Street&lt;/td&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;25,237&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;John Street&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;14,036&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;Princes Street&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;26,509&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;Charles Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;16,041&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;38&lt;/td&gt;&lt;td&gt;Oxford Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;23,789&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;39&lt;/td&gt;&lt;td&gt;Nelson Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;17,365&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;James Street&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;15,162&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;Valley Road&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;td&gt;92,760&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;York Street&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;td&gt;12,786&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;43&lt;/td&gt;&lt;td&gt;Tui Street&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;td&gt;12,064&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;Kowhai Street&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;td&gt;12,220&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;Campbell Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;17,273&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;Kent Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;18,598&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;47&lt;/td&gt;&lt;td&gt;Ward Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;17,431&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;Russell Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;14,733&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;49&lt;/td&gt;&lt;td&gt;Duke Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;17,436&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;Main Street&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt;33,201&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-&lt;p&gt;Short Street - clearly well named at an average length of 153m.&lt;/p&gt;
-
-&lt;p&gt;And of course we can get the total length of all road centrelines in the dataset with:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ST_LENGTH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_length&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;nz-road-centre-line-electoral&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Which gives 123,086,930 metres of road.*&lt;/p&gt;
-
-&lt;p&gt;*&lt;small&gt;Note that the dataset exists for electoral addressing purposes, so this comment on the layer
-information is important: &lt;q&gt;Because some roads have multiple names for part of their lengths, some road centreline geometries will duplicate parts of other roads even though there is in reality only one road formation.&lt;/q&gt; In other words, we&amp;#39;ve got some duplication above.
-&lt;/small&gt;&lt;/p&gt;
-</description>
-                <pubDate>Mon, 19 Jan 2015 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2015/01/19/popular-nz-road-names/</link>
-                
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2015/01/19/popular-nz-road-names/</guid>
             </item>
         
     </channel>
