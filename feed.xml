@@ -7,6 +7,35 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Auckland Cycleways</title>
+                <description>&lt;p&gt;I&amp;#39;ve been working with some cycling data recently, and the good people at &lt;a href=&quot;https://www.bikeauckland.org.nz/project-watch-march-2019/&quot;&gt;Bike Auckland&lt;/a&gt; have asked if they posted a little map I made the other day. This is a quick look at
+Aucklands cycling infrastructure as of March 2019, from the Auckland Transport
+GIS &lt;a href=&quot;http://data-atgis.opendata.arcgis.com/&quot;&gt;open data portal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;(P.S &lt;em&gt;yes&lt;/em&gt; it has been a &lt;em&gt;very long&lt;/em&gt; time since I&amp;#39;ve updated this blog - 3 and half years!
+Time flies when you&amp;#39;re busy. I&amp;#39;m working on a few other maps related to cycling, and I&amp;#39;m looking
+to launch a project around the upcoming local body elections in New Zealand. More on that
+later!)&lt;/p&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/set/4702-nz-aerial-imagery/&quot;&gt;NZ Aerial Imagery&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz&quot;&gt;Other Base data layers&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://data-atgis.opendata.arcgis.com/datasets/cycle-facility-network&quot;&gt;Cycle Facility Network&lt;/a&gt; (Auckalnd Transport)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Tue, 02 Apr 2019 00:00:00 +1300</pubDate>
+                <link>http://polemic.nz/2019/04/02/auckland-cycleways/</link>
+                
+                <enclosure url="http://polemic.nz/assets/maps/20190402-AucklandCycleways_Thumb.png" type="image/png" />
+                
+                
+                
+                <guid isPermaLink="true">http://polemic.nz/2019/04/02/auckland-cycleways/</guid>
+            </item>
+        
+            <item>
                 <title>Whau Flags</title>
                 <description>&lt;p&gt;I&amp;#39;ve been working on a side project for the &lt;a href=&quot;http://whauthepeople.com/&quot; target=&quot;_blank&quot;&gt;Whau
 Arts Festival&lt;/a&gt; happening in Avondale, Auckland from the 15&lt;sup&gt;th&lt;/sup&gt; - 18&lt;sup&gt;th&lt;/sup&gt; October.
@@ -165,7 +194,7 @@ for updating the dataset when requested, to be onerous.&lt;/p&gt;
 does create its own. The data they produce is a mix of community consensus, guesswork, 
 approximations and bad assumptions. The result is a lot of conflicting
 locality information. The &lt;a href=&quot;http://nominatim.openstreetmap.org/&quot;&gt;Nominatum Open Street Map address finder&lt;/a&gt; includes non-existent&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;4.&lt;/sup&gt;&lt;/a&gt; localities such as
-&lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=rosebank%2C+auckland&amp;amp;viewbox=27.99%2C-26.11%2C28.09%2C-26.17&quot;&gt;Rosebank&lt;/a&gt; and &lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=balmoral%2C+auckland&amp;amp;viewbox=174.74%2C-36.88%2C174.84%2C-36.94&quot;&gt;Balmoral&lt;/a&gt; in Auckland. &lt;a href=&quot;https://mapzen.com/blog/who-s-on-first&quot;&gt;MapZen&amp;#39;s world gazetteer&lt;/a&gt; project will 
+&lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=rosebank%2C+auckland&amp;viewbox=27.99%2C-26.11%2C28.09%2C-26.17&quot;&gt;Rosebank&lt;/a&gt; and &lt;a href=&quot;http://nominatim.openstreetmap.org/search.php?q=balmoral%2C+auckland&amp;viewbox=174.74%2C-36.88%2C174.84%2C-36.94&quot;&gt;Balmoral&lt;/a&gt; in Auckland. &lt;a href=&quot;https://mapzen.com/blog/who-s-on-first&quot;&gt;MapZen&amp;#39;s world gazetteer&lt;/a&gt; project will 
 use open sources like &lt;a href=&quot;http://www.geonames.org/&quot;&gt;Geonames&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;captioned-image&quot;&gt;
@@ -255,7 +284,7 @@ one of many that believe the selection panel dropped the ball at the final hurdl
 to be desired.&lt;/p&gt;
 
 &lt;p&gt;Since the four designs were announced, there has been a groundswell of support for an alternative: &amp;quot;&lt;a href=&quot;https://www.govt.nz/browse/engaging-with-government/the-nz-flag-your-chance-to-decide/gallery/design/24310&quot;&gt;Red Peak&lt;/a&gt;&amp;quot; Aaron Dustin.
-&lt;a href=&quot;http://www.nzherald.co.nz/opinion/news/article.cfm?c_id=466&amp;amp;objectid=11507494&quot;&gt;Toby Manhire&lt;/a&gt; and &lt;a href=&quot;http://rowansimpson.com/2015/09/02/dear-john/&quot;&gt;Rowan Simpson&lt;/a&gt; make good arguments for why it should be considered.&lt;/p&gt;
+&lt;a href=&quot;http://www.nzherald.co.nz/opinion/news/article.cfm?c_id=466&amp;objectid=11507494&quot;&gt;Toby Manhire&lt;/a&gt; and &lt;a href=&quot;http://rowansimpson.com/2015/09/02/dear-john/&quot;&gt;Rowan Simpson&lt;/a&gt; make good arguments for why it should be considered.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Red-Peak-FINAL.jpg&quot; alt=&quot;Read Peak by Aaron Dustin&quot;&gt;&lt;/p&gt;
 
@@ -381,10 +410,10 @@ of the smaller off-shore islands and loaded this into postgres as the table &lt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;ST_SetSRID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;CDB_HexagonGrid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST_Extent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;&amp;quot;geom&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;land_cover&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST_Extent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;&quot;geom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;land_cover&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
             &lt;span class=&quot;mi&quot;&gt;2193&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;hexgrid&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;hexgrid&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The next step is to remove the hexagons that don&amp;#39;t cover land. The follow query finds hexagons that
 intersect with the land cover layer and contain at least 30% land. This factor is a somewhat arbitrary - 
@@ -494,88 +523,6 @@ of crashes on New Zealand roads.&lt;/p&gt;
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/24/electro-punk/</guid>
-            </item>
-        
-            <item>
-                <title>Auckland Suburbs - Part 1</title>
-                <description>&lt;p&gt;So, suburbs. You&amp;#39;re probably looking at this map and
-wondering &amp;quot;what&amp;#39;s the big deal?&amp;quot;. It&amp;#39;s a terrible
-map of the suburbs of Auckland. There are lots of holes. Some
-bits are downright inaccurate. And you&amp;#39;d be right to wonder. Then again, you might be someone who has once tried to acquire an authoritative, free and open dataset of suburbs
-for Auckland (or, better yet, the whole of New Zealand).&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re in the latter group, then you&amp;#39;re lucky enough to have experienced the strange
-black hole of rationality that surrounds the &lt;a href=&quot;https://data.govt.nz/datasetrequest/show/4&quot;&gt;NZ Localities&lt;/a&gt; dataset held -
-oddly enough - by the New Zealand Fire Service Commission. And if so, you probably have an idea of why the map above is significant.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ll write a bit more about the Commission at a later date (the Commission is not be confused with the New Zealand Fire Service, mind. The Commission is the board that oversees the actual Fire Service, it pays to be pedantic when dealing with agencies and the OIA). It&amp;#39;s a cautionary tale for all open data advocates.&lt;/p&gt;
-
-&lt;p&gt;So here we are: we want to know about suburbs, but we can&amp;#39;t use the official data. We&amp;#39;ll need to get it elsewhere. Fortunately there is another CC-BY dataset that &lt;em&gt;does&lt;/em&gt; have a &lt;code&gt;locality&lt;/code&gt; field that looks a lot like a suburb&lt;sup&gt;1&lt;/sup&gt;. This is the &lt;a href=&quot;https://data.linz.govt.nz/layer/779-nz-street-address-electoral/&quot;&gt;New Zealand Electoral Address&lt;/a&gt; dataset from LINZ:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This layer provides all allocated addresses as advised to LINZ by Territorial Authorities (TAs). Under the Local Government Act 1974 (section 319) it is the responsibility of the TAs to advise LINZ (the Surveyor General) of all allocated addresses in their district.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;How do we go from the point layer to suburb polygons? I first tried calculating Concave Hulls over the locality but the results were.. not great. However the priority for LINZ is to correctly locate addresses within Stats NZ Meshblocks. So we can assign the address locality to the containing meshblock in Postgres, including a count of the times that locality name appears, like so (where I&amp;#39;ve already imported the Statistics Meshblocks as &lt;code&gt;meshblocks&lt;/code&gt; and address points as &lt;code&gt;electoral-addresses&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;locality&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;locality_count&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;meshblock-localities&amp;quot;&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;meshblocks&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mb&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;electoral-addresses&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST_Intersects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST_SetSRID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2193&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ta2014_nam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Auckland&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;locality&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;locality&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;locality_count&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This new table &lt;code&gt;meshblock-localities&lt;/code&gt; now has duplicate meshblocks for each locality found, so we select distinct meshblocks by picking the most common locality found:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DISTINCT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;locality&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;locality_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;meshblock-localities-distinct&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;meshblock-localities&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;locality_count&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Finally, we still have individual meshblocks, but we really want to join localities together to form single polygons:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
-    &lt;span class=&quot;n&quot;&gt;locality&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ST_UNION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;geom&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;meshblock-localities-union&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;quot;meshblock-localities-distinct&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;locality&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now our table &lt;code&gt;meshblock-localities-union&lt;/code&gt; has just the
-locality name and it&amp;#39;s geometry. I&amp;#39;ve then imported it into
-QGIS and performed some additional cleanup:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Split multi-part geometries. There are a lot of small
-blocks that are geographically distinct with odd (sometimes hyphenated) names.&lt;/li&gt;
-&lt;li&gt;Remove some spurious records, e.g. localities like &amp;quot;Auckland&amp;quot; - probably assigned to addresses that are not obviously in a well known suburb.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The result: a rough starting point to build a proper 
-suburb dataset, from CC-BY licensed data sources.&lt;/p&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/779-nz-street-address-electoral/&quot;&gt;New Zealand Electoral Address&lt;/a&gt; (Land Information New Zealand)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.stats.govt.nz/browse_for_stats/people_and_communities/Geographic-areas/digital-boundary-files.aspx&quot;&gt;New Zealand 2014 Clipped Meshblock Boundaries&lt;/a&gt; (Statistics NZ)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Footnotes&lt;/h3&gt;
-
-&lt;p&gt;&lt;sup&gt;1.&lt;/sup&gt; It turns out that the &lt;code&gt;locality&lt;/code&gt; field is indeed, slightly indirectly, from the NZFS locality boundaries. More on that in Part 2.&lt;/p&gt;
-</description>
-                <pubDate>Fri, 23 Jan 2015 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</link>
-                
-                <enclosure url="http://polemic.nz/assets/maps/20150123-Auckland-Suburbs_Thumb.png" type="image/png" />
-                
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2015/01/23/auckland-suburbs-part-1/</guid>
             </item>
         
     </channel>

@@ -51,8 +51,6 @@
             <ul class="left">
                 <li><a href="/"><span>Home</span></a></li>
                 
-                <li><a href="/posts/"><span>Posts</span></a></li>
-                
                 
                 <li><a><span>Popular New Zealand Road Names</span></a></li>
                 
@@ -78,10 +76,10 @@ to have quick look at name statistics. To analyse the data, import it to Postgre
 
 <p>Now you can run queries against the data. To get the 50 most popular road names with their total length:</p>
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
-    <span class="ss">&quot;name&quot;</span><span class="p">,</span>
+    <span class="nv">"name"</span><span class="p">,</span>
     <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">total_count</span><span class="p">,</span>
     <span class="n">ROUND</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">ST_LENGTH</span><span class="p">(</span><span class="n">geom</span><span class="p">)))</span> <span class="k">as</span> <span class="n">total_length</span>
-<span class="k">FROM</span> <span class="ss">&quot;nz-road-centre-line-electoral&quot;</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="ss">&quot;name&quot;</span>
+<span class="k">FROM</span> <span class="nv">"nz-road-centre-line-electoral"</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="nv">"name"</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">total_count</span> <span class="k">DESC</span>
 <span class="k">LIMIT</span> <span class="mi">50</span>
 </code></pre></div>
@@ -154,7 +152,7 @@ to have quick look at name statistics. To analyse the data, import it to Postgre
 <p>And of course we can get the total length of all road centrelines in the dataset with:</p>
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
     <span class="k">SUM</span><span class="p">(</span><span class="n">ST_LENGTH</span><span class="p">(</span><span class="n">geom</span><span class="p">))</span> <span class="k">as</span> <span class="n">total_length</span>
-<span class="k">FROM</span> <span class="ss">&quot;nz-road-centre-line-electoral&quot;</span>
+<span class="k">FROM</span> <span class="nv">"nz-road-centre-line-electoral"</span>
 </code></pre></div>
 <p>Which gives 123,086,930 metres of road.*</p>
 

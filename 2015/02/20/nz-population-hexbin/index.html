@@ -62,8 +62,6 @@ fixed up coastal hexes in a very non-reproducible way.
             <ul class="left">
                 <li><a href="/"><span>Home</span></a></li>
                 
-                <li><a href="/maps/"><span>Maps</span></a></li>
-                
                 
                 <li><a><span>NZ Population Hexbins</span></a></li>
                 
@@ -99,10 +97,10 @@ of the smaller off-shore islands and loaded this into postgres as the table <cod
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span>
     <span class="n">ST_SetSRID</span><span class="p">(</span>
         <span class="n">CDB_HexagonGrid</span><span class="p">(</span>
-            <span class="p">(</span><span class="k">SELECT</span> <span class="n">ST_Extent</span><span class="p">(</span><span class="ss">&quot;geom&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">extent</span> <span class="k">from</span> <span class="ss">&quot;land_cover&quot;</span><span class="p">),</span> <span class="mi">10000</span><span class="p">),</span>
+            <span class="p">(</span><span class="k">SELECT</span> <span class="n">ST_Extent</span><span class="p">(</span><span class="nv">"geom"</span><span class="p">)</span> <span class="k">as</span> <span class="n">extent</span> <span class="k">from</span> <span class="nv">"land_cover"</span><span class="p">),</span> <span class="mi">10000</span><span class="p">),</span>
             <span class="mi">2193</span>
     <span class="p">)</span> <span class="k">as</span> <span class="n">geom</span>
-<span class="k">INTO</span> <span class="ss">&quot;hexgrid&quot;</span><span class="p">;</span>
+<span class="k">INTO</span> <span class="nv">"hexgrid"</span><span class="p">;</span>
 </code></pre></div>
 <p>The next step is to remove the hexagons that don&#39;t cover land. The follow query finds hexagons that
 intersect with the land cover layer and contain at least 30% land. This factor is a somewhat arbitrary - 

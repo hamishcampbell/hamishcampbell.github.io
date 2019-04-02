@@ -63,8 +63,6 @@ for Auckland (or, better yet, the whole of New Zealand).
             <ul class="left">
                 <li><a href="/"><span>Home</span></a></li>
                 
-                <li><a href="/maps/"><span>Maps</span></a></li>
-                
                 
                 <li><a><span>Auckland Suburbs - Part 1</span></a></li>
                 
@@ -105,26 +103,26 @@ oddly enough - by the New Zealand Fire Service Commission. And if so, you probab
     <span class="n">mb</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span>
     <span class="n">ad</span><span class="p">.</span><span class="n">locality</span><span class="p">,</span>
     <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">locality_count</span>
-<span class="k">INTO</span> <span class="ss">&quot;meshblock-localities&quot;</span> 
-<span class="k">FROM</span> <span class="ss">&quot;meshblocks&quot;</span> <span class="k">as</span> <span class="n">mb</span>
-<span class="k">INNER</span> <span class="k">JOIN</span> <span class="ss">&quot;electoral-addresses&quot;</span> <span class="k">as</span> <span class="n">ad</span> 
+<span class="k">INTO</span> <span class="nv">"meshblock-localities"</span> 
+<span class="k">FROM</span> <span class="nv">"meshblocks"</span> <span class="k">as</span> <span class="n">mb</span>
+<span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">"electoral-addresses"</span> <span class="k">as</span> <span class="n">ad</span> 
 <span class="k">ON</span> <span class="n">ST_Intersects</span><span class="p">(</span><span class="n">mb</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">ST_SetSRID</span><span class="p">(</span><span class="n">ad</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span> <span class="mi">2193</span><span class="p">))</span>
-<span class="k">WHERE</span> <span class="n">mb</span><span class="p">.</span><span class="n">ta2014_nam</span> <span class="o">=</span> <span class="s1">&#39;Auckland&#39;</span>
+<span class="k">WHERE</span> <span class="n">mb</span><span class="p">.</span><span class="n">ta2014_nam</span> <span class="o">=</span> <span class="s1">'Auckland'</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">mb</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ad</span><span class="p">.</span><span class="n">locality</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">ad</span><span class="p">.</span><span class="n">locality</span><span class="p">,</span> <span class="n">locality_count</span> <span class="k">DESC</span>
 </code></pre></div>
 <p>This new table <code>meshblock-localities</code> now has duplicate meshblocks for each locality found, so we select distinct meshblocks by picking the most common locality found:</p>
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="k">ON</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="n">locality</span><span class="p">,</span> <span class="n">locality_count</span><span class="p">,</span> <span class="n">geom</span>
-<span class="k">INTO</span> <span class="ss">&quot;meshblock-localities-distinct&quot;</span>
-<span class="k">FROM</span> <span class="ss">&quot;meshblock-localities&quot;</span>
+<span class="k">INTO</span> <span class="nv">"meshblock-localities-distinct"</span>
+<span class="k">FROM</span> <span class="nv">"meshblock-localities"</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">id</span><span class="p">,</span> <span class="n">locality_count</span> <span class="k">DESC</span><span class="p">;</span><span class="o">*/</span>
 </code></pre></div>
 <p>Finally, we still have individual meshblocks, but we really want to join localities together to form single polygons:</p>
 <div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
     <span class="n">locality</span><span class="p">,</span>
     <span class="n">ST_UNION</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span> <span class="k">as</span> <span class="n">geom</span>
-<span class="k">INTO</span> <span class="ss">&quot;meshblock-localities-union&quot;</span>
-<span class="k">FROM</span> <span class="ss">&quot;meshblock-localities-distinct&quot;</span>
+<span class="k">INTO</span> <span class="nv">"meshblock-localities-union"</span>
+<span class="k">FROM</span> <span class="nv">"meshblock-localities-distinct"</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">locality</span><span class="p">;</span>
 </code></pre></div>
 <p>Now our table <code>meshblock-localities-union</code> has just the

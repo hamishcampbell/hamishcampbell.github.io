@@ -61,8 +61,6 @@ grid lines.
             <ul class="left">
                 <li><a href="/"><span>Home</span></a></li>
                 
-                <li><a href="/maps/"><span>Maps</span></a></li>
-                
                 
                 <li><a><span>Azimuth Orthographic Projections with QGIS</span></a></li>
                 
@@ -117,29 +115,29 @@ from the project properties dialog. Check &quot;Enable &#39;on the fly&#39; CRS 
 script to clip your geometries to within the visible area.</p>
 
 <p>This is copied from this <a href="http://gis.stackexchange.com/questions/78346/ortho-projection-produces-artifacts/78441">excellent GIS Stackexchange answer</a>:</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">from</span> <span class="nn">qgis.core</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">qgis.utils</span>
 
-<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">imp</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="p">,</span> <span class="n">os</span><span class="p">,</span> <span class="n">imp</span>
 <span class="kn">import</span> <span class="nn">fTools</span>
 <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fTools</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span>
-<span class="n">ftu</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_source</span><span class="p">(</span><span class="s">&#39;ftools_utils&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s">&#39;tools&#39;</span><span class="p">,</span><span class="s">&#39;ftools_utils.py&#39;</span><span class="p">))</span>
+<span class="n">ftu</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_source</span><span class="p">(</span><span class="s">'ftools_utils'</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s">'tools'</span><span class="p">,</span><span class="s">'ftools_utils.py'</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">doClip</span><span class="p">(</span><span class="n">iface</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">110</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s">&#39;result.shp&#39;</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">doClip</span><span class="p">(</span><span class="n">iface</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">110</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s">'result.shp'</span><span class="p">):</span>
     <span class="n">sourceLayer</span> <span class="o">=</span> <span class="n">iface</span><span class="o">.</span><span class="n">activeLayer</span><span class="p">()</span>
 
     <span class="n">sourceCrs</span> <span class="o">=</span> <span class="n">sourceLayer</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span><span class="o">.</span><span class="n">crs</span><span class="p">()</span>
 
-    <span class="n">targetProjString</span> <span class="o">=</span> <span class="s">&quot;+proj=ortho +lat_0=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; +lon_0=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;+x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs&quot;</span>
+    <span class="n">targetProjString</span> <span class="o">=</span> <span class="s">"+proj=ortho +lat_0="</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">+</span> <span class="s">" +lon_0="</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span> <span class="o">+</span> <span class="s">"+x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"</span>
     <span class="n">targetCrs</span> <span class="o">=</span> <span class="n">QgsCoordinateReferenceSystem</span><span class="p">()</span>
     <span class="n">targetCrs</span><span class="o">.</span><span class="n">createFromProj4</span><span class="p">(</span><span class="n">targetProjString</span><span class="p">)</span>
 
     <span class="n">transformTargetToSrc</span> <span class="o">=</span> <span class="n">QgsCoordinateTransform</span><span class="p">(</span><span class="n">targetCrs</span><span class="p">,</span> <span class="n">sourceCrs</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span>
 
     <span class="k">def</span> <span class="nf">circlePolygon</span><span class="p">(</span><span class="n">nPoints</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">6370000</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">clipdisc</span> <span class="o">=</span> <span class="n">QgsVectorLayer</span><span class="p">(</span><span class="s">&quot;Polygon?crs=epsg:4326&quot;</span><span class="p">,</span> <span class="s">&quot;Clip disc&quot;</span><span class="p">,</span> <span class="s">&quot;memory&quot;</span><span class="p">)</span>
+        <span class="n">clipdisc</span> <span class="o">=</span> <span class="n">QgsVectorLayer</span><span class="p">(</span><span class="s">"Polygon?crs=epsg:4326"</span><span class="p">,</span> <span class="s">"Clip disc"</span><span class="p">,</span> <span class="s">"memory"</span><span class="p">)</span>
         <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">nPoints</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
         <span class="n">circlePoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">transformTargetToSrc</span><span class="p">(</span><span class="n">QgsPoint</span><span class="p">(</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">*</span><span class="n">radius</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">*</span><span class="n">radius</span><span class="p">))</span> <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles</span> <span class="p">])</span>
         <span class="n">sortIdx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">circlePoints</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
@@ -154,9 +152,9 @@ script to clip your geometries to within the visible area.</p>
 
     <span class="n">auxDisc</span> <span class="o">=</span> <span class="n">circlePolygon</span><span class="p">(</span><span class="n">nPoints</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">)</span>
 
-    <span class="c">###### The clipping stuff</span>
-    <span class="c">## Code taken from the fTools plugin</span>
-
+    <span class="c1">###### The clipping stuff
+</span>    <span class="c1">## Code taken from the fTools plugin
+</span>
     <span class="n">vproviderA</span> <span class="o">=</span> <span class="n">sourceLayer</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span>
     <span class="n">vproviderB</span> <span class="o">=</span> <span class="n">auxDisc</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span>
 
@@ -167,7 +165,7 @@ script to clip your geometries to within the visible area.</p>
     <span class="n">fitA</span> <span class="o">=</span> <span class="n">vproviderA</span><span class="o">.</span><span class="n">getFeatures</span><span class="p">()</span>
 
     <span class="n">nElement</span> <span class="o">=</span> <span class="mi">0</span>  
-    <span class="n">writer</span> <span class="o">=</span> <span class="n">QgsVectorFileWriter</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span> <span class="s">&#39;UTF8&#39;</span><span class="p">,</span> <span class="n">vproviderA</span><span class="o">.</span><span class="n">fields</span><span class="p">(),</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">QgsVectorFileWriter</span><span class="p">(</span> <span class="n">filename</span><span class="p">,</span> <span class="s">'UTF8'</span><span class="p">,</span> <span class="n">vproviderA</span><span class="o">.</span><span class="n">fields</span><span class="p">(),</span>
                                   <span class="n">vproviderA</span><span class="o">.</span><span class="n">geometryType</span><span class="p">(),</span> <span class="n">vproviderA</span><span class="o">.</span><span class="n">crs</span><span class="p">()</span> <span class="p">)</span>
 
     <span class="n">index</span> <span class="o">=</span> <span class="n">ftu</span><span class="o">.</span><span class="n">createIndex</span><span class="p">(</span> <span class="n">vproviderB</span> <span class="p">)</span>
@@ -216,7 +214,7 @@ script to clip your geometries to within the visible area.</p>
             <span class="k">continue</span>
     <span class="k">del</span> <span class="n">writer</span>
 
-    <span class="n">resultLayer</span> <span class="o">=</span> <span class="n">QgsVectorLayer</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sourceLayer</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; - Ortho: Lat &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;, Lon &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lon</span><span class="p">),</span> <span class="s">&quot;ogr&quot;</span><span class="p">)</span>
+    <span class="n">resultLayer</span> <span class="o">=</span> <span class="n">QgsVectorLayer</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sourceLayer</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">+</span> <span class="s">" - Ortho: Lat "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">+</span> <span class="s">", Lon "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lon</span><span class="p">),</span> <span class="s">"ogr"</span><span class="p">)</span>
     <span class="n">QgsMapLayerRegistry</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">addMapLayer</span><span class="p">(</span><span class="n">resultLayer</span><span class="p">)</span>
 </code></pre></div>
 <p>Copy that somewhere in your python path. I saved it as <code>clipper.py</code> in my QGIS python folder.</p>
