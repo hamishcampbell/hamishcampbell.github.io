@@ -2,13 +2,12 @@
 @min-content-width: 400px;
 
 @crumb-height: 48px;
-@crumb-height-small: 34px;
 
 html, body {
     margin: 0;
     padding: 0;
-    font-size: 14px;
-        font-family: "Montserrat Alternates", "Arial", "Helvetica", sans-serif;
+    font-size: 16px;
+    font-family: "Montserrat Alternates", "Arial", "Helvetica", sans-serif;
     line-height: 2em;
 }
 
@@ -16,10 +15,14 @@ body {
     background: #404040;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 a {
     color: #666;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.1s;
 
     &:hover {
         color: #F99;
@@ -28,8 +31,8 @@ a {
 
 body > header {
     z-index: 1;
-    box-sizing: border-box;
     position: fixed;
+    white-space: nowrap;
 
     top: 0;
     width: 100%;
@@ -75,7 +78,7 @@ body > header > h1 {
 
     max-width: 680px;
     margin: auto;
-    padding: 38px 16px 16px;
+    padding: 32px 16px 16px;
 
     .profile {
         background-image: url(me.jpg);
@@ -91,8 +94,21 @@ body > header > h1 {
         font-size: 1.2em;
         color: #666;
         line-height: 2.3em;
-        margin-top: 4px;
-        text-align: justify;
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .splash {
+        .profile {
+            width: 110px;
+            height: 110px;
+            margin: 8px 16px 16px 0;
+        }
+        p {
+            font-size: 1.05em;
+            line-height: 2.1em;
+        }
     }
 }
 
@@ -107,10 +123,6 @@ body > header > h1 {
         text-align: left;
     }
 
-    h1 {
-        text-shadow: 1px 1px 0px #FFF, 1px 2px 0px #000;
-    }
-
     .affixTop & {
         margin-top: 205px + @crumb-height;
     }
@@ -120,7 +132,7 @@ body > header > h1 {
     .content {
         margin-top: 147px;
         .affixTop & {
-            margin-top: 147px + @crumb-height-small;
+            margin-top: 147px + @crumb-height;
         }
     }
 }
@@ -133,7 +145,6 @@ body > header > h1 {
         padding: 0;
     }
     .meta {
-        font-size: 0.9em;
         margin: 0;
         padding: 0;
         line-height: 1em;
@@ -144,7 +155,6 @@ body > header > h1 {
 #crumbs {
     background: #E6E6E6;
     position: relative;
-    box-sizing: border-box;
     height: @crumb-height;
     padding: @crumb-height / 4 0;
     z-index: 1;
@@ -166,9 +176,13 @@ body > header > h1 {
         padding: 0 @crumb-height / 2;
         margin: 0 auto;
         list-style: none;
+        white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     li {
-        float: left;
+        display: inline;
         margin: 0;
         padding: 0;
     }
@@ -183,7 +197,6 @@ body > header > h1 {
     }
     li:after {
         content: "/";
-        float: right;
         color: #666;
         font-size: 0.9em;
     }
@@ -195,24 +208,6 @@ body > header > h1 {
     }
     li:last-child span {
         margin-right: 0;
-    }
-}
-
-@media all and (max-width: 550px) {
-    #crumbs {
-        height: @crumb-height-small;
-        padding: @crumb-height-small / 4 0;
-        font-size: 12px;
-
-        ul {
-            line-height: @crumb-height-small / 2;
-            height: @crumb-height-small / 2;
-            max-width: @max-content-width;
-            padding: 0 @crumb-height-small / 2;
-        }
-        span {
-            margin: 0 4px;
-        }
     }
 }
 
@@ -254,7 +249,6 @@ article > header h1 {
 }
 section > header p.meta,
 article > header p.meta {
-    font-size: 0.9em;
     color: #666;
     margin-top: 0;
 }
@@ -280,14 +274,12 @@ article > div p {
 }
 
 .home > .left {
-    box-sizing: border-box;
     float: left;
     width: 50%;
     padding-right: 8px;
     padding-left: 8px;
 }
 .home > .right {
-    box-sizing: border-box;
     float: right;
     width: 50%;
     padding-right: 8px;
@@ -319,6 +311,11 @@ footer {
     }
 }
 
+article a, .article-excerpt a {
+    color: #C66;
+    font-weight: 900;
+
+}
 article .imageFeature {
 
     float: left;
@@ -356,7 +353,7 @@ article .highlight {
 
 
 hr {
-    margin: 12px 0 36px 0;
+    margin: 12px 0 28px 0;
     padding: 0;
     height: 1px;
     border: none;
