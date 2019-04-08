@@ -272,6 +272,14 @@ article a,
   color: #C66;
   font-weight: 900;
 }
+article .imageThumb {
+  float: left;
+  margin-right: 16px;
+}
+article .imageThumb img {
+  border: 1px solid #CCC;
+  width: 300px;
+}
 article .imageFeature {
   float: left;
   margin-right: 16px;
@@ -279,6 +287,7 @@ article .imageFeature {
 article .imageFeature img {
   border: 1px solid #CCC;
 }
+.article-excerpt .imagePreview img,
 article .imagePreview img {
   border: 1px solid #CCC;
   width: 100%;

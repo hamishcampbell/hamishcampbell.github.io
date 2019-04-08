@@ -7,6 +7,26 @@
         <atom:link href="http://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Te Kōpuke / Mount Saint John</title>
+                <description>&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Mount_Saint_John_(New_Zealand)&quot;&gt;Te Kōpuke / Mt Saint John&lt;/a&gt; is one of Auckland&amp;#39;s many peaks in the Auckland volcanic field, and one of our most underrated cones if you ask me. Unfortunately it is obscured by housing these days, but a look at the Lidar-derived elevation model reveals its exceptionally round scoria cone shape. If you know Auckland&amp;#39;s geography, you might be surprised to learn it is the source of the lava flow that built &lt;a href=&quot;https://en.wikipedia.org/wiki/Meola_Reef&quot;&gt;Meola Reef&lt;/a&gt; in the Waitematā Harbour. Until recently it was thought the reef was formed by the eruption of &lt;a href=&quot;https://en.wikipedia.org/wiki/Maungawhau&quot;&gt;Maungawhau&lt;/a&gt;, but geochemical testing revealed that Mangawhau had erupted through an earlier lava flow from Te Kōpuke.&lt;/p&gt;
+
+&lt;h3&gt;Datasources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz/layer/53405-auckland-lidar-1m-dem-2013/&quot;&gt;Auckland Lidar 1m DEM (2013)&lt;/a&gt; (LINZ)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <pubDate>Mon, 08 Apr 2019 00:00:00 +1200</pubDate>
+                <link>http://polemic.nz/2019/04/08/te-kopuke/</link>
+                
+                <enclosure url="http://polemic.nz/assets/maps/20190408-TeKopuke_Thumb.png" type="image/png" />
+                
+                
+                
+                <guid isPermaLink="true">http://polemic.nz/2019/04/08/te-kopuke/</guid>
+            </item>
+        
+            <item>
                 <title>Auckland Cycleways</title>
                 <description>&lt;p&gt;I&amp;#39;ve been working with some cycling data recently, and the good people at &lt;a href=&quot;https://www.bikeauckland.org.nz/project-watch-march-2019/&quot;&gt;Bike Auckland&lt;/a&gt; have asked if they can post a little map I made the other day. This is a quick look at
 Aucklands cycling infrastructure as of March 2019, from the Auckland Transport
@@ -510,20 +530,6 @@ of crashes on New Zealand roads.&lt;/p&gt;
                 
                 
                 <guid isPermaLink="true">http://polemic.nz/2015/01/27/warbirds/</guid>
-            </item>
-        
-            <item>
-                <title>Electro-Punk</title>
-                <description>&lt;p&gt;An ice-cream machine at The Tannery in New Lynn. A curious mix of modern and old.&lt;/p&gt;
-</description>
-                <pubDate>Sat, 24 Jan 2015 00:00:00 +1300</pubDate>
-                <link>http://polemic.nz/2015/01/24/electro-punk/</link>
-                
-                
-                <enclosure url="http://polemic.nz/assets/photos/20150124-ElectroPunk_Thumb.jpg" type="image/jpg" />
-                
-                
-                <guid isPermaLink="true">http://polemic.nz/2015/01/24/electro-punk/</guid>
             </item>
         
     </channel>
