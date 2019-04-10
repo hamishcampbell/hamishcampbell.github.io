@@ -30,11 +30,11 @@ body > header {
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 24px 0 18px;
-  color: #F2F2F2;
+  color: #F4F4F4;
 }
 body > header a {
-  color: #F2F2F2;
-  border-bottom: 1px dotted #F2F2F2;
+  color: #F4F4F4;
+  border-bottom: 1px dotted #F4F4F4;
   white-space: nowrap;
 }
 body > header a:hover {
@@ -57,39 +57,46 @@ body > header > h1 {
   }
 }
 .splash {
-  max-width: 680px;
-  margin: auto;
-  padding: 32px 16px 16px;
-}
-.splash .profile {
-  background-image: url(me.jpg);
-  background-size: 100%;
-  border-radius: 50%;
-  float: left;
-  margin: 0 24px 16px 0;
-  width: 120px;
-  height: 120px;
-}
-.splash p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
   font-size: 1.2em;
   color: #666;
   line-height: 2.3em;
-  margin: 0;
+}
+.splash .headshot {
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-image: url(hamish-campbell-042019.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  border: 2px solid #F9F9F9;
+  box-shadow: 0 0 3px #999;
+  margin-right: 2em;
+}
+.splash .bio {
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 @media all and (max-width: 550px) {
-  .splash .profile {
-    width: 110px;
-    height: 110px;
-    margin: 8px 16px 16px 0;
+  .headshot {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1em;
   }
-  .splash p {
-    font-size: 1.05em;
-    line-height: 2.1em;
+  .splash {
+    font-size: 0.95em;
+    line-height: 1.9em;
+    flex-wrap: wrap;
   }
 }
 .content {
   margin-top: 205px;
-  background: #F2F2F2;
+  background: #F4F4F4;
   padding-bottom: 24px;
   position: relative;
   z-index: 1;
@@ -365,7 +372,7 @@ article table tbody tr:nth-child(odd) {
   background-color: #FFF;
 }
 article table tbody tr:nth-child(even) {
-  background-color: #F2F2F2;
+  background-color: #F4F4F4;
 }
 article table tbody tr:hover {
   background-color: #DDD;

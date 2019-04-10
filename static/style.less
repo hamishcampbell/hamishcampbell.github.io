@@ -43,11 +43,11 @@ body > header {
 
     padding: 24px 0 18px;
 
-    color: #F2F2F2;
+    color: #F4F4F4;
 
     a {
-        color: #F2F2F2;
-        border-bottom: 1px dotted #F2F2F2;
+        color: #F4F4F4;
+        border-bottom: 1px dotted #F4F4F4;
         white-space: nowrap;
 
         &:hover {
@@ -75,46 +75,53 @@ body > header > h1 {
 }
 
 .splash {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-    max-width: 680px;
-    margin: auto;
-    padding: 32px 16px 16px;
+    padding: 2em 0;
 
-    .profile {
-        background-image: url(me.jpg);
-        background-size: 100%;
+    font-size: 1.2em;
+    color: #666;
+    line-height: 2.3em;
+
+    .headshot {
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        background-image: url(hamish-campbell-042019.jpg);
+        background-size: cover;
         border-radius: 50%;
-        float: left;
-        margin: 0 24px 16px 0;
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
+        border: 2px solid #F9F9F9;
+        box-shadow: 0 0 3px #999;
+        margin-right: 2em;
     }
 
-    p {
-        font-size: 1.2em;
-        color: #666;
-        line-height: 2.3em;
-        margin: 0;
+    .bio {
+        flex-grow: 1;
+        flex-shrink: 1;
     }
 }
 
 @media all and (max-width: 550px) {
+    .headshot {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 1em;
+    }
     .splash {
-        .profile {
-            width: 110px;
-            height: 110px;
-            margin: 8px 16px 16px 0;
-        }
-        p {
-            font-size: 1.05em;
-            line-height: 2.1em;
-        }
+        font-size: 0.95em;
+        line-height: 1.9em;
+        flex-wrap: wrap;
     }
 }
 
 .content {
     margin-top: 205px;
-    background: #F2F2F2;
+    background: #F4F4F4;
     padding-bottom: 24px;
     position: relative;
     z-index: 1;
@@ -426,7 +433,7 @@ article {
             background-color: #FFF;
         }
         tbody tr:nth-child(even) {
-            background-color: #F2F2F2;
+            background-color: #F4F4F4;
         }
         tbody tr:hover {
             background-color: #DDD;
