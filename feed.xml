@@ -37,7 +37,7 @@ as the Oceania OpenStreetMap communities, for a total of 4 days of workshops, ta
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/20191118-points-buffer-gen.png&quot; alt=&quot;Simple Buffer Generator&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;It&amp;#39;s important to note the &amp;quot;Geometry Type&amp;quot; option here - it mush match the output of the expression. In
+&lt;p&gt;It&amp;#39;s important to note the &amp;quot;Geometry Type&amp;quot; option here - it must match the output of the expression. In
 this case, the input is a point layer, and the &lt;code&gt;buffer&lt;/code&gt; generates a 100m buffered polygon for each feature
 geometry referred to by the variable &lt;code&gt;$geometry&lt;/code&gt;.&lt;/p&gt;
 
