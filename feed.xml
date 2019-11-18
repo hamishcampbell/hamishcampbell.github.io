@@ -7,6 +7,222 @@
         <atom:link href="https://polemic.nz/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>FOSS4G / QGIS Geometry Generators</title>
+                <description>&lt;p&gt;Last week I was fortunate to attend and present at FOSS4G SOTM&lt;a href=&quot;#footnotes&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Oceania. 
+The conference, now in it&amp;#39;s second year, brings together Open Source developers &amp;amp; users in GIS, as well
+as the Oceania OpenStreetMap communities, for a total of 4 days of workshops, talks and community events.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;tl&quot; dir=&quot;ltr&quot;&gt;Hooorraayy &lt;a href=&quot;https://t.co/PmlNzJ5TTb&quot;&gt;pic.twitter.com/PmlNzJ5TTb&lt;/a&gt;&lt;/p&gt;&amp;mdash; FOSS4G SotM Oceania (@FOSS4G_Oceania) &lt;a href=&quot;https://twitter.com/FOSS4G_Oceania/status/1195116972314218496?ref_src=twsrc%5Etfw&quot;&gt;November 14, 2019&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Durign the lightening talk session I gave a brief introduction to QGIS Geometry Generators. I&amp;#39;ve had a few requests for more detail on the techniques covered.&lt;/p&gt;
+
+&lt;h3&gt;What is a Geometry Generator&lt;/h3&gt;
+
+&lt;p&gt;A Geometry Generator is a symbol layer type that lets you use code to create new geometries from existing features, and use the new &amp;#39;generated&amp;#39; geometries as symbols that can, in turn, have styles applied.&lt;/p&gt;
+
+&lt;p&gt;This is a powerful feature best explained with an example.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note that many of these generators rely on functions released in version 3.10, and I recommend you upgrade your QGIS version if you haven&amp;#39;t done so already!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Creating a Buffer&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#39;s say we have a simple points layer, like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-points.png&quot; alt=&quot;A Basic Points Dataset&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;We can open the layer symbology and select a &amp;quot;Geometry Generator&amp;quot; style layer with a simple expression&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;buffer($geometry, 100)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-points-buffer-gen.png&quot; alt=&quot;Simple Buffer Generator&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s important to note the &amp;quot;Geometry Type&amp;quot; option here - it mush match the output of the expression. In
+this case, the input is a point layer, and the &lt;code&gt;buffer&lt;/code&gt; generates a 100m buffered polygon for each feature
+geometry referred to by the variable &lt;code&gt;$geometry&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The result is what you might expect:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-points-buffered.png&quot; alt=&quot;A Basic Points Dataset buffered by 100m&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;So far not very exciting. You could have just used a standard marker symbol with a radius of 50 metres at scale, for example. Except to note that this buffer will be correctly projected over larger scales, and that
+this can be applied to any type of geometry - lines, points or polygons, to give the same effect.&lt;/p&gt;
+
+&lt;h3&gt;Using Built-in Variables&lt;/h3&gt;
+
+&lt;p&gt;Now we&amp;#39;ll add a second symbol to the same points layer, this time it&amp;#39;s generating lines with an &amp;quot;arrow&amp;quot; symbol attached. I&amp;#39;ll show the code, the result, and walk through what&amp;#39;s happening:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;difference(
+    make_line(
+        $geometry,
+        @map_extent_center
+    ),
+    make_circle(
+        @map_extent_center,
+        250
+    )
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-points-arrows.png&quot; alt=&quot;Points with an additional lines symbol to the centre of the map&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;We have a number of built-in variables at our displosal. Some, like &lt;code&gt;$area&lt;/code&gt; refer to the current feature. Others, like &lt;code&gt;@map_extent_center&lt;/code&gt; refer to the state of the displayed map.&lt;/p&gt;
+
+&lt;p&gt;This expression is using &lt;code&gt;make_line&lt;/code&gt; to generate a line from the current feature to the centre of the current
+map view. Since all of our lines would converge at the map centre, I&amp;#39;m also using &lt;code&gt;create_circle&lt;/code&gt; to generate a 250m circular &amp;#39;mask&amp;#39; at the centre of the map and using &lt;code&gt;difference&lt;/code&gt; to clip the line. The result is a series of arrows originating at our points, terminating 250m from the centre of the map.&lt;/p&gt;
+
+&lt;h4&gt;Adding Randomness&lt;/h4&gt;
+
+&lt;p&gt;Given a lines layer like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-lines.png&quot; alt=&quot;Simple lines layer&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;We can modify the geometry of the lines in other interesting ways using simple maths functions available
+to all expressions, and by using &lt;code&gt;array_foreach&lt;/code&gt; and &lt;code&gt;generate_series&lt;/code&gt; to iterate over sequences.&lt;/p&gt;
+
+&lt;p&gt;In this example, the &lt;code&gt;array_foreach&lt;/code&gt; returns an array of points, where each point is an interpolated point
+every 100m along the line, translated randomly by up to 10m vertically or horizontally. &lt;code&gt;make_line&lt;/code&gt; then
+combines the array of points back into a line.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;make_line(
+    array_foreach(
+        generate_series(
+            0, length($geometry), 100
+        ),
+        translate(
+            line_interpolate_point($geometry, @element),
+            rand(-10, 10),
+            rand(-10, 10)
+        )
+    )
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The result is a degree of randomness added to the output symbol:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-lines-randomness.png&quot; alt=&quot;Simple lines layer with randomness&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Duplicating the symbol along with the original style can give the symbol a hand-drawn effect:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-lines-randomness-multiple.png&quot; alt=&quot;Lines with mutliple randomised symbols giving a drawn effect&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-lines-sketch.png&quot; alt=&quot;A real roads dataset with a sketch effect&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;A variant of the approach where each interpolated point is randomly sprinkled with &amp;#39;sparks&amp;#39; - 
+a fun way to symbolise &lt;a href=&quot;https://data.linz.govt.nz/layer/50219-nz-powerline-centrelines-topo-1500k/&quot;&gt;Transmission Lines&lt;/a&gt; from LINZ, for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-lines-electric.png&quot; alt=&quot;A real roads dataset with a sketch effect&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Offsets and Fancier Markup&lt;/h3&gt;
+
+&lt;p&gt;In this example, the &lt;code&gt;line_substring&lt;/code&gt; expression is building a set of new lines for each inner vertex
+each feature – that is, for each &lt;em&gt;angle&lt;/em&gt; in the line, it construct a simple 3-vertex line starting 100m
+before and ending 100m after the inner vertex. The &lt;code&gt;offset_curve&lt;/code&gt; function creates a rounded version of the
+new lines, offset 75m to one side of the original location. &lt;code&gt;collect_geometries&lt;/code&gt; turns the array of lines
+into a single MultiLine for rendering.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;collect_geometries(
+    array_foreach(
+        generate_series(2, num_points($geometry) - 1),
+        offset_curve(
+            line_substring(
+                $geometry,
+                 distance_to_vertex(
+                    $geometry,
+                    @element - 1
+                ) - 100,
+                distance_to_vertex(
+                    $geometry,
+                    @element - 1
+                ) + 100
+            ),
+            - 75
+        )
+    )
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Adding a arrow marker symbol at the end of the generated line gives:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-lines-offset-arrows.png&quot; alt=&quot;Lines layer with offset arrows&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;A Beautiful Raster Hack&lt;/h3&gt;
+
+&lt;p&gt;This technique was first documented and shared by &lt;a href=&quot;https://twitter.com/cartocalypse&quot;&gt;@cartocalypse&lt;/a&gt; on their &lt;a href=&quot;https://hannes.enjoys.it/blog/2019/09/dynamic-elevation-profile-lines-as-qgis-geometry-generator/&quot;&gt;blog here&lt;/a&gt;. I recommend you read that post for more background.&lt;/p&gt;
+
+&lt;p&gt;Firstly create an &lt;em&gt;empty&lt;/em&gt; polygon layer. A new scratch layer with the &amp;quot;Polygon / CurvePolygon&amp;quot; geometry type will do.&lt;/p&gt;
+
+&lt;p&gt;Secondly set the symbology type to &amp;quot;Inverted Polygon&amp;quot;. Why? Because this will generate a &lt;em&gt;single&lt;/em&gt; feature for the map extent not covered by polygons in the current layer. And since there are &lt;strong&gt;no&lt;/strong&gt; polygons the &amp;quot;inverted polygons&amp;quot; symbol gifts us a single feature that covers the extent of the map. Wonderful!&lt;/p&gt;
+
+&lt;p&gt;Thirdly you&amp;#39;ll need a raster dataset. In this example I use the &lt;a href=&quot;https://data.linz.govt.nz/layer/51768-nz-8m-digital-elevation-model-2012/&quot;&gt;New Zealand 8m DEM&lt;/a&gt; avaialble from LINZ. This layer expresses modelled height from sea-level for the extent of mainland New Zealand.&lt;/p&gt;
+
+&lt;p&gt;Finally configure a Geometry Generator symbol for the layer. In my version below I&amp;#39;ve generated a 40 by
+40 cell grid and read the raster value (i.e. elevation). I&amp;#39;ve used the raster value to create circles scaled
+to the elevation value:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;with_variable(
+    'raster_layer',
+    '8m_DEM_ccdf4eaf_1948_423d_a50a_bfdc20912825',       
+    collect_geometries(
+        array_foreach(
+            generate_series(
+                y(@map_extent_center)-(@map_extent_height/2), 
+                y(@map_extent_center)+(@map_extent_height/2),  
+                @map_extent_height / 40
+            ),
+            with_variable(
+                'y',
+                @element,
+                collect_geometries(
+                    array_foreach(
+                        generate_series(
+                            x(@map_extent_center)-(@map_extent_width/2),
+                            x(@map_extent_center)+(@map_extent_width/2),
+                            @map_extent_width / 40
+                        ),
+                        make_circle(
+                            make_point(@element, @y),                           
+                            coalesce(
+                                raster_value(
+                                    @raster_layer,
+                                    1,
+                                    transform( 
+                                        make_point(@element, @y),
+                                        @map_crs,
+                                        layer_property(@raster_layer,'crs')
+                                    )
+                                ),
+                                0 
+                            )*10
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The result (using an &lt;em&gt;empty&lt;/em&gt; scratch layer!):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20191118-nz-raster-elev.png&quot; alt=&quot;Generated point symbols from raster values.&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/20191118-nz-raster-elev-large.png&quot;&gt;Download link to a larger version&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Final Notes&lt;/h3&gt;
+
+&lt;p&gt;Geometry generators are a fun and powerful QGIS feature that extends what you can do with symbols far
+beyond standard symbol options. They allow you to do more with the raw geometries of your data, without
+creating intermediate layers just for display. Geometry Generators can be tricky to tame, so use the 
+&amp;quot;Expression Dialog&amp;quot; accessible  from the (somewhat mysterious) &lt;code&gt;ℇ&lt;/code&gt; button to get assistance and a 
+decent function reference. The built-in expressions are only the start - you can also use the full power of
+python to create your own functions from scratch by selecting &amp;quot;Function Editor&amp;quot; from the expression dialog.&lt;/p&gt;
+
+&lt;h3&gt;&lt;span id=&quot;footnotes&quot;&gt;Footnotes&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;sup&gt;1.&lt;/sup&gt; Recursively expanded to &lt;em&gt;Free and Open Source for Geospatial Information Systems &amp;amp; State of the Map – Oceania&lt;/em&gt;. Hey, naming things is hard.&lt;/p&gt;
+</description>
+                <pubDate>Mon, 18 Nov 2019 00:00:00 +1300</pubDate>
+                <link>https://polemic.nz/2019/11/18/foss4g-qgis-geometry-generators/</link>
+                
+                
+                
+                <guid isPermaLink="true">https://polemic.nz/2019/11/18/foss4g-qgis-geometry-generators/</guid>
+            </item>
+        
+            <item>
                 <title>Maungawhau / Mt Eden</title>
                 <description>&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Maungawhau&quot;&gt;Maungawhau / Mount Eden&lt;/a&gt; forms the highest point in Auckland City. It has some of the best views over the city and is a prominant feature of the skyline. It erupted roughly 28,000 years through an earlier magma flow generated by &lt;a href=&quot;/2019/04/08/te-kopuke/&quot;&gt;Te Kōpuke&lt;/a&gt;. Like many of Auckland&amp;#39;s scoria cones, it was subjected to various human interferences over the years: a resourvior is built into the northern side, the western side was quarried away, and various buildings have been constructed and since removed from the peak. Fortunately it is now under collective management by Auckland Council and local iwi to preserve it for future generations.&lt;/p&gt;
 
@@ -499,43 +715,6 @@ for the hexagonal intersections weighted by area. I won&amp;#39;t provide the de
                 
                 
                 <guid isPermaLink="true">https://polemic.nz/2015/02/20/nz-population-hexbin/</guid>
-            </item>
-        
-            <item>
-                <title>Auckland Crash Animation</title>
-                <description>&lt;p&gt;&lt;iframe src=&quot;//player.vimeo.com/video/118107645&quot; width=&quot;100%&quot; height=&quot;400&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;http://vimeo.com/118107645&quot;&gt;Auckland Central Crashes 2010-2014&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/user36859677&quot;&gt;Hamish Campbell&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;The NZTA collects detailed crash data from the NZ Police. This data,
-held in the NZ Crash Analysis System (CAS) is published regularly (&lt;a href=&quot;http://www.nzta.govt.nz/resources/crash-analysis-system-data/index.html&quot;&gt;here&lt;/a&gt; ) and
-provides detailed data on the location, causes and consequences
-of crashes on New Zealand roads.&lt;/p&gt;
-
-&lt;p&gt;The above animation shows all central Auckland crashes over the period Jan 2010 to June 2014 (the latest available data). Fatalities are coded in dark red, severe injury crashes in orange, minor injury crashes in yellow and no-injury crashes in blue. The map is made with QGIS and the frames generated with the &lt;a href=&quot;https://plugins.qgis.org/plugins/timemanager/&quot;&gt;TimeManager&lt;/a&gt; plugin.&lt;/p&gt;
-
-&lt;p&gt;This is a very simple view of the data. The tables contain lots of useful information, like:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The types of vehicles involved (as well as cyclists and pedestrians)&lt;/li&gt;
-&lt;li&gt;Weather and lighting conditions&lt;/li&gt;
-&lt;li&gt;Vehicle movement&lt;/li&gt;
-&lt;li&gt;Characteristics of the road&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;What sorts of questions would you ask, given the above information?&lt;/p&gt;
-
-&lt;h3&gt;Datasources&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.nzta.govt.nz/resources/crash-analysis-system-data/index.html&quot;&gt;CAS Crash Data 2000-2014&lt;/a&gt; (NZTA)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://data.linz.govt.nz&quot;&gt;Base data layers&lt;/a&gt; (LINZ)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <pubDate>Fri, 30 Jan 2015 00:00:00 +1300</pubDate>
-                <link>https://polemic.nz/2015/01/30/auckland-crashes-animation/</link>
-                
-                
-                
-                <guid isPermaLink="true">https://polemic.nz/2015/01/30/auckland-crashes-animation/</guid>
             </item>
         
     </channel>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--
+ ____   __   __    ____  _  _  __  ___ 
+(  _ \ /  \ (  )  (  __)( \/ )(  )/ __)
+ ) __/(  O )/ (_/\ ) _) / \/ \ )(( (__ 
+(__)   \__/ \____/(____)\_)(_/(__)\___)
+
+  by Hamish Campbell | Auckland | Aotearoa New Zealand
+
+  hn.campbell@gmail.com
+-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FOSS4G / QGIS Geometry Generators | Hamish Campbell | Polemic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/font-awesome.css">
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Montserrat+Alternates'>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://polemic.nz/feed.xml">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35371727-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Polemic</h1>
+        <p>Hamish Campbell &ndash; Aotearoa New Zealand</p>
+        <p class="ident">
+            <a href="http://github.com/hamishcampbell" target="_blank"><i class="icon-github"></i> GitHub</a> &ndash; 
+            <a href="http://twitter.com/polemic" target="_blank"><i class="icon-twitter"></i> Twitter</a> &ndash; 
+            <a href="http://linkedin.com/profile/view?id=55658318&amp;locale=en_US" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a> &ndash; 
+            <a href="https://keybase.io/polemic" target="_blank"><i class="icon-key"></i> Keybase</a>
+        </p>
+    </header>
+
+    <div class="content">
+
+        <div id="crumbs">
+            <ul>
+                <li><a href="/"><span>Home</span></a></li>
+                
+                
+                <li><a><span>FOSS4G / QGIS Geometry Generators</span></a></li>
+                
+            </ul>
+        </div>
+
+        <article>
+    <header>
+        <h1>FOSS4G / QGIS Geometry Generators</h1>
+        <p class="meta">18 November 2019</p>
+    </header>
+
+    <div>
+        <p>Last week I was fortunate to attend and present at FOSS4G SOTM<a href="#footnotes"><sup>1</sup></a> Oceania. 
+The conference, now in it&#39;s second year, brings together Open Source developers &amp; users in GIS, as well
+as the Oceania OpenStreetMap communities, for a total of 4 days of workshops, talks and community events.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="tl" dir="ltr">Hooorraayy <a href="https://t.co/PmlNzJ5TTb">pic.twitter.com/PmlNzJ5TTb</a></p>&mdash; FOSS4G SotM Oceania (@FOSS4G_Oceania) <a href="https://twitter.com/FOSS4G_Oceania/status/1195116972314218496?ref_src=twsrc%5Etfw">November 14, 2019</a></blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Durign the lightening talk session I gave a brief introduction to QGIS Geometry Generators. I&#39;ve had a few requests for more detail on the techniques covered.</p>
+
+<h3>What is a Geometry Generator</h3>
+
+<p>A Geometry Generator is a symbol layer type that lets you use code to create new geometries from existing features, and use the new &#39;generated&#39; geometries as symbols that can, in turn, have styles applied.</p>
+
+<p>This is a powerful feature best explained with an example.</p>
+
+<p><strong>Note that many of these generators rely on functions released in version 3.10, and I recommend you upgrade your QGIS version if you haven&#39;t done so already!</strong></p>
+
+<h3>Creating a Buffer</h3>
+
+<p>Let&#39;s say we have a simple points layer, like so:</p>
+
+<p><img src="/assets/images/20191118-points.png" alt="A Basic Points Dataset"></p>
+
+<p>We can open the layer symbology and select a &quot;Geometry Generator&quot; style layer with a simple expression</p>
+<div class="highlight"><pre><code class="language-" data-lang="">buffer($geometry, 100)
+</code></pre></div>
+<p><img src="/assets/images/20191118-points-buffer-gen.png" alt="Simple Buffer Generator"></p>
+
+<p>It&#39;s important to note the &quot;Geometry Type&quot; option here - it mush match the output of the expression. In
+this case, the input is a point layer, and the <code>buffer</code> generates a 100m buffered polygon for each feature
+geometry referred to by the variable <code>$geometry</code>.</p>
+
+<p>The result is what you might expect:</p>
+
+<p><img src="/assets/images/20191118-points-buffered.png" alt="A Basic Points Dataset buffered by 100m"></p>
+
+<p>So far not very exciting. You could have just used a standard marker symbol with a radius of 50 metres at scale, for example. Except to note that this buffer will be correctly projected over larger scales, and that
+this can be applied to any type of geometry - lines, points or polygons, to give the same effect.</p>
+
+<h3>Using Built-in Variables</h3>
+
+<p>Now we&#39;ll add a second symbol to the same points layer, this time it&#39;s generating lines with an &quot;arrow&quot; symbol attached. I&#39;ll show the code, the result, and walk through what&#39;s happening:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">difference(
+    make_line(
+        $geometry,
+        @map_extent_center
+    ),
+    make_circle(
+        @map_extent_center,
+        250
+    )
+)
+</code></pre></div>
+<p><img src="/assets/images/20191118-points-arrows.png" alt="Points with an additional lines symbol to the centre of the map"></p>
+
+<p>We have a number of built-in variables at our displosal. Some, like <code>$area</code> refer to the current feature. Others, like <code>@map_extent_center</code> refer to the state of the displayed map.</p>
+
+<p>This expression is using <code>make_line</code> to generate a line from the current feature to the centre of the current
+map view. Since all of our lines would converge at the map centre, I&#39;m also using <code>create_circle</code> to generate a 250m circular &#39;mask&#39; at the centre of the map and using <code>difference</code> to clip the line. The result is a series of arrows originating at our points, terminating 250m from the centre of the map.</p>
+
+<h4>Adding Randomness</h4>
+
+<p>Given a lines layer like so:</p>
+
+<p><img src="/assets/images/20191118-lines.png" alt="Simple lines layer"></p>
+
+<p>We can modify the geometry of the lines in other interesting ways using simple maths functions available
+to all expressions, and by using <code>array_foreach</code> and <code>generate_series</code> to iterate over sequences.</p>
+
+<p>In this example, the <code>array_foreach</code> returns an array of points, where each point is an interpolated point
+every 100m along the line, translated randomly by up to 10m vertically or horizontally. <code>make_line</code> then
+combines the array of points back into a line.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">make_line(
+    array_foreach(
+        generate_series(
+            0, length($geometry), 100
+        ),
+        translate(
+            line_interpolate_point($geometry, @element),
+            rand(-10, 10),
+            rand(-10, 10)
+        )
+    )
+)
+</code></pre></div>
+<p>The result is a degree of randomness added to the output symbol:</p>
+
+<p><img src="/assets/images/20191118-lines-randomness.png" alt="Simple lines layer with randomness"></p>
+
+<p>Duplicating the symbol along with the original style can give the symbol a hand-drawn effect:</p>
+
+<p><img src="/assets/images/20191118-lines-randomness-multiple.png" alt="Lines with mutliple randomised symbols giving a drawn effect"></p>
+
+<p><img src="/assets/images/20191118-lines-sketch.png" alt="A real roads dataset with a sketch effect"></p>
+
+<p>A variant of the approach where each interpolated point is randomly sprinkled with &#39;sparks&#39; - 
+a fun way to symbolise <a href="https://data.linz.govt.nz/layer/50219-nz-powerline-centrelines-topo-1500k/">Transmission Lines</a> from LINZ, for example:</p>
+
+<p><img src="/assets/images/20191118-lines-electric.png" alt="A real roads dataset with a sketch effect"></p>
+
+<h3>Offsets and Fancier Markup</h3>
+
+<p>In this example, the <code>line_substring</code> expression is building a set of new lines for each inner vertex
+each feature – that is, for each <em>angle</em> in the line, it construct a simple 3-vertex line starting 100m
+before and ending 100m after the inner vertex. The <code>offset_curve</code> function creates a rounded version of the
+new lines, offset 75m to one side of the original location. <code>collect_geometries</code> turns the array of lines
+into a single MultiLine for rendering.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">collect_geometries(
+    array_foreach(
+        generate_series(2, num_points($geometry) - 1),
+        offset_curve(
+            line_substring(
+                $geometry,
+                 distance_to_vertex(
+                    $geometry,
+                    @element - 1
+                ) - 100,
+                distance_to_vertex(
+                    $geometry,
+                    @element - 1
+                ) + 100
+            ),
+            - 75
+        )
+    )
+)
+</code></pre></div>
+<p>Adding a arrow marker symbol at the end of the generated line gives:</p>
+
+<p><img src="/assets/images/20191118-lines-offset-arrows.png" alt="Lines layer with offset arrows"></p>
+
+<h3>A Beautiful Raster Hack</h3>
+
+<p>This technique was first documented and shared by <a href="https://twitter.com/cartocalypse">@cartocalypse</a> on their <a href="https://hannes.enjoys.it/blog/2019/09/dynamic-elevation-profile-lines-as-qgis-geometry-generator/">blog here</a>. I recommend you read that post for more background.</p>
+
+<p>Firstly create an <em>empty</em> polygon layer. A new scratch layer with the &quot;Polygon / CurvePolygon&quot; geometry type will do.</p>
+
+<p>Secondly set the symbology type to &quot;Inverted Polygon&quot;. Why? Because this will generate a <em>single</em> feature for the map extent not covered by polygons in the current layer. And since there are <strong>no</strong> polygons the &quot;inverted polygons&quot; symbol gifts us a single feature that covers the extent of the map. Wonderful!</p>
+
+<p>Thirdly you&#39;ll need a raster dataset. In this example I use the <a href="https://data.linz.govt.nz/layer/51768-nz-8m-digital-elevation-model-2012/">New Zealand 8m DEM</a> avaialble from LINZ. This layer expresses modelled height from sea-level for the extent of mainland New Zealand.</p>
+
+<p>Finally configure a Geometry Generator symbol for the layer. In my version below I&#39;ve generated a 40 by
+40 cell grid and read the raster value (i.e. elevation). I&#39;ve used the raster value to create circles scaled
+to the elevation value:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">with_variable(
+    'raster_layer',
+    '8m_DEM_ccdf4eaf_1948_423d_a50a_bfdc20912825',       
+    collect_geometries(
+        array_foreach(
+            generate_series(
+                y(@map_extent_center)-(@map_extent_height/2), 
+                y(@map_extent_center)+(@map_extent_height/2),  
+                @map_extent_height / 40
+            ),
+            with_variable(
+                'y',
+                @element,
+                collect_geometries(
+                    array_foreach(
+                        generate_series(
+                            x(@map_extent_center)-(@map_extent_width/2),
+                            x(@map_extent_center)+(@map_extent_width/2),
+                            @map_extent_width / 40
+                        ),
+                        make_circle(
+                            make_point(@element, @y),                           
+                            coalesce(
+                                raster_value(
+                                    @raster_layer,
+                                    1,
+                                    transform( 
+                                        make_point(@element, @y),
+                                        @map_crs,
+                                        layer_property(@raster_layer,'crs')
+                                    )
+                                ),
+                                0 
+                            )*10
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+</code></pre></div>
+<p>The result (using an <em>empty</em> scratch layer!):</p>
+
+<p><img src="/assets/images/20191118-nz-raster-elev.png" alt="Generated point symbols from raster values."></p>
+
+<p><a href="/assets/images/20191118-nz-raster-elev-large.png">Download link to a larger version</a></p>
+
+<h3>Final Notes</h3>
+
+<p>Geometry generators are a fun and powerful QGIS feature that extends what you can do with symbols far
+beyond standard symbol options. They allow you to do more with the raw geometries of your data, without
+creating intermediate layers just for display. Geometry Generators can be tricky to tame, so use the 
+&quot;Expression Dialog&quot; accessible  from the (somewhat mysterious) <code>ℇ</code> button to get assistance and a 
+decent function reference. The built-in expressions are only the start - you can also use the full power of
+python to create your own functions from scratch by selecting &quot;Function Editor&quot; from the expression dialog.</p>
+
+<h3><span id="footnotes">Footnotes</span></h3>
+
+<p><sup>1.</sup> Recursively expanded to <em>Free and Open Source for Geospatial Information Systems &amp; State of the Map – Oceania</em>. Hey, naming things is hard.</p>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polemic'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>
+
+
+    </div>
+
+    <footer>
+        <span><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-NC</a> &copy; Hamish Campbell</span>
+        <p class="ident">
+            <a href="http://github.com/hamishcampbell" target="_blank"><i class="icon-github"></i> GitHub</a> &ndash; 
+            <a href="http://twitter.com/polemic" target="_blank"><i class="icon-twitter"></i> Twitter</a> &ndash; 
+            <a href="http://linkedin.com/profile/view?id=55658318&amp;locale=en_US" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a> &ndash; 
+            <a href="https://keybase.io/polemic" target="_blank"><i class="icon-key"></i> Keybase</a>
+        </p>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+    <script src="/static/site.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
