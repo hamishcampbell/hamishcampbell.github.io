@@ -301,7 +301,7 @@ article .imagePreview img {
 }
 article p img {
   border: 1px solid #CCC;
-  max-width: 800px;
+  max-width: 100%;
 }
 article code {
   background: #DDD;
@@ -400,6 +400,9 @@ article .captioned-image .caption {
   margin: 0;
   font-size: 0.9em;
   line-height: 1.1em;
+}
+twitter-widget {
+  margin: auto;
 }
 /** UTIL **/
 .clear {
